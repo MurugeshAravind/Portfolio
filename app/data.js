@@ -23,25 +23,19 @@ export const DATA = {
       company: "Cognizant",
       role: "Senior Associate",
       period: "2022 – Present",
-      description: [
-        "Leading frontend architecture for banking platforms, building accessible component libraries and implementing security-first UI patterns.",
-      ],
+      description: "Leading frontend architecture for banking platforms, building accessible component libraries and implementing security-first UI patterns.",
     },
     {
       company: "Infosys",
       role: "Senior Associate Consultant",
       period: "2020 – 2022",
-      description: [
-        "Modernized enterprise workflow systems by migrating legacy Angular applications to React, improving performance and user experience.",
-      ],
+      description: "Modernized enterprise workflow systems by migrating legacy Angular applications to React, improving performance and user experience.",
     },
     {
       company: "Amazecodes",
       role: "Software Engineer",
       period: "2018 – 2020",
-      description: [
-        "Built responsive enterprise dashboards with a focus on cross-browser compatibility and component-level testing.",
-      ],
+      description: "Built responsive enterprise dashboards with a focus on cross-browser compatibility and component-level testing.",
     },
   ],
   projects: [
