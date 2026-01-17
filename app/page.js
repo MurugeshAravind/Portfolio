@@ -20,7 +20,7 @@ export default function HomePage() {
     <div className="relative">
       {/* Mouse Spotlight */}
       <div
-        className="pointer-events-none fixed inset-0 z-30 transition duration-300 lg:absolute"
+        className="pointer-events-none fixed inset-0 z-30 transition duration-300"
         style={{
           background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
         }}
@@ -41,7 +41,7 @@ export default function HomePage() {
         </ul>
       </nav>
 
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 pt-24 font-sans md:px-20 md:py-20 lg:px-48 lg:py-0 lg:pt-0">
+      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 pt-24 font-sans md:px-20 md:py-20 lg:px-24 lg:py-0 lg:pt-0">
         <div className="lg:flex lg:justify-between lg:gap-24">
 
           {/* LEFT COLUMN: Header / Nav */}
@@ -88,7 +88,7 @@ export default function HomePage() {
 
             {/* ABOUT */}
             <section id="about" className="mb-16 scroll-mt-20 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-labelledby="about-heading">
-              <div className="sticky top-[53px] z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+              <div className="sticky top-[53px] z-20 -mx-6 mb-4 bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                 <h2 id="about-heading" className="text-sm font-bold uppercase tracking-widest text-neutral-900 dark:text-neutral-100">About</h2>
               </div>
               <div>
@@ -100,7 +100,7 @@ export default function HomePage() {
 
             {/* EXPERIENCE */}
             <section id="experience" className="mb-16 scroll-mt-20 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-labelledby="experience-heading">
-              <div className="sticky top-[53px] z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+              <div className="sticky top-[53px] z-20 -mx-6 mb-4 bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                 <h2 id="experience-heading" className="text-sm font-bold uppercase tracking-widest text-neutral-900 dark:text-neutral-100">Experience</h2>
               </div>
               <div>
@@ -132,7 +132,7 @@ export default function HomePage() {
 
             {/* PROJECTS */}
             <section id="projects" className="mb-16 scroll-mt-20 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-labelledby="projects-heading">
-              <div className="sticky top-[53px] z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+              <div className="sticky top-[53px] z-20 -mx-6 mb-4 bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                 <h2 id="projects-heading" className="text-sm font-bold uppercase tracking-widest text-neutral-900 dark:text-neutral-100">Projects</h2>
               </div>
               <div>
@@ -161,7 +161,7 @@ export default function HomePage() {
 
             {/* SKILLS AS FOOTER/SECTION */}
             <section id="skills" className="mb-16 scroll-mt-20 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-labelledby="skills-heading">
-              <div className="sticky top-[53px] z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+              <div className="sticky top-[53px] z-20 -mx-6 mb-4 bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                 <h2 id="skills-heading" className="text-sm font-bold uppercase tracking-widest text-neutral-900 dark:text-neutral-100">Tech Stack</h2>
               </div>
               <div className="flex flex-wrap gap-2 mb-8">
