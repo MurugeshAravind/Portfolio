@@ -8,95 +8,56 @@ export const DATA = {
   email: "arvindh.balasubramaniam@gmail.com",
   phone: "+91-9443763344",
   about:
-    "Senior Frontend Engineer with 8+ years of experience designing and building scalable, high-performance web applications using React and TypeScript. Specialized in modernizing legacy systems (Angular to React), frontend architecture, performance optimization (Core Web Vitals, code-splitting), and test-driven development. Experienced in delivering enterprise-grade UIs for banking and large-scale business platforms in Agile environments.",
+    "I'm a reliability-focused engineer currently building high-performance banking platforms. With over 8 years of experience, I specialize in simplifying complex legacy systems into clean, modern React architectures. I care deeply about accessibility, comprehensive testing, and creating pixel-perfect user interfaces that are as robust behind the scenes as they are beautiful on the screen.",
   skills: [
     "React",
     "TypeScript",
-    "JavaScript",
     "Zustand",
-    "Redux Toolkit",
-    "HTML5 / CSS3",
     "Playwright",
-    "Jest / RTL",
-    "Git / CI/CD",
-    "Agile Methodologies",
-    "Performance Optimization",
-    "Accessibility (WCAG)",
+    "Jest",
     "Frontend Architecture",
+    "Accessibility (WCAG)",
   ],
   experience: [
     {
       company: "Cognizant",
-      role: "Senior Associate - Projects",
-      period: "Aug 2022 – Present",
+      role: "Senior Associate",
+      period: "2022 – Present",
       description: [
-        "Led frontend architecture and React implementation for the Open Account Online (OAO) banking platform.",
-        "Designed and standardized a reusable component library in React and TypeScript.",
-        "Implemented PII data-masking and secure UI rendering patterns.",
-        "Optimized frontend performance using lazy loading, memoization, and efficient state management.",
-        "Drove accessibility adoption (ARIA, semantic HTML, WCAG).",
+        "Leading frontend architecture for banking platforms, building accessible component libraries and implementing security-first UI patterns.",
       ],
     },
     {
       company: "Infosys",
       role: "Senior Associate Consultant",
-      period: "Jun 2020 – Apr 2022",
+      period: "2020 – 2022",
       description: [
-        "Led the migration of a large-scale enterprise workflow platform (RHPAM) from Angular to React.",
-        "Improved application load times by 40% and increased Lighthouse performance by 20 points.",
-        "Enhanced UX and performance, contributing to 15% growth in daily active users.",
+        "Modernized enterprise workflow systems by migrating legacy Angular applications to React, improving performance and user experience.",
       ],
     },
     {
-      company: "Amazecodes Solutions Pvt. Ltd",
+      company: "Amazecodes",
       role: "Software Engineer",
-      period: "Jun 2018 – Mar 2020",
+      period: "2018 – 2020",
       description: [
-        "Developed pixel-perfect, responsive React UIs for enterprise applications.",
-        "Built cross-browser compatible UI components, reducing UI bugs by 30%.",
-        "Resolved frontend performance bottlenecks to improve stability and responsiveness.",
+        "Built responsive enterprise dashboards with a focus on cross-browser compatibility and component-level testing.",
       ],
     },
-    {
-      company: "Altran Technologies & ManpowerGroup",
-      role: "Web & Network Engineering",
-      period: "Dec 2014 – May 2018",
-      description: [
-        "Ensured high availability and operational reliability for telecom network configurations.",
-        "Built and optimized web pages with SEO and performance best practices.",
-      ],
-    },
-  ],
-  education: [
-    {
-      degree: "Bachelor of Technology in Information Technology",
-      institution: "K.S.R College of Technology, Tamil Nadu",
-      period: "Aug 2010 – Jun 2014",
-    },
-  ],
-  awards: [
-    "Insta Award — Infosys, 2021",
-    "ReactJS Warriors — Cognizant, 2023",
-    "Successful Deliveries and Proactive Improvements — Cognizant, 2023",
-    "Doing Right Thing — Cognizant, 2025",
-  ],
-  certifications: [
-    "Oracle Certified Foundations Associate, Oracle Jun 2025 – 2027",
-    "GitHub Copilot Foundations, GitHub Jun 2025 – 2028",
-    "Vibe Code Hackathon – Vibe Coded using Cursor, Cognizant Nov 2025",
   ],
   projects: [
     {
-      name: "Open Account Online (OAO)",
+      name: "Banking Onboarding Platform",
       description:
-        "Banking platform for customer onboarding with secure, high-availability flows.",
+        "High-security customer onboarding flow handling sensitive PII data with real-time validation and localized content delivery. Built a reusable React/TypeScript component library that reduced development time by 30%.",
       link: "#",
+      tech: ["React", "TypeScript", "Redux", "Jest"],
     },
     {
-      name: "RHPAM Migration",
+      name: "Workflow Migration Tool",
       description:
-        "Migration of large-scale enterprise workflow platform from Angular to React.",
+        "Enterprise dashboard transformation project that improved load times by 40% and updated the UX for 500+ daily internal users. Migrated from Angular to React with code-splitting and asset optimization.",
       link: "#",
+      tech: ["React", "Angular", "Webpack"],
     },
   ],
 };
