@@ -27,7 +27,7 @@ export default function HomePage() {
       />
 
       {/* Mobile Navigation - Fixed at Top */}
-      <nav className="lg:hidden fixed top-0 left-0 right-0 z-50 bg-white/60 dark:bg-neutral-950/60 backdrop-blur-xl border-b border-neutral-200/50 dark:border-neutral-800/50 shadow-sm" aria-label="In-page jump links">
+      <nav className="lg:hidden fixed top-0 left-0 right-0 z-[100] bg-white/70 dark:bg-neutral-950/70 backdrop-blur-lg border-b border-neutral-200/50 dark:border-neutral-800/50 shadow-sm" aria-label="In-page jump links">
         <ul className="flex gap-6 justify-center py-4 px-6">
           {['About', 'Experience', 'Projects'].map((item) => (
             <li key={item}>
@@ -41,11 +41,11 @@ export default function HomePage() {
         </ul>
       </nav>
 
-      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 font-sans md:px-12 md:py-20 lg:px-24 lg:py-0">
-        <div className="lg:flex lg:justify-between lg:gap-4">
+      <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 pt-24 font-sans md:px-20 md:py-20 lg:px-48 lg:py-0 lg:pt-0">
+        <div className="lg:flex lg:justify-between lg:gap-24">
 
           {/* LEFT COLUMN: Header / Nav */}
-          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-1/2 lg:flex-col lg:justify-between lg:py-24">
+          <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[40%] lg:flex-col lg:justify-between lg:py-24">
             <div>
               <h1 className="text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl">
                 <a href="/">{DATA.name}</a>
@@ -84,11 +84,11 @@ export default function HomePage() {
           </header>
 
           {/* RIGHT COLUMN: Content */}
-          <main id="content" className="pt-20 lg:pt-24 lg:w-1/2 lg:py-24">
+          <main id="content" className="pt-20 lg:pt-24 lg:w-[50%] lg:py-24">
 
             {/* ABOUT */}
             <section id="about" className="mb-16 scroll-mt-20 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-labelledby="about-heading">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+              <div className="sticky top-[53px] z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                 <h2 id="about-heading" className="text-sm font-bold uppercase tracking-widest text-neutral-900 dark:text-neutral-100">About</h2>
               </div>
               <div>
@@ -100,7 +100,7 @@ export default function HomePage() {
 
             {/* EXPERIENCE */}
             <section id="experience" className="mb-16 scroll-mt-20 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-labelledby="experience-heading">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+              <div className="sticky top-[53px] z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                 <h2 id="experience-heading" className="text-sm font-bold uppercase tracking-widest text-neutral-900 dark:text-neutral-100">Experience</h2>
               </div>
               <div>
@@ -119,11 +119,9 @@ export default function HomePage() {
                               <span>{job.role} · <span className="inline-block text-teal-600 dark:text-teal-300 group-hover:text-teal-700 dark:group-hover:text-teal-200 transition-colors">{job.company}</span></span>
                             </div>
                           </h3>
-                          <ul className="mt-2 text-sm leading-normal text-neutral-600 dark:text-neutral-400 list-disc list-outside ml-4 space-y-2">
-                            {job.description.map((point, i) => (
-                              <li key={i}>{point}</li>
-                            ))}
-                          </ul>
+                          <p className="mt-2 text-sm leading-normal text-neutral-600 dark:text-neutral-400">
+                            {job.description}
+                          </p>
                         </div>
                       </div>
                     </li>
@@ -134,7 +132,7 @@ export default function HomePage() {
 
             {/* PROJECTS */}
             <section id="projects" className="mb-16 scroll-mt-20 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-labelledby="projects-heading">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+              <div className="sticky top-[53px] z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                 <h2 id="projects-heading" className="text-sm font-bold uppercase tracking-widest text-neutral-900 dark:text-neutral-100">Projects</h2>
               </div>
               <div>
@@ -163,7 +161,7 @@ export default function HomePage() {
 
             {/* SKILLS AS FOOTER/SECTION */}
             <section id="skills" className="mb-16 scroll-mt-20 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-labelledby="skills-heading">
-              <div className="sticky top-0 z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
+              <div className="sticky top-[53px] z-20 -mx-6 mb-4 w-screen bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
                 <h2 id="skills-heading" className="text-sm font-bold uppercase tracking-widest text-neutral-900 dark:text-neutral-100">Tech Stack</h2>
               </div>
               <div className="flex flex-wrap gap-2 mb-8">
