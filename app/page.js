@@ -42,7 +42,7 @@ export default function HomePage() {
       </nav>
 
       <div className="mx-auto min-h-screen max-w-screen-xl px-6 py-12 pt-24 font-sans md:px-20 md:py-20 lg:px-24 lg:py-0 lg:pt-0">
-        <div className="lg:flex lg:justify-between lg:gap-24">
+        <div className="lg:flex lg:justify-between lg:gap-24 2xl:justify-center 2xl:gap-48">
 
           {/* LEFT COLUMN: Header / Nav */}
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[40%] lg:flex-col lg:justify-between lg:py-24">
@@ -151,25 +151,20 @@ export default function HomePage() {
                           <p className="mt-2 text-sm leading-normal text-neutral-600 dark:text-neutral-400">
                             {project.description}
                           </p>
+                          <ul className="mt-2 flex flex-wrap" aria-label="Technologies used">
+                            {project.tech.map((tech, techIndex) => (
+                              <li key={techIndex} className="mr-1.5 mt-2">
+                                <div className="flex items-center rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-sm font-medium text-teal-800 dark:text-teal-300">
+                                  {tech}
+                                </div>
+                              </li>
+                            ))}
+                          </ul>
                         </div>
                       </div>
                     </li>
                   ))}
                 </ul>
-              </div>
-            </section>
-
-            {/* SKILLS AS FOOTER/SECTION */}
-            <section id="skills" className="mb-16 scroll-mt-20 md:mb-24 lg:mb-36 lg:scroll-mt-24" aria-labelledby="skills-heading">
-              <div className="sticky top-[53px] z-20 -mx-6 mb-4 bg-white/75 dark:bg-neutral-950/75 px-6 py-5 backdrop-blur md:-mx-12 md:px-12 lg:relative lg:top-auto lg:mx-auto lg:w-full lg:px-0 lg:py-0">
-                <h2 id="skills-heading" className="text-sm font-bold uppercase tracking-widest text-neutral-900 dark:text-neutral-100">Tech Stack</h2>
-              </div>
-              <div className="flex flex-wrap gap-2 mb-8">
-                {DATA.skills.map((skill, index) => (
-                  <span key={index} className="flex items-center rounded-full bg-teal-100 dark:bg-teal-400/10 px-3 py-1 text-xs font-medium leading-5 text-teal-800 dark:text-teal-300">
-                    {skill}
-                  </span>
-                ))}
               </div>
             </section>
 
