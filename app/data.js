@@ -11,7 +11,9 @@ export const DATA = {
   skills: [
     "React",
     "TypeScript",
+    "Javascirpt",
     "Zustand",
+    "ReduxToolkit",
     "Playwright",
     "Jest",
     "Frontend Architecture",
