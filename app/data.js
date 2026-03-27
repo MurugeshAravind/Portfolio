@@ -1,11 +1,10 @@
-import profile from "../profile.jpg";
-
 export const DATA = {
   name: "Murugesh Aravind",
   title: "Senior Frontend Engineer",
-  avatarUrl: profile,
   location: "Bengaluru, India",
   email: "arvindh.balasubramaniam@gmail.com",
+  github: "https://github.com/MurugeshAravind",
+  linkedin: "https://linkedin.com/in/murugesh-aravind-0ab64847",
   about:
     "I’m a frontend engineer with 8+ years of experience working on large-scale banking platforms, where reliability, performance, and security matter. My strength lies in simplifying complex legacy systems into modern React architectures, with a strong emphasis on accessibility, testing, and performance optimization. I enjoy building pixel-perfect interfaces that balance great user experience with solid engineering foundations.",
   skills: [
