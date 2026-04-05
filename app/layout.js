@@ -2,6 +2,9 @@ import { GeistSans } from "geist/font/sans";
 import ClientProviders from "./components/client-providers";
 import "./global.css";
 
+// Optimize font loading
+const geistSans = GeistSans;
+
 const siteUrl = "https://www.aravind.is-a.dev";
 
 export const metadata = {
@@ -69,6 +72,8 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
+        <link rel="preconnect" href="https://github.com" />
+        <link rel="preconnect" href="https://linkedin.com" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
