@@ -19,23 +19,27 @@ export default function HomePage() {
           {/* LEFT COLUMN: Header / Nav */}
           <header className="lg:sticky lg:top-0 lg:flex lg:max-h-screen lg:w-[40%] lg:flex-col lg:justify-between lg:py-24">
             <div>
-              <div className="animate-fade-up animate-fade-up-1 mb-6">
-                <Image
-                  src={avatarImg}
-                  alt={DATA.name}
-                  width={96}
-                  height={96}
-                  className="rounded-full ring-2 ring-teal-500/30 dark:ring-teal-400/30 ring-offset-2 ring-offset-white dark:ring-offset-neutral-950 object-cover aspect-square"
-                  priority
-                  sizes="(max-width: 768px) 64px, 96px"
-                />
+              <div className="flex flex-row-reverse items-start justify-between lg:block mb-2 lg:mb-0">
+                <div className="animate-fade-up animate-fade-up-1 mb-4 lg:mb-6">
+                  <Image
+                    src={avatarImg}
+                    alt={DATA.name}
+                    width={96}
+                    height={96}
+                    className="rounded-full ring-2 ring-teal-500/30 dark:ring-teal-400/30 ring-offset-2 ring-offset-white dark:ring-offset-neutral-950 object-cover aspect-square w-16 h-16 md:w-24 md:h-24"
+                    priority
+                    sizes="(max-width: 768px) 64px, 96px"
+                  />
+                </div>
+                <div className="flex-1">
+                  <h1 className="animate-fade-up animate-fade-up-1 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl">
+                    <a href="/">{DATA.name}</a>
+                  </h1>
+                  <h2 className="animate-fade-up animate-fade-up-2 mt-3 text-lg font-medium tracking-tight text-neutral-700 dark:text-neutral-300 sm:text-xl">
+                    {DATA.title}
+                  </h2>
+                </div>
               </div>
-              <h1 className="animate-fade-up animate-fade-up-1 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl">
-                <a href="/">{DATA.name}</a>
-              </h1>
-              <h2 className="animate-fade-up animate-fade-up-2 mt-3 text-lg font-medium tracking-tight text-neutral-700 dark:text-neutral-300 sm:text-xl">
-                {DATA.title}
-              </h2>
 
               <ul className="animate-fade-up animate-fade-up-3 ml-1 mt-6 flex flex-wrap items-center gap-y-2" aria-label="Contact info">
                 <li className="mr-5 text-xs text-neutral-500 flex items-center gap-1.5">
