@@ -49,6 +49,7 @@ export default function Spotlight() {
     <div
       ref={spotlightRef}
       className="pointer-events-none fixed inset-0 z-30"
+      style={{ willChange: "background" }}
       aria-hidden="true"
     />
   );
