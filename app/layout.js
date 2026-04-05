@@ -2,26 +2,27 @@ import { GeistSans } from "geist/font/sans";
 import ClientProviders from "./components/client-providers";
 import "./global.css";
 
-const siteUrl = "https://portfolio-murugesh-aravinds-projects.vercel.app";
+const siteUrl = "https://www.aravind.is-a.dev";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: "Murugesh Aravind — Senior Frontend Engineer",
   description:
-    "Senior Frontend Engineer with 8+ years of experience building scalable banking platforms and React architectures. Specialising in accessibility, performance, and TypeScript.",
+    "Senior Frontend Engineer with 8+ years of experience building scalable banking platforms and React architectures. Specializing in accessibility, performance, and TypeScript.",
   openGraph: {
     type: "website",
     url: siteUrl,
     title: "Murugesh Aravind — Senior Frontend Engineer",
     description:
-      "Senior Frontend Engineer with 8+ years of experience building scalable banking platforms and React architectures. Specialising in accessibility, performance, and TypeScript.",
+      "Senior Frontend Engineer with 8+ years of experience building scalable banking platforms and React architectures. Specializing in accessibility, performance, and TypeScript.",
     siteName: "Murugesh Aravind Portfolio",
+    locale: "en_US",
   },
   twitter: {
     card: "summary_large_image",
     title: "Murugesh Aravind — Senior Frontend Engineer",
     description:
-      "Senior Frontend Engineer with 8+ years of experience building scalable banking platforms and React architectures. Specialising in accessibility, performance, and TypeScript.",
+      "Senior Frontend Engineer with 8+ years of experience building scalable banking platforms and React architectures. Specializing in accessibility, performance, and TypeScript.",
   },
   robots: {
     index: true,
