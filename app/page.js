@@ -186,10 +186,6 @@ export default function HomePage() {
                 <a href="https://tailwindcss.com" target="_blank" rel="noopener noreferrer" className="font-medium text-neutral-600 dark:text-neutral-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
                   Tailwind CSS
                 </a>
-                . Deployed on{" "}
-                <a href="https://vercel.com" target="_blank" rel="noopener noreferrer" className="font-medium text-neutral-600 dark:text-neutral-400 hover:text-teal-600 dark:hover:text-teal-400 transition-colors">
-                  Vercel
-                </a>
                 .
               </p>
             </footer>

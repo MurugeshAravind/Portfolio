@@ -1,42 +1,41 @@
-# Portfolio Blog Starter
+# Murugesh Aravind — Portfolio
 
-This is a porfolio site template complete with a blog. Includes:
+Senior Frontend Engineer with 8+ years of experience building scalable banking platforms and React architectures.
 
-- MDX and Markdown support
-- Optimized for SEO (sitemap, robots, JSON-LD schema)
-- RSS Feed
-- Dynamic OG images
-- Syntax highlighting
-- Tailwind v4
-- Vercel Speed Insights / Web Analytics
-- Geist font
+## Tech Stack
 
-## Demo
+- **Framework**: [Next.js](https://nextjs.org) (App Router)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com)
+- **Icons**: [Heroicons](https://heroicons.com)
+- **Font**: [Geist](https://vercel.com/font)
+- **Deployment**: Custom Domain (Next.js)
 
-https://portfolio-blog-starter.vercel.app
+## Features
 
-## How to Use
+- **Performance**: Optimized images, LERP-based spotlight effect, and minimal client-side JS.
+- **Accessibility**: Semantic HTML and keyboard-friendly navigation.
+- **SEO**: Static metadata, JSON-LD structured data, and sitemap generation.
+- **Testing**: Unit tests with Vitest and React Testing Library.
 
-You can choose from one of the following two methods to use this repository:
+## Getting Started
 
-### One-Click Deploy
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
+2. Run the development server:
+   ```bash
+   npm run dev
+   ```
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/vercel/examples/tree/main/solutions/blog&project-name=blog&repository-name=blog)
+3. Build for production:
+   ```bash
+   npm run build
+   ```
 
-### Clone and Deploy
+## Development
 
-Execute [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app) with [pnpm](https://pnpm.io/installation) to bootstrap the example:
-
-```bash
-pnpm create next-app --example https://github.com/vercel/examples/tree/main/solutions/blog blog
-```
-
-Then, run Next.js in development mode:
-
-```bash
-pnpm dev
-```
-
-Deploy it to the cloud with [Vercel](https://vercel.com/templates) ([Documentation](https://nextjs.org/docs/app/building-your-application/deploying)).
+- `app/`: Next.js App Router components and layouts.
+- `__tests__/`: Unit tests for hooks and components.
+- `skills/`: Custom Gemini CLI skills for development workflow.

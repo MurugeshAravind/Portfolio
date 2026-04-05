@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://portfolio-murugesh-aravinds-projects.vercel.app/sitemap.xml
+Sitemap: https://www.aravind.is-a.dev/sitemap.xml
