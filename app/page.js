@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { DATA } from "./data";
-import avatarImg from "../profile.jpg";
+import avatarImg from "../profile.webp";
 import LazySpotlight from "./components/lazy-spotlight";
 import { MobileNav, DesktopNav } from "./components/nav-links";
 
