@@ -25,7 +25,7 @@ export default function HomePage() {
                   alt={DATA.name}
                   width={96}
                   height={96}
-                  className="rounded-full ring-2 ring-teal-500/30 dark:ring-teal-400/30 ring-offset-2 ring-offset-white dark:ring-offset-neutral-950 object-cover"
+                  className="rounded-full ring-2 ring-teal-500/30 dark:ring-teal-400/30 ring-offset-2 ring-offset-white dark:ring-offset-neutral-950 object-cover aspect-square"
                   priority
                   sizes="(max-width: 768px) 64px, 96px"
                 />
