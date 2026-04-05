@@ -7,14 +7,11 @@ export default function Spotlight() {
   const rafRef = useRef(null);
   const targetPos = useRef({ x: 0, y: 0 });
   const currentPos = useRef({ x: 0, y: 0 });
+  const isMoving = useRef(false);
 
   useEffect(() => {
-    const handleMouseMove = (e) => {
-      targetPos.current = { x: e.clientX, y: e.clientY };
-    };
-    window.addEventListener("mousemove", handleMouseMove, { passive: true });
-
     const lerp = (a, b, t) => a + (b - a) * t;
+    
     const animate = () => {
       const dx = targetPos.current.x - currentPos.current.x;
       const dy = targetPos.current.y - currentPos.current.y;
@@ -26,14 +23,25 @@ export default function Spotlight() {
         if (spotlightRef.current) {
           spotlightRef.current.style.background = `radial-gradient(700px at ${currentPos.current.x}px ${currentPos.current.y}px, rgba(20, 184, 166, 0.12), transparent 80%)`;
         }
+        rafRef.current = requestAnimationFrame(animate);
+      } else {
+        isMoving.current = false;
       }
-      rafRef.current = requestAnimationFrame(animate);
     };
-    rafRef.current = requestAnimationFrame(animate);
+
+    const handleMouseMove = (e) => {
+      targetPos.current = { x: e.clientX, y: e.clientY };
+      if (!isMoving.current) {
+        isMoving.current = true;
+        rafRef.current = requestAnimationFrame(animate);
+      }
+    };
+    
+    window.addEventListener("mousemove", handleMouseMove, { passive: true });
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      cancelAnimationFrame(rafRef.current);
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
     };
   }, []);
 
