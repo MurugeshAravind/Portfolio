@@ -1,46 +1,39 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useActiveSection } from "../hooks/useActiveSection";
 
 const SECTIONS = ["About", "Experience", "Projects"];
+const SECTION_IDS = ["about", "experience", "projects"];
 
 export function MobileNav() {
+  const activeSection = useActiveSection(SECTION_IDS);
+
   return (
     <nav
-      className="lg:hidden fixed top-0 left-0 right-0 z-[100] bg-white/70 dark:bg-neutral-950/70 backdrop-blur-lg border-b border-neutral-200/50 dark:border-neutral-800/50 shadow-sm"
+      className="lg:hidden fixed top-0 left-0 right-0 z-[100] bg-white/70 dark:bg-neutral-950/70 backdrop-blur-lg border-b border-neutral-200/50 dark:border-neutral-800/50 shadow-sm transition-all"
       aria-label="In-page jump links"
     >
       <ul className="flex gap-6 justify-center py-4 px-6">
-        {SECTIONS.map((item) => (
-          <li key={item}>
-            <a className="group flex items-center" href={`#${item.toLowerCase()}`}>
-              <span className="nav-text text-xs font-bold uppercase tracking-widest text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100 transition-colors">
-                {item}
-              </span>
-            </a>
-          </li>
-        ))}
+        {SECTIONS.map((item) => {
+          const isActive = activeSection === item.toLowerCase();
+          return (
+            <li key={item}>
+              <a className="group flex flex-col items-center gap-1" href={`#${item.toLowerCase()}`}>
+                <span className={`nav-text text-xs font-bold uppercase tracking-widest transition-colors ${isActive ? 'text-teal-600 dark:text-teal-400' : 'text-neutral-600 dark:text-neutral-400 hover:text-neutral-900 dark:hover:text-neutral-100'}`}>
+                  {item}
+                </span>
+                <span className={`h-0.5 rounded-full transition-all duration-300 ${isActive ? 'w-full bg-teal-600 dark:bg-teal-400' : 'w-0 bg-transparent group-hover:w-full group-hover:bg-neutral-300 dark:group-hover:bg-neutral-700'}`}></span>
+              </a>
+            </li>
+          );
+        })}
       </ul>
     </nav>
   );
 }
 
 export function DesktopNav() {
-  const [activeSection, setActiveSection] = useState("about");
-
-  useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) setActiveSection(entry.target.id);
-        });
-      },
-      { rootMargin: "-30% 0px -60% 0px" }
-    );
-    sections.forEach((s) => observer.observe(s));
-    return () => observer.disconnect();
-  }, []);
+  const activeSection = useActiveSection(SECTION_IDS);
 
   return (
     <nav className="animate-fade-up animate-fade-up-4 nav hidden lg:block" aria-label="In-page jump links">
