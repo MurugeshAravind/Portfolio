@@ -27,6 +27,7 @@ export default function HomePage() {
                   height={96}
                   className="rounded-full ring-2 ring-teal-500/30 dark:ring-teal-400/30 ring-offset-2 ring-offset-white dark:ring-offset-neutral-950 object-cover"
                   priority
+                  sizes="(max-width: 768px) 64px, 96px"
                 />
               </div>
               <h1 className="animate-fade-up animate-fade-up-1 text-4xl font-bold tracking-tight text-neutral-900 dark:text-neutral-100 sm:text-5xl">
