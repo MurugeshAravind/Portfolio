@@ -147,6 +147,87 @@ a {
   opacity: 0.8;
 }
 
+/* Hamburger — hidden on desktop */
+.nav-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  flex-direction: column;
+  gap: 5px;
+  z-index: 110;
+}
+
+.hamburger-line {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--text);
+  border-radius: 2px;
+  transition: transform 0.3s, opacity 0.3s;
+}
+
+.hamburger-line.open:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.hamburger-line.open:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-line.open:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile menu overlay */
+.mobile-menu {
+  position: fixed;
+  top: 60px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(10, 10, 10, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+  z-index: 99;
+}
+
+.mobile-menu-link {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+
+.mobile-menu-link.active {
+  color: var(--text);
+}
+
+.mobile-menu-link:hover {
+  color: var(--text);
+}
+
+.mobile-menu-cta {
+  color: var(--accent);
+  margin-top: 16px;
+  padding: 10px 28px;
+  border: 1px solid rgba(200, 245, 69, 0.3);
+  border-radius: 4px;
+  font-size: 16px;
+}
+
+.mobile-menu-cta:hover {
+  color: var(--accent);
+  background: rgba(200, 245, 69, 0.06);
+}
+
 /* ─── Scroll Progress ─── */
 .scroll-progress {
   position: fixed;
@@ -887,11 +968,12 @@ a {
     display: none;
   }
 
-  .nav-cta {
-    font-size: 12px;
-    padding: 6px 14px;
-    border: 1px solid rgba(200, 245, 69, 0.3);
-    border-radius: 3px;
+  .nav-cta-desktop {
+    display: none;
+  }
+
+  .nav-hamburger {
+    display: flex;
   }
 
   .project-info {
