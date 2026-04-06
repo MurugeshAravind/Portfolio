@@ -792,6 +792,7 @@ a {
 
   .about-photo-wrap {
     max-width: 240px;
+    margin: 0 auto;
   }
 
   .exp-item {
@@ -920,6 +921,7 @@ a {
 
   .about-photo-wrap {
     max-width: 200px;
+    margin: 0 auto;
   }
 
   .about-text {
