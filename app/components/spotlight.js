@@ -21,7 +21,7 @@ export default function Spotlight() {
         currentPos.current.x = lerp(currentPos.current.x, targetPos.current.x, 0.08);
         currentPos.current.y = lerp(currentPos.current.y, targetPos.current.y, 0.08);
         if (spotlightRef.current) {
-          spotlightRef.current.style.background = `radial-gradient(700px at ${currentPos.current.x}px ${currentPos.current.y}px, rgba(20, 184, 166, 0.12), transparent 80%)`;
+          spotlightRef.current.style.background = `radial-gradient(700px at ${currentPos.current.x}px ${currentPos.current.y}px, rgba(200, 245, 69, 0.07), transparent 80%)`;
         }
         rafRef.current = requestAnimationFrame(animate);
       } else {
