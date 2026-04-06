@@ -9,7 +9,7 @@
   --accent: #c8f545;
   --accent2: #3b82f6;
   --text: #f0ede6;
-  --muted: #6b6b6b;
+  --muted: #B0B0B0;
   --font-display: var(--font-syne, "Syne", sans-serif);
   --font-body: var(--font-dm-sans, "DM Sans", sans-serif);
 }
@@ -66,7 +66,7 @@ a {
 }
 
 .section-num {
-  font-family: var(--font-display);
+  font-family: var(--font-mono, 'JetBrains Mono', monospace);
   font-size: 13px;
   color: var(--accent);
   font-weight: 700;
@@ -146,8 +146,21 @@ a {
   opacity: 0.8;
 }
 
+/* ─── Scroll Progress ─── */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 3px;
+  background: var(--accent);
+  z-index: 200;
+  transform-origin: left;
+  will-change: transform;
+}
+
 /* ─── Hero ─── */
 .hero {
+  position: relative;
   display: grid;
   grid-template-columns: 1fr 1fr;
   min-height: 88vh;
@@ -156,6 +169,19 @@ a {
   padding: 0 48px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(200, 245, 69, 0.06) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
 }
 
 .eyebrow {
@@ -223,7 +249,7 @@ a {
 
 .stat-card {
   background: var(--card);
-  border: 1px solid var(--border);
+  border: 1px solid rgba(200, 255, 0, 0.12);
   border-radius: 12px;
   padding: 24px 20px;
   text-align: center;
@@ -318,7 +344,7 @@ a {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  background: rgba(200, 245, 69, 0.1);
+  background: rgba(200, 255, 0, 0.12);
   color: var(--accent);
 }
 
@@ -575,6 +601,7 @@ a {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--border);
+  box-shadow: 0 0 60px rgba(200, 255, 0, 0.06);
 }
 
 .about-photo {
@@ -599,17 +626,20 @@ a {
 }
 
 .about-links a {
-  font-size: 14px;
-  font-weight: 500;
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
   color: var(--text);
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 2px;
-  transition: border-color 0.2s, color 0.2s;
+  padding: 8px 20px;
+  border: 1px solid var(--border);
+  border-radius: 100px;
+  transition: border-color 0.2s, color 0.2s, background 0.2s;
 }
 
 .about-links a:hover {
   color: var(--accent);
   border-color: var(--accent);
+  background: rgba(200, 255, 0, 0.06);
 }
 
 /* ─── Contact ─── */
@@ -652,7 +682,8 @@ a {
 
 .contact-form input:focus,
 .contact-form textarea:focus {
-  border-color: rgba(200, 245, 69, 0.4);
+  border-color: var(--accent);
+  border-left: 2px solid var(--accent);
 }
 
 .contact-form textarea {
