@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://www.aravind.is-a.dev/sitemap.xml
+Sitemap: https://aravind.is-a.dev/sitemap.xml

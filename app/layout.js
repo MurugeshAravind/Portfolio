@@ -15,13 +15,13 @@ const dmSans = DM_Sans({
   display: "swap",
 });
 
-const siteUrl = "https://www.aravind.is-a.dev";
+const siteUrl = "https://aravind.is-a.dev";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: "Murugesh Aravind — Senior Frontend Engineer",
   description:
-    "8 years building banking platforms and React architectures for 50,000+ users. Based in Chennai. Open to senior and lead frontend roles.",
+    "8 years building banking platforms and React architectures for 50,000+ users. Based in India. Open to senior and lead frontend roles.",
   openGraph: {
     type: "website",
     url: siteUrl,
@@ -58,7 +58,6 @@ const jsonLd = {
   url: siteUrl,
   address: {
     "@type": "PostalAddress",
-    addressLocality: "Chennai",
     addressCountry: "IN",
   },
   sameAs: [
