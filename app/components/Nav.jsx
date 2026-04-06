@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useActiveSection } from "../hooks/useActiveSection";
 
 const LINKS = [
@@ -14,6 +14,17 @@ const SECTION_IDS = ["work", "experience", "about"];
 export default function Nav() {
   const activeSection = useActiveSection(SECTION_IDS);
   const [menuOpen, setMenuOpen] = useState(false);
+  const menuRef = useRef(null);
+
+  function toggleMenu() {
+    setMenuOpen(prev => !prev);
+  }
+
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "";
+    if (menuOpen) menuRef.current?.querySelector("a")?.focus();
+    return () => { document.body.style.overflow = ""; };
+  }, [menuOpen]);
 
   return (
     <nav className="nav" aria-label="Main navigation">
@@ -42,9 +53,10 @@ export default function Nav() {
       {/* Mobile hamburger */}
       <button
         className="nav-hamburger"
-        onClick={() => setMenuOpen(!menuOpen)}
+        onClick={toggleMenu}
         aria-label={menuOpen ? "Close menu" : "Open menu"}
         aria-expanded={menuOpen}
+        {...(menuOpen && { "aria-controls": "mobile-menu" })}
       >
         <span className={`hamburger-line ${menuOpen ? "open" : ""}`} />
         <span className={`hamburger-line ${menuOpen ? "open" : ""}`} />
@@ -53,7 +65,7 @@ export default function Nav() {
 
       {/* Mobile menu */}
       {menuOpen && (
-        <div className="mobile-menu">
+        <div id="mobile-menu" className="mobile-menu" ref={menuRef}>
           {LINKS.map(({ label, href }) => (
             <a
               key={label}
