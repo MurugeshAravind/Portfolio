@@ -363,6 +363,9 @@ a {
   min-height: 200px;
   position: relative;
   overflow: hidden;
+  background-image:
+    radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 20px 20px;
 }
 
 .project-visual::after {
@@ -371,9 +374,15 @@ a {
   inset: 0;
   background: linear-gradient(
     135deg,
-    rgba(200, 245, 69, 0.06) 0%,
-    rgba(59, 130, 246, 0.06) 100%
+    rgba(200, 245, 69, 0.05) 0%,
+    rgba(59, 130, 246, 0.05) 50%,
+    transparent 100%
   );
+}
+
+/* Last non-featured card alone on its row: stretch full width */
+.projects-grid > .project-card:not(.featured):last-child:nth-child(2n + 2) {
+  grid-column: span 2;
 }
 
 .project-visual[data-id="open-account"]::before {
@@ -394,6 +403,18 @@ a {
   transform: translate(-50%, -50%);
   font-size: 48px;
   opacity: 0.4;
+}
+
+.project-visual[data-id="tic-tac-toe"]::before {
+  content: "✕ ○";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 42px;
+  opacity: 0.4;
+  color: var(--accent2);
+  letter-spacing: 8px;
 }
 
 .project-visual[data-id="portfolio"]::before {
@@ -742,6 +763,13 @@ a {
   }
 }
 
+@media (max-width: 1024px) {
+  /* Orphan card fix: always full width on single-col mobile */
+  .projects-grid > .project-card:not(.featured):last-child:nth-child(2n + 2) {
+    grid-column: span 1;
+  }
+}
+
 @media (max-width: 640px) {
   .hero-title {
     font-size: 32px;
@@ -766,6 +794,13 @@ a {
 
   .nav-links {
     display: none;
+  }
+
+  .nav-cta {
+    font-size: 12px;
+    padding: 6px 14px;
+    border: 1px solid rgba(200, 245, 69, 0.3);
+    border-radius: 3px;
   }
 
   .project-info {

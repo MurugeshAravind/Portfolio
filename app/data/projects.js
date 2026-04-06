@@ -34,6 +34,22 @@ export const projects = [
     company: "Infosys",
   },
   {
+    id: "tic-tac-toe",
+    featured: false,
+    tag: "Full-stack · AWS · Open source",
+    name: "Advanced Tic-Tac-Toe",
+    description:
+      "Multiplayer game with AWS Cognito auth, DynamoDB-backed history, " +
+      "global leaderboard, and dynamic 3x3 to 6x6 grids. Deployed on " +
+      "AWS Amplify with full CI/CD pipeline.",
+    impact: [
+      { num: "6x6", label: "Max grid size" },
+      { num: "E2E", label: "Playwright tested" },
+    ],
+    stack: ["React 19", "TypeScript", "AWS Cognito", "DynamoDB", "Vite"],
+    repo: "https://github.com/MurugeshAravind/advanced-tic-tac-toe",
+  },
+  {
     id: "portfolio",
     featured: false,
     tag: "Side project · Open source",
