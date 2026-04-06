@@ -25,7 +25,7 @@ export default function About() {
 
         <div className="about-content">
           <p className="about-text">
-            I&apos;m a Senior Frontend Engineer based in Chennai, India, with 8
+            I&apos;m a Senior Frontend Engineer based in India, with 8
             years building banking and enterprise platforms where performance,
             security, and accessibility are non-negotiable. My strength is taking
             tangled legacy codebases and making them fast, tested, and
