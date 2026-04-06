@@ -34,6 +34,7 @@ body {
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
 }
 
 ::selection {
@@ -746,12 +747,20 @@ a {
 }
 
 /* ─── Responsive ─── */
+
+/* Tablet & below */
 @media (max-width: 1024px) {
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
     padding: 64px 24px;
     gap: 48px;
+  }
+
+  .hero::before {
+    width: 400px;
+    height: 400px;
+    top: -60px;
   }
 
   .section {
@@ -769,6 +778,11 @@ a {
   .project-card.featured {
     grid-column: span 1;
     grid-template-columns: 1fr;
+  }
+
+  /* Orphan card fix: full width on single-col layout */
+  .projects-grid > .project-card:not(.featured):last-child:nth-child(2n + 2) {
+    grid-column: span 1;
   }
 
   .about-grid {
@@ -794,33 +808,78 @@ a {
   }
 }
 
-@media (max-width: 1024px) {
-  /* Orphan card fix: always full width on single-col mobile */
-  .projects-grid > .project-card:not(.featured):last-child:nth-child(2n + 2) {
-    grid-column: span 1;
-  }
-}
-
+/* Mobile */
 @media (max-width: 640px) {
+  .hero {
+    padding: 48px 16px;
+    gap: 32px;
+  }
+
+  .hero::before {
+    width: 300px;
+    height: 300px;
+    top: -40px;
+  }
+
   .hero-title {
-    font-size: 32px;
+    font-size: 28px;
+    letter-spacing: -0.5px;
+  }
+
+  .hero-sub {
+    font-size: 14px;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+  }
+
+  .hero-actions .btn-primary,
+  .hero-actions .btn-secondary {
+    width: 100%;
+    text-align: center;
   }
 
   .stat-row {
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
+    gap: 8px;
   }
 
   .stat-num {
-    font-size: 28px;
+    font-size: 24px;
   }
 
   .stat-card {
-    padding: 16px 12px;
+    padding: 14px 8px;
+    border-radius: 8px;
   }
 
-  .form-row {
-    grid-template-columns: 1fr;
+  .stat-label {
+    font-size: 10px;
+  }
+
+  .stack-card {
+    padding: 16px;
+  }
+
+  .section {
+    padding: 48px 16px;
+  }
+
+  .section-header {
+    margin-bottom: 32px;
+  }
+
+  .section-header h2 {
+    font-size: 24px;
+  }
+
+  .nav {
+    padding: 0 16px;
+  }
+
+  .nav-logo {
+    font-size: 18px;
   }
 
   .nav-links {
@@ -835,14 +894,90 @@ a {
   }
 
   .project-info {
-    padding: 24px;
+    padding: 20px;
+  }
+
+  .project-name {
+    font-size: 18px;
+  }
+
+  .project-desc {
+    font-size: 13px;
   }
 
   .project-impact {
-    gap: 16px;
+    gap: 12px;
+    flex-wrap: wrap;
   }
 
   .impact-num {
-    font-size: 22px;
+    font-size: 20px;
   }
+
+  .exp-company {
+    font-size: 17px;
+  }
+
+  .about-photo-wrap {
+    max-width: 200px;
+  }
+
+  .about-text {
+    font-size: 14px;
+  }
+
+  .about-links {
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .contact-section {
+    padding: 48px 16px;
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-form input,
+  .contact-form textarea {
+    font-size: 16px; /* prevents iOS zoom on focus */
+  }
+
+  .footer {
+    padding: 24px 16px;
+  }
+}
+
+/* Small mobile (iPhone SE, Galaxy Fold, etc.) */
+@media (max-width: 380px) {
+  .hero-title {
+    font-size: 24px;
+  }
+
+  .stat-num {
+    font-size: 20px;
+  }
+
+  .stat-label {
+    font-size: 9px;
+  }
+
+  .stat-card {
+    padding: 12px 6px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    padding: 10px 20px;
+    font-size: 13px;
+  }
+}
+
+/* Disabled button state */
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
 }
