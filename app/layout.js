@@ -55,6 +55,9 @@ export const metadata = {
   alternates: {
     canonical: siteUrl,
   },
+  verification: {
+    google: "lQosaKZzzIGt1_-iGncrCIJf9zkPCykkk5WbZomaRQo",
+  },
 };
 
 const jsonLd = {
