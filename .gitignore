@@ -28,6 +28,8 @@ yarn-error.log*
 
 # env files
 .env
+.env.local
+.env*.local
 
 # vercel
 .vercel
@@ -36,4 +38,8 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-.vercel
+# local tooling / AI config
+.agents/
+.claude/
+skills-lock.json
+e2e-tests/
