@@ -37,7 +37,7 @@ export function DesktopNav() {
 
   return (
     <nav className="animate-fade-up animate-fade-up-4 nav hidden lg:block" aria-label="In-page jump links">
-      <ul className="mt-16 w-max">
+      <ul className="w-max">
         {SECTIONS.map((item) => {
           const isActive = activeSection === item.toLowerCase();
           return (

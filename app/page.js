@@ -26,9 +26,9 @@ export default function HomePage() {
                     alt={DATA.name}
                     width={96}
                     height={96}
-                    className="rounded-full ring-2 ring-teal-500/30 dark:ring-teal-400/30 ring-offset-2 ring-offset-white dark:ring-offset-neutral-950 object-cover aspect-square w-16 h-16 md:w-24 md:h-24"
+                    className="rounded-full ring-2 ring-teal-500/30 dark:ring-teal-400/30 ring-offset-2 ring-offset-white dark:ring-offset-neutral-950 object-cover aspect-square w-20 h-20 md:w-24 md:h-24"
                     priority
-                    sizes="(max-width: 768px) 64px, 96px"
+                    sizes="(max-width: 768px) 80px, 96px"
                   />
                 </div>
                 <div className="flex-1">
@@ -68,9 +68,10 @@ export default function HomePage() {
                 </li>
               </ul>
 
-              {/* Desktop Navigation — client component for active section tracking */}
-              <DesktopNav />
             </div>
+
+            {/* Desktop Navigation — pushed to bottom via header's justify-between */}
+            <DesktopNav />
           </header>
 
           {/* RIGHT COLUMN: Content */}
@@ -159,6 +160,12 @@ export default function HomePage() {
                                   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3.5 h-3.5 shrink-0 translate-y-px transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" aria-hidden="true"><path fillRule="evenodd" d="M9.25 3.75a.75.75 0 0 1 .75-.75h3.25A.75.75 0 0 1 14 3.75V7a.75.75 0 0 1-1.5 0V5.56l-6.22 6.22a.75.75 0 0 1-1.06-1.06L11.44 4.5H10a.75.75 0 0 1-.75-.75ZM2 8a.75.75 0 0 1 .75-.75h1.5a.75.75 0 0 1 0 1.5h-1.5A.75.75 0 0 1 2 8Zm0 3.25a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1-.75-.75Z" clipRule="evenodd" /></svg>
                                 )}
                               </Tag>
+                              {!hasLink && (
+                                <span className="ml-2 inline-flex items-center gap-1 rounded-full border border-neutral-200 dark:border-neutral-700 px-2 py-0.5 text-xs font-normal text-neutral-400 dark:text-neutral-500">
+                                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-3 h-3" aria-hidden="true"><path fillRule="evenodd" d="M8 1a3.5 3.5 0 0 0-3.5 3.5V7A1.5 1.5 0 0 0 3 8.5v5A1.5 1.5 0 0 0 4.5 15h7a1.5 1.5 0 0 0 1.5-1.5v-5A1.5 1.5 0 0 0 11 7V4.5A3.5 3.5 0 0 0 8 1Zm2 6V4.5a2 2 0 1 0-4 0V7h4Z" clipRule="evenodd" /></svg>
+                                  Private / NDA
+                                </span>
+                              )}
                             </h3>
                             <p className="mt-2 text-sm leading-normal text-neutral-600 dark:text-neutral-400">
                               {project.description}
