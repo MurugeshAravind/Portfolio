@@ -46,6 +46,10 @@ export default function Contact() {
         <h2>Let&apos;s talk</h2>
       </div>
 
+      <p className="contact-intro">
+        Have a project in mind, or just want to say hello? I&apos;d love to hear from you.
+      </p>
+
       {submitted ? (
         <p style={{ color: "var(--accent)", fontSize: "16px" }}>
           Thanks for reaching out! I&apos;ll get back to you soon.
