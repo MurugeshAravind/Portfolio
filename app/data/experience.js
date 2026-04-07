@@ -33,14 +33,4 @@ export const experience = [
       "Integrated REST APIs and managed state with Redux, delivering dynamic data-driven UIs for B2B SaaS clients",
     ],
   },
-  {
-    period: "Dec 2014 — May 2018",
-    company: "Altran Technologies",
-    role: "Configuration Management Engineer",
-    bullets: [
-      "Managed configuration of telecom infrastructure for Vodafone and Turk Telekom",
-      "Gained first web technology exposure collaborating with Digital Vendor Marketing team on retail web pages",
-      "Completed self-directed training in JavaScript, React, HTML, and CSS — transitioned full-time into software engineering",
-    ],
-  },
 ];

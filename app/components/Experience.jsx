@@ -8,9 +8,12 @@ export default function Experience() {
         <h2>Experience</h2>
       </div>
       <ol className="exp-list">
-        {experience.map((job) => (
-          <li key={job.company} className="exp-item">
-            <div className="exp-period">{job.period}</div>
+        {experience.map((job, index) => (
+          <li key={job.company} className={`exp-item ${index === 0 ? "exp-item--current" : ""}`}>
+            <div className="exp-period">
+              {job.period}
+              {index === 0 && <span className="exp-badge">Current</span>}
+            </div>
             <div>
               <h3 className="exp-company">{job.company}</h3>
               <p className="exp-role">{job.role}</p>

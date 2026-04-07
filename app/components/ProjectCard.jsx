@@ -1,7 +1,70 @@
+const VISUAL_PATTERNS = {
+  "open-account": (
+    <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="project-svg">
+      {/* Shield / secure banking motif */}
+      <rect x="160" y="40" width="80" height="100" rx="4" stroke="rgba(200,245,69,0.25)" strokeWidth="1.5" fill="none" />
+      <path d="M200 55 L230 70 L230 110 Q230 130 200 140 Q170 130 170 110 L170 70 Z" stroke="rgba(200,245,69,0.35)" strokeWidth="1" fill="rgba(200,245,69,0.04)" />
+      <path d="M190 100 L197 107 L212 90" stroke="rgba(200,245,69,0.5)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <line x1="60" y1="80" x2="140" y2="80" stroke="rgba(200,245,69,0.1)" strokeWidth="1" />
+      <line x1="60" y1="95" x2="130" y2="95" stroke="rgba(200,245,69,0.07)" strokeWidth="1" />
+      <line x1="60" y1="110" x2="120" y2="110" stroke="rgba(200,245,69,0.05)" strokeWidth="1" />
+      <line x1="260" y1="80" x2="340" y2="80" stroke="rgba(200,245,69,0.1)" strokeWidth="1" />
+      <line x1="270" y1="95" x2="340" y2="95" stroke="rgba(200,245,69,0.07)" strokeWidth="1" />
+      <line x1="280" y1="110" x2="340" y2="110" stroke="rgba(200,245,69,0.05)" strokeWidth="1" />
+    </svg>
+  ),
+  "angular-react-migration": (
+    <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="project-svg">
+      {/* Angular to React transformation */}
+      <polygon points="120,130 150,60 180,130" stroke="rgba(255,100,100,0.3)" strokeWidth="1.5" fill="rgba(255,100,100,0.04)" />
+      <line x1="130" y1="115" x2="170" y2="115" stroke="rgba(255,100,100,0.2)" strokeWidth="1" />
+      <path d="M195 95 L220 95" stroke="rgba(200,245,69,0.3)" strokeWidth="1.5" strokeLinecap="round" markerEnd="" />
+      <polygon points="218 90 228 95 218 100" fill="rgba(200,245,69,0.3)" />
+      <circle cx="280" cy="95" r="28" stroke="rgba(59,130,246,0.35)" strokeWidth="1.5" fill="rgba(59,130,246,0.04)" />
+      <ellipse cx="280" cy="95" rx="45" ry="16" stroke="rgba(59,130,246,0.15)" strokeWidth="1" fill="none" />
+      <ellipse cx="280" cy="95" rx="16" ry="45" stroke="rgba(59,130,246,0.15)" strokeWidth="1" fill="none" />
+      <circle cx="280" cy="95" r="5" fill="rgba(59,130,246,0.3)" />
+    </svg>
+  ),
+  "tic-tac-toe": (
+    <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="project-svg">
+      {/* Tic-tac-toe grid with X and O */}
+      <line x1="167" y1="50" x2="167" y2="150" stroke="rgba(59,130,246,0.2)" strokeWidth="1.5" />
+      <line x1="233" y1="50" x2="233" y2="150" stroke="rgba(59,130,246,0.2)" strokeWidth="1.5" />
+      <line x1="130" y1="83" x2="270" y2="83" stroke="rgba(59,130,246,0.2)" strokeWidth="1.5" />
+      <line x1="130" y1="117" x2="270" y2="117" stroke="rgba(59,130,246,0.2)" strokeWidth="1.5" />
+      <line x1="140" y1="58" x2="158" y2="76" stroke="rgba(200,245,69,0.4)" strokeWidth="2" strokeLinecap="round" />
+      <line x1="158" y1="58" x2="140" y2="76" stroke="rgba(200,245,69,0.4)" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="200" cy="67" r="11" stroke="rgba(200,245,69,0.4)" strokeWidth="2" fill="none" />
+      <line x1="242" y1="91" x2="260" y2="109" stroke="rgba(200,245,69,0.4)" strokeWidth="2" strokeLinecap="round" />
+      <line x1="260" y1="91" x2="242" y2="109" stroke="rgba(200,245,69,0.4)" strokeWidth="2" strokeLinecap="round" />
+      <circle cx="149" cy="133" r="11" stroke="rgba(200,245,69,0.3)" strokeWidth="1.5" fill="none" />
+    </svg>
+  ),
+  portfolio: (
+    <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="project-svg">
+      {/* Code/terminal motif */}
+      <rect x="120" y="45" width="160" height="110" rx="6" stroke="rgba(200,245,69,0.2)" strokeWidth="1" fill="rgba(200,245,69,0.02)" />
+      <line x1="120" y1="65" x2="280" y2="65" stroke="rgba(200,245,69,0.15)" strokeWidth="1" />
+      <circle cx="133" cy="55" r="3" fill="rgba(255,100,100,0.3)" />
+      <circle cx="143" cy="55" r="3" fill="rgba(255,200,50,0.3)" />
+      <circle cx="153" cy="55" r="3" fill="rgba(100,200,100,0.3)" />
+      <path d="M140 85 L155 95 L140 105" stroke="rgba(200,245,69,0.4)" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <line x1="163" y1="90" x2="220" y2="90" stroke="rgba(200,245,69,0.15)" strokeWidth="1" strokeLinecap="round" />
+      <line x1="163" y1="100" x2="200" y2="100" stroke="rgba(200,245,69,0.1)" strokeWidth="1" strokeLinecap="round" />
+      <line x1="148" y1="115" x2="230" y2="115" stroke="rgba(59,130,246,0.12)" strokeWidth="1" strokeLinecap="round" />
+      <line x1="148" y1="125" x2="195" y2="125" stroke="rgba(59,130,246,0.08)" strokeWidth="1" strokeLinecap="round" />
+      <line x1="148" y1="135" x2="210" y2="135" stroke="rgba(200,245,69,0.08)" strokeWidth="1" strokeLinecap="round" />
+    </svg>
+  ),
+};
+
 export default function ProjectCard({ project }) {
   return (
     <article className={`project-card ${project.featured ? "featured" : ""}`}>
-      <div className="project-visual" data-id={project.id} />
+      <div className="project-visual" data-id={project.id}>
+        {VISUAL_PATTERNS[project.id]}
+      </div>
 
       <div className="project-info">
         <span className="project-tag">{project.tag}</span>
