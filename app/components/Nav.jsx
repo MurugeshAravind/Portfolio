@@ -22,8 +22,12 @@ export default function Nav() {
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
+    document.documentElement.style.overflow = menuOpen ? "hidden" : "";
     if (menuOpen) menuRef.current?.querySelector("a")?.focus();
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
+    };
   }, [menuOpen]);
 
   return (
@@ -71,7 +75,11 @@ export default function Nav() {
               key={label}
               href={href}
               className={`mobile-menu-link ${activeSection === href.slice(1) ? "active" : ""}`}
-              onClick={() => setMenuOpen(false)}
+              onClick={() => {
+                setMenuOpen(false);
+                document.body.style.overflow = "";
+                document.documentElement.style.overflow = "";
+              }}
             >
               {label}
             </a>
@@ -79,7 +87,11 @@ export default function Nav() {
           <a
             href="#contact"
             className="mobile-menu-link mobile-menu-cta"
-            onClick={() => setMenuOpen(false)}
+            onClick={() => {
+              setMenuOpen(false);
+              document.body.style.overflow = "";
+              document.documentElement.style.overflow = "";
+            }}
           >
             Let&apos;s talk
           </a>
