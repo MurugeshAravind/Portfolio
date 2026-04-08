@@ -38,7 +38,7 @@ export default function Hero() {
         <div className="stat-row">
           {[
             { num: "8+", label: "Years experience" },
-            { num: "50k", label: "Users served" },
+            { num: "50k+", label: "Daily users" },
             { num: "40%", label: "Load time cut" },
           ].map((s) => (
             <div key={s.label} className="stat-card">
