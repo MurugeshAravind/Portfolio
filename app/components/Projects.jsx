@@ -21,6 +21,7 @@ export default function Projects() {
         <>
           <div className="section-header labs-header">
             <h3>Labs</h3>
+            <p className="labs-subtitle">Side projects & experiments — built for fun, learning, or curiosity.</p>
           </div>
           <div className="projects-grid labs-grid">
             {labs.map((project) => (
