@@ -22,7 +22,7 @@ export default function Projects() {
           <div className="section-header labs-header">
             <h3>Labs</h3>
           </div>
-          <div className="projects-grid">
+          <div className="projects-grid labs-grid">
             {labs.map((project) => (
               <ProjectCard key={project.id} project={project} />
             ))}
