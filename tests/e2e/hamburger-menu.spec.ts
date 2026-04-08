@@ -138,9 +138,10 @@ test.describe("Hamburger menu open/close behavior", () => {
     await page.locator("button.nav-hamburger").click();
     const menu = page.locator("#mobile-menu");
 
-    await expect(menu.locator("a")).toHaveCount(4); // Work, Experience, About, Let's talk
+    await expect(menu.locator("a")).toHaveCount(5); // Work, Experience, Certifications, About, Let's talk
     await expect(menu.locator("text=Work")).toBeVisible();
     await expect(menu.locator("text=Experience")).toBeVisible();
+    await expect(menu.locator("text=Certifications")).toBeVisible();
     await expect(menu.locator("text=About")).toBeVisible();
     await expect(menu.locator("text=Let's talk")).toBeVisible();
   });

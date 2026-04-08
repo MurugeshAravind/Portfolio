@@ -6,10 +6,11 @@ import { useActiveSection } from "../hooks/useActiveSection";
 const LINKS = [
   { label: "Work", href: "#work" },
   { label: "Experience", href: "#experience" },
+  { label: "Certifications", href: "#certifications" },
   { label: "About", href: "#about" },
 ];
 
-const SECTION_IDS = ["work", "experience", "about"];
+const SECTION_IDS = ["work", "experience", "certifications", "about"];
 
 export default function Nav() {
   const activeSection = useActiveSection(SECTION_IDS);
