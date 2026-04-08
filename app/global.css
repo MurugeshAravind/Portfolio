@@ -599,6 +599,14 @@ a {
   letter-spacing: -0.3px;
 }
 
+.labs-subtitle {
+  font-size: 14px;
+  color: var(--muted);
+  opacity: 0.6;
+  margin-top: 6px;
+  font-weight: 400;
+}
+
 /* ─── Certifications ─── */
 .certs-section {
   padding-top: 48px;
