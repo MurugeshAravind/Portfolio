@@ -42,12 +42,13 @@ export default function Contact() {
   return (
     <section id="contact" className="contact-section">
       <div className="section-header">
-        <span className="section-num">04</span>
+        <span className="section-num">05</span>
         <h2>Let&apos;s talk</h2>
       </div>
 
       <p className="contact-intro">
-        Have a project in mind, or just want to say hello? I&apos;d love to hear from you.
+        Looking for a senior frontend engineer, or want to talk React architecture?
+        Drop me a line — I respond within 24 hours.
       </p>
 
       {submitted ? (

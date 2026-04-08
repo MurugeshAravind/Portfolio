@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section id="about" className="section">
       <div className="section-header">
-        <span className="section-num">03</span>
+        <span className="section-num">04</span>
         <h2>About</h2>
       </div>
 
@@ -33,9 +33,10 @@ export default function About() {
           </p>
 
           <p className="about-text">
-            Outside of client work I&apos;m building side projects that let me
-            explore the full stack. I care deeply about code that future
-            engineers can actually understand.
+            Outside of client work I&apos;m exploring the full stack through AWS
+            projects and open-source contributions. My default is:
+            write the test first, ship behind a feature flag, and never
+            let a migration touch production without a rollback plan.
           </p>
 
           <div className="about-links">

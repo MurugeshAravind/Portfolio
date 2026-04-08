@@ -585,6 +585,90 @@ a {
   color: var(--text);
 }
 
+/* ─── Labs sub-header ─── */
+.labs-header {
+  margin-top: 48px;
+  margin-bottom: 32px;
+}
+
+.labs-header h3 {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--muted);
+  letter-spacing: -0.3px;
+}
+
+/* ─── Certifications ─── */
+.certs-section {
+  padding-top: 48px;
+  padding-bottom: 48px;
+}
+
+.certs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.cert-card {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px 24px;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.cert-card:hover {
+  border-color: rgba(200, 245, 69, 0.3);
+  transform: translateY(-2px);
+}
+
+.cert-icon {
+  flex-shrink: 0;
+  color: var(--accent);
+}
+
+.cert-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  flex: 1;
+}
+
+.cert-name {
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.cert-issuer {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.cert-badge {
+  flex-shrink: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0a0a0a;
+  background: var(--accent);
+  padding: 3px 10px;
+  border-radius: 3px;
+}
+
+.cert-badge--pending {
+  background: transparent;
+  color: var(--accent);
+  border: 1px solid rgba(200, 245, 69, 0.3);
+}
+
 /* ─── Experience ─── */
 .exp-list {
   list-style: none;
@@ -941,6 +1025,14 @@ a {
 
   .exp-item--current {
     padding-left: 16px;
+  }
+
+  .certs-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certs-section {
+    padding: 48px 24px;
   }
 }
 

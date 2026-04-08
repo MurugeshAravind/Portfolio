@@ -36,7 +36,8 @@ export const projects = [
   {
     id: "tic-tac-toe",
     featured: false,
-    tag: "Full-stack · AWS · Open source",
+    lab: true,
+    tag: "AWS Architecture Demo · Open source",
     name: "Advanced Tic-Tac-Toe",
     description:
       "Multiplayer game with AWS Cognito auth, DynamoDB-backed history, " +
@@ -52,6 +53,7 @@ export const projects = [
   {
     id: "portfolio",
     featured: false,
+    lab: true,
     tag: "Side project · Open source",
     name: "This Portfolio",
     description:
