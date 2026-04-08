@@ -489,8 +489,8 @@ a {
   );
 }
 
-/* Last non-featured card alone on its row: stretch full width */
-.projects-grid > .project-card:not(.featured):last-child:nth-child(2n + 2) {
+/* Last non-featured card alone on its row: stretch full width (Work grid only) */
+.projects-grid:not(.labs-grid) > .project-card:not(.featured):last-child:nth-child(2n + 2) {
   grid-column: span 2;
 }
 
@@ -990,7 +990,7 @@ a {
   }
 
   /* Orphan card fix: full width on single-col layout */
-  .projects-grid > .project-card:not(.featured):last-child:nth-child(2n + 2) {
+  .projects-grid:not(.labs-grid) > .project-card:not(.featured):last-child:nth-child(2n + 2) {
     grid-column: span 1;
   }
 
