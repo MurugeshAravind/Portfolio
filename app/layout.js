@@ -1,24 +1,23 @@
-import { Instrument_Serif, Hanken_Grotesk, Azeret_Mono } from "next/font/google";
+import { Syne, DM_Sans, JetBrains_Mono } from "next/font/google";
 import "./global.css";
 
-const instrumentSerif = Instrument_Serif({
+const syne = Syne({
   subsets: ["latin"],
-  weight: ["400"],
-  style: ["normal", "italic"],
+  weight: ["400", "700", "800"],
   variable: "--font-display",
   display: "swap",
 });
 
-const hankenGrotesk = Hanken_Grotesk({
+const dmSans = DM_Sans({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600"],
+  weight: ["300", "400", "500"],
   variable: "--font-body",
   display: "swap",
 });
 
-const azeretMono = Azeret_Mono({
+const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
-  weight: ["400", "700"],
+  weight: ["700"],
   variable: "--font-mono",
   display: "swap",
 });
@@ -86,7 +85,7 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${instrumentSerif.variable} ${hankenGrotesk.variable} ${azeretMono.variable}`}>
+    <html lang="en" className={`${syne.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}>
       <head>
         <script
           type="application/ld+json"
