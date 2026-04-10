@@ -571,13 +571,32 @@ a {
   gap: 6px;
 }
 
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 16px;
+}
+
+.project-live {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: var(--accent);
+  transition: opacity 0.2s;
+}
+
+.project-live:hover {
+  opacity: 0.8;
+}
+
 .project-repo {
   display: inline-flex;
   align-items: center;
   gap: 6px;
   font-size: 13px;
   color: var(--muted);
-  margin-top: 16px;
   transition: color 0.2s;
 }
 

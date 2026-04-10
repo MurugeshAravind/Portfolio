@@ -34,6 +34,24 @@ export const projects = [
     company: "Infosys",
   },
   {
+    id: "fundscope",
+    featured: false,
+    lab: true,
+    tag: "State Management Demo · Open source",
+    name: "FundScope",
+    description:
+      "Mutual fund tracker — search, compare NAV, and explore fund details. " +
+      "Built with Zustand for global state, dark mode, skeleton loading, " +
+      "and a 42-test suite with Playwright E2E coverage.",
+    impact: [
+      { num: "42", label: "Tests" },
+      { num: "E2E", label: "Playwright" },
+    ],
+    stack: ["React 19", "TypeScript", "Zustand", "Tailwind", "Vite"],
+    repo: "https://github.com/MurugeshAravind/zustand-demo",
+    live: "https://fundscope.netlify.app",
+  },
+  {
     id: "tic-tac-toe",
     featured: false,
     lab: true,
@@ -49,6 +67,7 @@ export const projects = [
     ],
     stack: ["React 19", "TypeScript", "AWS Cognito", "DynamoDB", "Vite"],
     repo: "https://github.com/MurugeshAravind/advanced-tic-tac-toe",
+    live: "https://main.d2o5yre1zt6isc.amplifyapp.com/",
   },
   {
     id: "portfolio",
@@ -62,5 +81,6 @@ export const projects = [
     impact: [],
     stack: ["Next.js", "React 19", "Tailwind", "Vitest", "Vercel"],
     repo: "https://github.com/MurugeshAravind/Portfolio",
+    live: "https://aravind.is-a.dev",
   },
 ];
