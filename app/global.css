@@ -10,8 +10,9 @@
   --accent2: #3b82f6;
   --text: #f0ede6;
   --muted: #B0B0B0;
-  --font-display: var(--font-syne, "Syne", sans-serif);
-  --font-body: var(--font-dm-sans, "DM Sans", sans-serif);
+  --font-display: "Space Grotesk", sans-serif;
+  --font-body: "Inter", sans-serif;
+  --font-mono: "Geist Mono", monospace;
 }
 
 *,
@@ -67,7 +68,7 @@ a {
 }
 
 .section-num {
-  font-family: var(--font-mono, 'JetBrains Mono', monospace);
+  font-family: var(--font-mono, 'Geist Mono', monospace);
   font-size: 13px;
   color: var(--accent);
   font-weight: 700;
