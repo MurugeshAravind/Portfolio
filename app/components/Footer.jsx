@@ -5,7 +5,6 @@ export default function Footer() {
         <a href="#work">Work</a>
         <a href="#experience">Experience</a>
         <a href="#about">About</a>
-        <a href="#contact">Contact</a>
       </div>
       <div className="footer-social">
         <a
