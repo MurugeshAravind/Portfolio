@@ -51,8 +51,13 @@ export default function Nav() {
         ))}
       </ul>
 
-      <a href="#contact" className="nav-cta nav-cta-desktop">
-        Let&apos;s talk
+      <a
+        href="https://linkedin.com/in/murugesh-aravind-0ab64847"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="nav-cta nav-cta-desktop"
+      >
+        Connect
       </a>
 
       {/* Mobile hamburger */}
@@ -86,7 +91,9 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="#contact"
+            href="https://linkedin.com/in/murugesh-aravind-0ab64847"
+            target="_blank"
+            rel="noopener noreferrer"
             className="mobile-menu-link mobile-menu-cta"
             onClick={() => {
               setMenuOpen(false);
@@ -94,7 +101,7 @@ export default function Nav() {
               document.documentElement.style.overflow = "";
             }}
           >
-            Let&apos;s talk
+            Connect
           </a>
         </div>
       )}
