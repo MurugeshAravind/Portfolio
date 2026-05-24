@@ -427,7 +427,7 @@ export default function About() {
       <div className="about-grid">
         <div className="about-photo-col">
           <div className="about-photo-wrap">
-            <img src="/profile.webp" alt="Murugesh Aravind" className="about-photo" />
+            <img src="/profile.jpg" alt="Murugesh Aravind" className="about-photo" />
           </div>
         </div>
 
@@ -677,7 +677,7 @@ to re-introduce any of these:
 
 These must not regress during the rebuild:
 
-- [ ] `next/image` for all images (already using `profile.webp` — keep this)
+- [ ] `next/image` for all images (already using `profile.jpg` — keep this)
 - [ ] JSON-LD structured data in `<head>` (already present — preserve it)
 - [ ] Sitemap generation — confirm `app/sitemap.js` exists
 - [ ] `robots.txt` — confirm it exists in `public/`
