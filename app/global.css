@@ -798,7 +798,7 @@ a {
 /* ─── About ─── */
 .about-grid {
   display: grid;
-  grid-template-columns: 320px 1fr;
+  grid-template-columns: 240px 1fr;
   gap: 64px;
   align-items: start;
 }
@@ -812,7 +812,7 @@ a {
 
 .about-photo {
   width: 100%;
-  aspect-ratio: 3 / 4;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   display: block;
   filter: grayscale(20%);
