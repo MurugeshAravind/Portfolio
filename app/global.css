@@ -855,6 +855,77 @@ a {
   background: rgba(200, 255, 0, 0.06);
 }
 
+.about-lead {
+  font-size: 18px;
+  color: var(--text);
+  font-weight: 500;
+  margin-bottom: 24px;
+  line-height: 1.6;
+}
+
+.about-subheading {
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-weight: 700;
+  color: var(--accent);
+  margin-top: 36px;
+  margin-bottom: 16px;
+}
+
+.about-list {
+  list-style: none;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.about-list-item {
+  font-size: 15px;
+  color: var(--muted);
+  line-height: 1.6;
+  padding-left: 20px;
+  position: relative;
+}
+
+.about-list-item::before {
+  content: "→";
+  color: var(--accent);
+  position: absolute;
+  left: 0;
+}
+
+.about-principles {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 32px;
+}
+
+.about-principle-item {
+  border-left: 2px solid var(--border);
+  padding-left: 16px;
+  transition: border-color 0.3s;
+}
+
+.about-principle-item:hover {
+  border-left-color: var(--accent);
+}
+
+.about-principle-title {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.about-principle-desc {
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+
 /* ─── Contact ─── */
 .contact-section {
   padding: 96px 48px;
