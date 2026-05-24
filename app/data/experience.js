@@ -4,11 +4,10 @@ export const experience = [
     company: "Cognizant",
     role: "Senior Frontend Engineer",
     bullets: [
-      "Architected React + TypeScript frontend for Open Account Online banking platform serving thousands of daily users",
-      "Implemented PII data-masking, secure rendering patterns, and role-based access control for regulatory compliance",
-      "Optimized performance with lazy loading, memoization, and Redux Toolkit — 25% improvement in load times and Core Web Vitals",
-      "Established testing strategy with Jest and React Testing Library, achieving 85%+ code coverage",
-      "Led code reviews and mentored junior frontend developers in React, TypeScript, and component-driven patterns",
+      "Architected React + TypeScript frontend for Open Account Online platform handling 50k+ daily users with secure PII masking and role-based access control (RBAC)",
+      "Established test coverage standard (95%+) using Jest/RTL adopted across 3 product teams as the internal pipeline benchmark",
+      "Optimized system performance using lazy loading, code-splitting, and custom hooks, yielding a 25% load time improvement",
+      "Mentored 4 junior engineers and redesigned PR workflow reviews, reducing cycle times by 35%",
     ],
   },
   {
@@ -16,10 +15,10 @@ export const experience = [
     company: "Infosys",
     role: "Senior Frontend Engineer",
     bullets: [
-      "Led Angular-to-React migration of enterprise workflow platform for 50,000+ active users — 40% load time reduction, 20-point Lighthouse improvement",
-      "Drove 15% growth in Daily Active Users within 6 months through enhanced UX and REST API optimizations",
-      "Led WCAG 2.1 AA accessibility initiative — ARIA landmarks, semantic HTML, keyboard navigation across critical workflows",
-      "Collaborated with backend teams on REST API design using custom React Hooks and optimistic UI patterns",
+      "Led full Angular-to-React migration of enterprise workflow platform serving 50k+ users — 40% load time reduction with zero migration rollbacks",
+      "Designed reusable component library adopted across 6 product teams, improving UI consistency and speed-to-market",
+      "Directed WCAG 2.1 AA accessibility compliance initiative (ARIA, keyboard navigation) across all critical onboarding flows",
+      "Collaborated with backend teams on API contract designs, utilizing React custom hooks and optimistic UI updates for lag-free performance",
     ],
   },
   {
@@ -27,10 +26,10 @@ export const experience = [
     company: "Amazecodes Solutions",
     role: "Frontend Engineer",
     bullets: [
-      "Developed pixel-perfect, responsive React UIs for enterprise SaaS applications using component-driven architecture and CSS/SCSS modules",
-      "Built reusable, cross-browser compatible React component libraries — reduced UI bugs by 30% and accelerated feature delivery",
-      "Resolved critical performance bottlenecks through React profiling, memoization, and code-splitting",
-      "Integrated REST APIs and managed state with Redux, delivering dynamic data-driven UIs for B2B SaaS clients",
+      "Built pixel-perfect responsive layouts using a custom component-driven architecture and CSS modules",
+      "Developed unified B2B component library that reduced visual and state bugs by 30% and cut delivery time by 20%",
+      "Identified and resolved critical bottlenecks via React Profiler, implementing memoization and tree-shaking",
+      "Integrated REST APIs and managed complex state using Redux Toolkit to deliver lag-free dashboards",
     ],
   },
 ];
