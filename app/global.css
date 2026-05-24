@@ -264,13 +264,21 @@ a {
 .hero {
   position: relative;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1.2fr 0.8fr;
   min-height: 88vh;
   align-items: center;
-  gap: 64px;
+  gap: 80px;
   padding: 0 48px;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.hero-right {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: relative;
+  top: 30px;
 }
 
 .hero::before {
@@ -1264,4 +1272,45 @@ a {
   cursor: not-allowed;
   transform: none;
   box-shadow: none;
+}
+
+/* ─── Project SVG Micro-Animations ─── */
+.svg-draw {
+  stroke-dasharray: 600;
+  stroke-dashoffset: 0;
+  transition: stroke-dashoffset 0.8s cubic-bezier(0.16, 1, 0.3, 1), stroke-opacity 0.4s ease;
+}
+
+.project-card:hover .svg-draw {
+  animation: drawEffect 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes drawEffect {
+  0% {
+    stroke-dashoffset: 600;
+    stroke-opacity: 0.2;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    stroke-opacity: 1;
+  }
+}
+
+/* React Logo Group Orbit Rotation on Hover */
+.react-logo-group {
+  transition: transform 0.4s ease;
+}
+
+.project-card:hover .react-logo-group {
+  animation: orbitRotate 12s linear infinite;
+  transform-origin: 280px 100px;
+}
+
+@keyframes orbitRotate {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
