@@ -18,7 +18,8 @@ export default function About() {
               width={320}
               height={427}
               className="about-photo"
-              sizes="(max-width: 1024px) 240px, 320px"
+              priority
+              unoptimized
             />
           </div>
         </div>
