@@ -49,7 +49,7 @@ body::before {
   width: 100vw;
   height: 100vh;
   z-index: 9999;
-  opacity: 0.35;
+  opacity: 0.15;
   pointer-events: none;
   background-image: url("/noise.png");
   background-repeat: repeat;
