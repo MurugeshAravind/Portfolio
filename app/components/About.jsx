@@ -15,8 +15,8 @@ export default function About() {
             <Image
               src={profileImg}
               alt="Murugesh Aravind"
-              width={320}
-              height={427}
+              width={240}
+              height={240}
               className="about-photo"
               priority
               unoptimized
