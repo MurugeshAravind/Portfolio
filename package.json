@@ -23,6 +23,7 @@
     "@types/react": "19.2.14",
     "baseline-browser-mapping": "^2.10.15",
     "jsdom": "^29.0.1",
+    "sharp": "^0.34.5",
     "typescript": "6.0.2",
     "vitest": "^4.1.2"
   },
