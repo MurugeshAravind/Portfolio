@@ -15,7 +15,7 @@ const VISUAL_PATTERNS = {
       <line x1="300" y1="20" x2="300" y2="180" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
       
       <rect x="160" y="40" width="80" height="100" rx="6" stroke="var(--accent)" strokeOpacity="0.15" strokeWidth="1" fill="none" />
-      <path d="M200 55 L230 70 L230 110 Q230 130 200 140 Q170 130 170 110 L170 70 Z" stroke="var(--accent)" strokeWidth="1.5" fill="url(#shieldGrad)" />
+      <path d="M200 55 L230 70 L230 110 Q230 130 200 140 Q170 130 170 110 L170 70 Z" stroke="var(--accent)" strokeWidth="1.5" fill="url(#shieldGrad)" className="svg-draw" />
       <path d="M190 100 L197 107 L212 90" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
       
       <circle cx="200" cy="97" r="45" stroke="var(--accent2)" strokeWidth="1" strokeDasharray="3 3" strokeOpacity="0.3" />
@@ -36,13 +36,15 @@ const VISUAL_PATTERNS = {
       <path d="M100 60 L130 70 L125 130 L100 145 L75 130 L70 70 Z" stroke="rgba(239, 68, 68, 0.2)" strokeWidth="1.5" fill="none" />
       <polygon points="100,75 120,125 110,125 100,100 90,125 80,125" stroke="rgba(239, 68, 68, 0.15)" fill="none" />
       
-      <path d="M160 100 L200 100" stroke="var(--accent)" strokeWidth="2" strokeDasharray="4 2" strokeLinecap="round" />
+      <path d="M160 100 L200 100" stroke="var(--accent)" strokeWidth="2" strokeDasharray="4 2" strokeLinecap="round" className="svg-draw" />
       <polygon points="198,95 208,100 198,105" fill="var(--accent)" />
       
-      <circle cx="280" cy="100" r="12" fill="url(#reactGrad)" />
-      <ellipse cx="280" cy="100" rx="45" ry="16" stroke="var(--accent2)" strokeWidth="1.5" strokeOpacity="0.6" fill="none" transform="rotate(30 280 100)" />
-      <ellipse cx="280" cy="100" rx="45" ry="16" stroke="var(--accent2)" strokeWidth="1.5" strokeOpacity="0.6" fill="none" transform="rotate(90 280 100)" />
-      <ellipse cx="280" cy="100" rx="45" ry="16" stroke="var(--accent2)" strokeWidth="1.5" strokeOpacity="0.6" fill="none" transform="rotate(150 280 100)" />
+      <g className="react-logo-group">
+        <circle cx="280" cy="100" r="12" fill="url(#reactGrad)" />
+        <ellipse cx="280" cy="100" rx="45" ry="16" stroke="var(--accent2)" strokeWidth="1.5" strokeOpacity="0.6" fill="none" transform="rotate(30 280 100)" />
+        <ellipse cx="280" cy="100" rx="45" ry="16" stroke="var(--accent2)" strokeWidth="1.5" strokeOpacity="0.6" fill="none" transform="rotate(90 280 100)" />
+        <ellipse cx="280" cy="100" rx="45" ry="16" stroke="var(--accent2)" strokeWidth="1.5" strokeOpacity="0.6" fill="none" transform="rotate(150 280 100)" />
+      </g>
     </svg>
   ),
   "tic-tac-toe": (
@@ -57,7 +59,7 @@ const VISUAL_PATTERNS = {
       <line x1="50" y1="100" x2="350" y2="100" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
       <line x1="50" y1="150" x2="350" y2="150" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
       
-      <rect x="130" y="40" width="140" height="120" rx="6" stroke="rgba(255,255,255,0.05)" strokeWidth="1" fill="url(#gameGrad)" />
+      <rect x="130" y="40" width="140" height="120" rx="6" stroke="rgba(255,255,255,0.05)" strokeWidth="1" fill="url(#gameGrad)" className="svg-draw" />
       <line x1="176" y1="40" x2="176" y2="160" stroke="rgba(255,255,255,0.1)" strokeWidth="1.5" />
       <line x1="224" y1="40" x2="224" y2="160" stroke="rgba(255,255,255,0.1)" strokeWidth="1.5" />
       <line x1="130" y1="80" x2="270" y2="80" stroke="rgba(255,255,255,0.1)" strokeWidth="1.5" />
@@ -91,7 +93,7 @@ const VISUAL_PATTERNS = {
       
       <path d="M110 140 L135 115 L165 125 L195 90 L230 100 L265 65 L290 55 L290 140 Z" fill="url(#fundGrad)" />
       
-      <path d="M110 140 L135 115 L165 125 L195 90 L230 100 L265 65 L290 55" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <path d="M110 140 L135 115 L165 125 L195 90 L230 100 L265 65 L290 55" stroke="var(--accent)" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" fill="none" className="svg-draw" />
       
       <line x1="110" y1="140" x2="290" y2="140" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
       
@@ -111,14 +113,14 @@ const VISUAL_PATTERNS = {
       <line x1="50" y1="100" x2="350" y2="100" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
       <line x1="50" y1="150" x2="350" y2="150" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
       
-      <rect x="110" y="40" width="180" height="120" rx="8" stroke="rgba(255,255,255,0.06)" strokeWidth="1.5" fill="url(#portGrad)" />
+      <rect x="110" y="40" width="180" height="120" rx="8" stroke="rgba(255,255,255,0.06)" strokeWidth="1.5" fill="url(#portGrad)" className="svg-draw" />
       <line x1="110" y1="65" x2="290" y2="65" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
       
       <circle cx="125" cy="52" r="3.5" fill="rgba(239, 68, 68, 0.4)" />
       <circle cx="137" cy="52" r="3.5" fill="rgba(245, 158, 11, 0.4)" />
       <circle cx="149" cy="52" r="3.5" fill="rgba(16, 185, 129, 0.4)" />
       
-      <path d="M130 85 L142 93 L130 101" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" />
+      <path d="M130 85 L142 93 L130 101" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" className="svg-draw" />
       <line x1="152" y1="93" x2="210" y2="93" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" />
       
       <rect x="130" y="115" width="130" height="6" rx="3" fill="rgba(255, 255, 255, 0.15)" />
