@@ -9,15 +9,45 @@ export default function LazySpotlight() {
   const [isDesktop, setIsDesktop] = useState(false);
 
   useEffect(() => {
-    // Check if window is defined (client-side) and above mobile/tablet width
+    let active = true;
+    let resizeListenerAdded = false;
+
     const checkWidth = () => {
-      setIsDesktop(window.innerWidth >= 1024);
+      if (active) {
+        setIsDesktop(window.innerWidth >= 1024);
+      }
     };
-    
-    checkWidth();
-    window.addEventListener("resize", checkWidth);
-    
-    return () => window.removeEventListener("resize", checkWidth);
+
+    const setupSpotlight = () => {
+      if (!active) return;
+      checkWidth();
+      window.addEventListener("resize", checkWidth);
+      resizeListenerAdded = true;
+    };
+
+    const handleIdleSetup = () => {
+      if (typeof window !== "undefined") {
+        if ("requestIdleCallback" in window) {
+          window.requestIdleCallback(setupSpotlight);
+        } else {
+          setTimeout(setupSpotlight, 200);
+        }
+      }
+    };
+
+    if (document.readyState === "complete") {
+      handleIdleSetup();
+    } else {
+      window.addEventListener("load", handleIdleSetup, { once: true });
+    }
+
+    return () => {
+      active = false;
+      window.removeEventListener("load", handleIdleSetup);
+      if (resizeListenerAdded) {
+        window.removeEventListener("resize", checkWidth);
+      }
+    };
   }, []);
 
   if (!isDesktop) return null;

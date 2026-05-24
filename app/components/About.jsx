@@ -19,7 +19,6 @@ export default function About() {
               height={240}
               className="about-photo"
               priority
-              unoptimized
             />
           </div>
         </div>
