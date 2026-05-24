@@ -1,5 +1,6 @@
 import Image from "next/image";
-import profileImg from "../../profile.jpg";
+import profileImg from "../../profile.webp";
+
 
 export default function About() {
   return (
