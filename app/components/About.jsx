@@ -29,11 +29,11 @@ export default function About() {
           </p>
 
           <p className="about-text">
-            I’m a Senior Frontend Engineer based in Chennai with 8+ years of experience modernizing legacy architectures, improving performance, and shipping changes safely at scale. My work sits at the intersection of frontend engineering, system design, and operational reliability.
+            I’m a Senior Frontend Engineer based in Bangalore with 8+ years of experience modernizing legacy architectures, improving performance, and shipping changes safely at scale. My work sits at the intersection of frontend engineering, system design, and operational reliability.
           </p>
 
           <h3 className="about-subheading">Over the years, I’ve helped deliver:</h3>
-          <ul className="about-list">
+          <ul className="about-list" role="list">
             <li className="about-list-item">50,000+ user platforms supporting enterprise workflows</li>
             <li className="about-list-item">40% load time improvements through performance optimization</li>
             <li className="about-list-item">85%+ test coverage as a quality baseline, not a milestone</li>
@@ -41,7 +41,7 @@ export default function About() {
           </ul>
 
           <h3 className="about-subheading">I’m drawn to difficult problems:</h3>
-          <ul className="about-list">
+          <ul className="about-list" role="list">
             <li className="about-list-item">Turning tangled legacy codebases into maintainable React architectures.</li>
             <li className="about-list-item">Improving systems without disrupting teams.</li>
             <li className="about-list-item">Shipping faster without compromising stability.</li>
