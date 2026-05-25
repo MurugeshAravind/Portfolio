@@ -10,7 +10,6 @@
   --accent2: #3b82f6;
   --text: #f0ede6;
   --muted: #B0B0B0;
-  --font-mono: "Geist Mono", monospace;
 }
 
 *,
@@ -85,17 +84,17 @@ a {
 }
 
 .section-num {
-  font-family: var(--font-mono, 'Geist Mono', monospace);
+  font-family: var(--font-display);
   font-size: 13px;
   color: var(--accent);
   font-weight: 700;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
 }
 
 .section-header h2 {
   font-family: var(--font-display);
   font-size: 32px;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.5px;
   color: var(--text);
 }
@@ -124,7 +123,7 @@ a {
 .nav-logo {
   font-family: var(--font-display);
   font-size: 20px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--text);
   letter-spacing: -0.5px;
 }
@@ -314,15 +313,16 @@ a {
 }
 
 .eyebrow span {
-  font-size: 13px;
-  font-weight: 500;
+  font-size: 11px;
+  font-weight: 700;
   color: var(--muted);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .hero-title {
   font-size: clamp(36px, 5vw, 56px);
-  font-weight: 800;
+  font-weight: 700;
   line-height: 1.1;
   letter-spacing: -1.5px;
   color: var(--text);
@@ -373,18 +373,20 @@ a {
 .stat-num {
   font-family: var(--font-display);
   font-size: 40px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--accent);
   display: block;
   line-height: 1.1;
 }
 
 .stat-label {
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 700;
   color: var(--muted);
   margin-top: 6px;
   display: block;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 /* Stack card */
@@ -397,8 +399,9 @@ a {
 
 .stack-label {
   font-size: 11px;
+  font-weight: 700;
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
   color: var(--muted);
   margin-bottom: 14px;
   display: block;
@@ -578,7 +581,7 @@ a {
 .impact-num {
   font-family: var(--font-display);
   font-size: 28px;
-  font-weight: 800;
+  font-weight: 700;
   color: var(--accent);
   display: block;
   line-height: 1.1;
@@ -586,9 +589,12 @@ a {
 
 .impact-label {
   font-size: 11px;
+  font-weight: 700;
   color: var(--muted);
   margin-top: 4px;
   display: block;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .project-stack {
@@ -746,7 +752,8 @@ a {
 }
 
 .exp-period {
-  font-size: 12px;
+  font-size: 11px;
+  font-weight: 700;
   color: var(--muted);
   text-transform: uppercase;
   letter-spacing: 0.08em;
@@ -864,13 +871,13 @@ a {
 }
 
 .about-subheading {
-  font-size: 15px;
+  font-size: 11px;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.08em;
   font-weight: 700;
   color: var(--accent);
-  margin-top: 36px;
-  margin-bottom: 16px;
+  margin-top: 40px;
+  margin-bottom: 14px;
 }
 
 .about-list {
@@ -882,9 +889,9 @@ a {
 }
 
 .about-list-item {
-  font-size: 15px;
+  font-size: 14px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.65;
   padding-left: 20px;
   position: relative;
 }
@@ -914,16 +921,18 @@ a {
 }
 
 .about-principle-title {
-  font-size: 15px;
+  font-family: var(--font-display);
+  font-size: 16px;
   font-weight: 700;
   color: var(--text);
-  margin-bottom: 4px;
+  margin-bottom: 6px;
+  letter-spacing: -0.1px;
 }
 
 .about-principle-desc {
   font-size: 14px;
   color: var(--muted);
-  line-height: 1.6;
+  line-height: 1.65;
 }
 
 /* ─── Contact ─── */
