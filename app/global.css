@@ -688,10 +688,56 @@ a {
   transform: translateY(-2px);
 }
 
+.cert-icon-frame {
+  display: inline-flex;
+  flex: 0 0 44px;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 2px;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.055), rgba(255, 255, 255, 0.015)),
+    rgba(10, 10, 10, 0.35);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+.cert-card:hover .cert-icon-frame {
+  border-color: rgba(200, 245, 69, 0.28);
+  background:
+    linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.02)),
+    rgba(10, 10, 10, 0.45);
+}
+
 .cert-icon {
   flex-shrink: 0;
   color: var(--accent);
-  margin-top: 2px;
+}
+
+.cert-logo {
+  width: 30px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.cert-logo-claude {
+  border-radius: 8px;
+}
+
+.cert-logo-cognizant {
+  width: 32px;
+  height: 28px;
+}
+
+.cert-logo-aws {
+  width: 34px;
+  height: 28px;
+  padding: 4px;
+  border-radius: 7px;
+  background: rgba(240, 237, 230, 0.94);
 }
 
 .cert-info {

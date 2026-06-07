@@ -1,83 +1,79 @@
+import Image from "next/image";
 import { certifications } from "../data/certifications";
 
-function CertIcon({ type }) {
-  if (type === "anthropic") {
+const BRAND_ICONS = {
+  anthropic: {
+    src: "/cert-icons/claude-ai-icon.webp",
+    className: "cert-logo cert-logo-claude",
+  },
+  cognizant: {
+    src: "/cert-icons/CTSH.svg",
+    className: "cert-logo cert-logo-cognizant",
+  },
+  aws: {
+    src: "/cert-icons/aws-icon.webp",
+    className: "cert-logo cert-logo-aws",
+  },
+};
+
+function CertIcon({ cert }) {
+  const brandIcon = BRAND_ICONS[cert.icon];
+
+  if (brandIcon) {
     return (
-      <svg
-        className="cert-icon"
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M12 3l7 4v6c0 3.8-2.9 6.8-7 8-4.1-1.2-7-4.2-7-8V7l7-4z" />
-        <path d="M9 14.5 12 8l3 6.5" />
-        <path d="M10.1 12.5h3.8" />
-      </svg>
+      <span className="cert-icon-frame">
+        <Image
+          src={brandIcon.src}
+          alt={`${cert.issuer} logo`}
+          width={32}
+          height={32}
+          className={brandIcon.className}
+        />
+      </span>
     );
   }
-  if (type === "aws") {
+
+  if (cert.icon === "github") {
     return (
-      <svg
-        className="cert-icon"
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M6.5 17C3.5 15.5 2 12.5 2 9.5 2 5.36 5.36 2 9.5 2c2.5 0 4.7 1.2 6 3.1A7.5 7.5 0 0 1 22 12c0 3-1.8 5.6-4.4 6.8" />
-        <path d="M12 12v6" />
-        <path d="M9 15l3 3 3-3" />
-      </svg>
+      <span className="cert-icon-frame">
+        <svg
+          className="cert-icon"
+          width="28"
+          height="28"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          aria-hidden="true"
+        >
+          <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4" />
+          <path d="M9 18c-4.51 2-5-2-7-2" />
+        </svg>
+      </span>
     );
   }
-  if (type === "github") {
-    return (
-      <svg
-        className="cert-icon"
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.4 5.4 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65S8.93 17.38 9 18v4" />
-        <path d="M9 18c-4.51 2-5-2-7-2" />
-      </svg>
-    );
-  }
-  // cognizant / default — award/certificate icon
+
   return (
-    <svg
-      className="cert-icon"
-      width="28"
-      height="28"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      aria-hidden="true"
-    >
-      <path d="M12 15l-3 3v-4.5M12 15l3 3v-4.5M12 15V9" />
-      <circle cx="12" cy="9" r="6" />
-      <path d="M9.5 8.5l1.5 1.5 3-3" />
-    </svg>
+    <span className="cert-icon-frame">
+      <svg
+        className="cert-icon"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 15l-3 3v-4.5M12 15l3 3v-4.5M12 15V9" />
+        <circle cx="12" cy="9" r="6" />
+        <path d="M9.5 8.5l1.5 1.5 3-3" />
+      </svg>
+    </span>
   );
 }
 
@@ -97,7 +93,7 @@ export default function Certifications() {
             rel="noopener noreferrer"
             className="cert-card"
           >
-            <CertIcon type={cert.icon} />
+            <CertIcon cert={cert} />
             <div className="cert-info">
               <span className="cert-name">{cert.name}</span>
               <span className="cert-issuer">{cert.issuer}</span>
