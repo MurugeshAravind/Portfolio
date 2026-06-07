@@ -1,6 +1,26 @@
 import { certifications } from "../data/certifications";
 
 function CertIcon({ type }) {
+  if (type === "anthropic") {
+    return (
+      <svg
+        className="cert-icon"
+        width="28"
+        height="28"
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        aria-hidden="true"
+      >
+        <path d="M12 3l7 4v6c0 3.8-2.9 6.8-7 8-4.1-1.2-7-4.2-7-8V7l7-4z" />
+        <path d="M9 14.5 12 8l3 6.5" />
+        <path d="M10.1 12.5h3.8" />
+      </svg>
+    );
+  }
   if (type === "aws") {
     return (
       <svg

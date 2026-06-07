@@ -2,8 +2,17 @@
 
 import { useState, useEffect } from "react";
 
-export function useActiveSection(sectionIds, options = { rootMargin: "-30% 0px -60% 0px" }) {
+const DEFAULT_OBSERVER_OPTIONS = { rootMargin: "-30% 0px -60% 0px" };
+
+export function useActiveSection(sectionIds, options = DEFAULT_OBSERVER_OPTIONS) {
   const [activeSection, setActiveSection] = useState(sectionIds[0] || "");
+  const sectionKey = sectionIds.join("|");
+  const {
+    root = null,
+    rootMargin = DEFAULT_OBSERVER_OPTIONS.rootMargin,
+    threshold = 0,
+  } = options;
+  const thresholdKey = Array.isArray(threshold) ? threshold.join("|") : threshold;
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -12,13 +21,17 @@ export function useActiveSection(sectionIds, options = { rootMargin: "-30% 0px -
           setActiveSection(entry.target.id);
         }
       });
-    }, options);
+    }, { root, rootMargin, threshold });
 
-    const sections = sectionIds.map((id) => document.getElementById(id)).filter(Boolean);
+    const sections = sectionKey
+      .split("|")
+      .filter(Boolean)
+      .map((id) => document.getElementById(id))
+      .filter(Boolean);
     sections.forEach((s) => observer.observe(s));
 
     return () => observer.disconnect();
-  }, [sectionIds, options]);
+  }, [root, rootMargin, sectionKey, thresholdKey]);
 
   return activeSection;
 }

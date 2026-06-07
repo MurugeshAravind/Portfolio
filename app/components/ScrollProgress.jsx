@@ -1,25 +1,49 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef } from "react";
 
 export default function ScrollProgress() {
-  const [progress, setProgress] = useState(0);
+  const progressRef = useRef(null);
+  const rafRef = useRef(null);
 
   useEffect(() => {
-    function handleScroll() {
+    function updateProgress() {
+      rafRef.current = null;
+
       const scrollTop = window.scrollY;
       const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      setProgress(docHeight > 0 ? scrollTop / docHeight : 0);
+      const progress =
+        docHeight > 0 ? Math.max(0, Math.min(scrollTop / docHeight, 1)) : 0;
+
+      if (progressRef.current) {
+        progressRef.current.style.transform = `scaleX(${progress})`;
+      }
     }
 
+    function handleScroll() {
+      if (rafRef.current === null) {
+        rafRef.current = window.requestAnimationFrame(updateProgress);
+      }
+    }
+
+    updateProgress();
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+      if (rafRef.current !== null) {
+        window.cancelAnimationFrame(rafRef.current);
+      }
+    };
   }, []);
 
   return (
     <div
+      ref={progressRef}
       className="scroll-progress"
-      style={{ transform: `scaleX(${progress})` }}
+      style={{ transform: "scaleX(0)" }}
       aria-hidden="true"
     />
   );
