@@ -99,7 +99,7 @@ test.describe("Hamburger menu open/close behavior", () => {
     expect(overflow).toBe("");
   });
 
-  test("clicking 'Let's talk' CTA closes the menu", async ({ page }) => {
+  test("clicking 'Connect' CTA closes the menu", async ({ page }) => {
     const hamburger = page.locator("button.nav-hamburger");
 
     // Open menu
@@ -138,12 +138,12 @@ test.describe("Hamburger menu open/close behavior", () => {
     await page.locator("button.nav-hamburger").click();
     const menu = page.locator("#mobile-menu");
 
-    await expect(menu.locator("a")).toHaveCount(5); // Work, Experience, Certifications, About, Let's talk
+    await expect(menu.locator("a")).toHaveCount(5); // Work, Experience, Certifications, About, Connect
     await expect(menu.locator("text=Work")).toBeVisible();
     await expect(menu.locator("text=Experience")).toBeVisible();
     await expect(menu.locator("text=Certifications")).toBeVisible();
     await expect(menu.locator("text=About")).toBeVisible();
-    await expect(menu.locator("text=Let's talk")).toBeVisible();
+    await expect(menu.locator("text=Connect")).toBeVisible();
   });
 
   test("mobile menu has correct z-index stacking for iOS WebKit", async ({ page }) => {

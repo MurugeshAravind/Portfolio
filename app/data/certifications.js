@@ -5,12 +5,21 @@
  * @property {string} issuedDate
  * @property {string|null} expiryDate
  * @property {string[]} skills
- * @property {"github"|"cognizant"|"aws"} icon
+ * @property {"github"|"cognizant"|"aws"|"anthropic"} icon
  * @property {string} credentialUrl
  */
 
 /** @type {Certification[]} */
 export const certifications = [
+  {
+    name: "Claude Certified Architect - Foundations",
+    issuer: "Anthropic",
+    issuedDate: "Jun 6, 2026",
+    expiryDate: "Dec 6, 2026",
+    skills: ["Claude", "AI Architecture"],
+    icon: "anthropic",
+    credentialUrl: "https://verify.skilljar.com/c/vqc4tx8irviz",
+  },
   {
     name: "Context Engineering Foundation",
     issuer: "Cognizant",
