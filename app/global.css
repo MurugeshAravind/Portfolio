@@ -892,7 +892,9 @@ a {
 }
 
 .about-links a {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   font-size: 13px;
   font-weight: 600;
   color: var(--text);
@@ -900,6 +902,11 @@ a {
   border: 1px solid var(--border);
   border-radius: 100px;
   transition: border-color 0.2s, color 0.2s, background 0.2s;
+}
+
+.about-link-icon {
+  flex-shrink: 0;
+  color: inherit;
 }
 
 .about-links a:hover {
