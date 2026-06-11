@@ -12,6 +12,16 @@
 /** @type {Certification[]} */
 export const certifications = [
   {
+    name: "Add Agents to Gemini Enterprise",
+    issuer: "Google Cloud",
+    issuedDate: "Jun 2026",
+    expiryDate: null,
+    skills: ["Google Cloud", "Gemini", "AI Agents"],
+    icon: "google-cloud",
+    credentialUrl:
+      "https://www.cloudskillsboost.google",
+  },
+  {
     name: "Claude Certified Architect - Foundations",
     issuer: "Anthropic",
     issuedDate: "Jun 6, 2026",

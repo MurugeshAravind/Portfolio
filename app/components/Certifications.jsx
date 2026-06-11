@@ -2,6 +2,10 @@ import Image from "next/image";
 import { certifications } from "../data/certifications";
 
 const BRAND_ICONS = {
+  "google-cloud": {
+    src: "/cert-icons/google-cloud-icon.webp",
+    className: "cert-logo cert-logo-gcp",
+  },
   anthropic: {
     src: "/cert-icons/claude-ai-icon.webp",
     className: "cert-logo cert-logo-claude",
