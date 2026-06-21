@@ -23,14 +23,13 @@ export function useActiveSection(sectionIds, options = DEFAULT_OBSERVER_OPTIONS)
       });
     }, { root, rootMargin, threshold });
 
-    const sections = sectionKey
-      .split("|")
-      .filter(Boolean)
+    const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter(Boolean);
     sections.forEach((s) => observer.observe(s));
 
     return () => observer.disconnect();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [root, rootMargin, sectionKey, thresholdKey]);
 
   return activeSection;
