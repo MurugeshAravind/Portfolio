@@ -21,7 +21,7 @@ export default function Spotlight() {
         currentPos.current.x = lerp(currentPos.current.x, targetPos.current.x, 0.08);
         currentPos.current.y = lerp(currentPos.current.y, targetPos.current.y, 0.08);
         if (spotlightRef.current) {
-          spotlightRef.current.style.background = `radial-gradient(600px at ${currentPos.current.x}px ${currentPos.current.y}px, rgba(200, 245, 69, 0.04) 0%, rgba(59, 130, 246, 0.02) 40%, transparent 80%)`;
+          spotlightRef.current.style.transform = `translate3d(${currentPos.current.x - 600}px, ${currentPos.current.y - 600}px, 0)`;
         }
         rafRef.current = requestAnimationFrame(animate);
       } else {
@@ -48,8 +48,12 @@ export default function Spotlight() {
   return (
     <div
       ref={spotlightRef}
-      className="pointer-events-none fixed inset-0 z-30"
-      style={{ willChange: "background" }}
+      className="pointer-events-none fixed left-0 top-0 z-30 w-[1200px] h-[1200px]"
+      style={{
+        background: "radial-gradient(600px circle at center, rgba(200, 245, 69, 0.04) 0%, rgba(59, 130, 246, 0.02) 40%, transparent 80%)",
+        transform: "translate3d(-600px, -600px, 0)",
+        willChange: "transform",
+      }}
       aria-hidden="true"
     />
   );
