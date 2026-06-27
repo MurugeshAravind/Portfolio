@@ -46,16 +46,16 @@ a single word about your experience.
 --muted:     #6b6b6b;
 
 /* Typography */
---font-display: 'Syne', sans-serif;   /* headings — geometric, 800 weight */
---font-body:    'DM Sans', sans-serif; /* body — clean, 300–500 weight */
+--font-display: 'Space Grotesk', sans-serif;   /* headings — modern, 500-700 weight */
+--font-body:    'Inter', sans-serif;           /* body — clean, 400-700 weight */
 ```
 
 **Font loading** — add to `app/layout.js`:
 ```js
-import { Syne, DM_Sans } from 'next/font/google'
+import { Space_Grotesk, Inter } from 'next/font/google'
 
-const syne = Syne({ subsets: ['latin'], weight: ['400', '700', '800'], variable: '--font-display' })
-const dmSans = DM_Sans({ subsets: ['latin'], weight: ['300', '400', '500'], variable: '--font-body' })
+const spaceGrotesk = Space_Grotesk({ subsets: ['latin'], weight: ['500', '700'], variable: '--font-display', display: 'swap' })
+const inter = Inter({ subsets: ['latin'], weight: ['400', '500', '600', '700'], variable: '--font-body', display: 'swap' })
 ```
 
 ---

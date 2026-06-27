@@ -83,8 +83,6 @@ export default function Nav() {
               className={`mobile-menu-link ${activeSection === href.slice(1) ? "active" : ""}`}
               onClick={() => {
                 setMenuOpen(false);
-                document.body.style.overflow = "";
-                document.documentElement.style.overflow = "";
               }}
             >
               {label}
@@ -97,8 +95,6 @@ export default function Nav() {
             className="mobile-menu-link mobile-menu-cta"
             onClick={() => {
               setMenuOpen(false);
-              document.body.style.overflow = "";
-              document.documentElement.style.overflow = "";
             }}
           >
             Connect

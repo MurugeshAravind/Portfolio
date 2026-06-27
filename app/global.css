@@ -251,11 +251,22 @@ a {
   position: fixed;
   top: 0;
   left: 0;
+  width: 100%;
   height: 3px;
-  background: var(--accent);
+  background: linear-gradient(to right, var(--accent), var(--accent2));
   z-index: 200;
   transform-origin: left;
-  will-change: transform;
+  animation: scroll-progress auto linear;
+  animation-timeline: scroll();
+}
+
+@keyframes scroll-progress {
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 /* ─── Hero ─── */
@@ -358,7 +369,7 @@ a {
 
 .stat-card {
   background: var(--card);
-  border: 1px solid rgba(200, 255, 0, 0.12);
+  border: 1px solid rgba(200, 245, 69, 0.12);
   border-radius: 12px;
   padding: 24px 20px;
   text-align: center;
@@ -456,7 +467,7 @@ a {
   font-size: 12px;
   font-weight: 500;
   letter-spacing: 0.02em;
-  background: rgba(200, 255, 0, 0.12);
+  background: rgba(200, 245, 69, 0.12);
   color: var(--accent);
 }
 
@@ -867,7 +878,7 @@ a {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid var(--border);
-  box-shadow: 0 0 60px rgba(200, 255, 0, 0.06);
+  box-shadow: 0 0 60px rgba(200, 245, 69, 0.06);
 }
 
 .about-photo {
@@ -912,7 +923,7 @@ a {
 .about-links a:hover {
   color: var(--accent);
   border-color: var(--accent);
-  background: rgba(200, 255, 0, 0.06);
+  background: rgba(200, 245, 69, 0.06);
 }
 
 .about-lead {
@@ -1048,69 +1059,6 @@ a {
   align-self: flex-start;
 }
 
-/* ─── Footer ─── */
-.footer {
-  padding: 48px;
-  border-top: 1px solid var(--border);
-  text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 20px;
-}
-
-.footer-links {
-  display: flex;
-  gap: 28px;
-}
-
-.footer-links a {
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--muted);
-  transition: color 0.2s;
-}
-
-.footer-links a:hover {
-  color: var(--text);
-}
-
-.footer-social {
-  display: flex;
-  gap: 16px;
-}
-
-.footer-social a {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  color: var(--muted);
-  transition: color 0.2s, border-color 0.2s, background 0.2s;
-}
-
-.footer-social a:hover {
-  color: var(--accent);
-  border-color: var(--accent);
-  background: rgba(200, 255, 0, 0.06);
-}
-
-.footer-text {
-  font-size: 13px;
-  color: var(--muted);
-}
-
-.footer-text a {
-  color: var(--text);
-  transition: color 0.2s;
-}
-
-.footer-text a:hover {
-  color: var(--accent);
-}
 
 /* ─── Entrance Animations ─── */
 @keyframes fade-up {
@@ -1199,13 +1147,6 @@ a {
     padding: 64px 24px;
   }
 
-  .footer {
-    padding: 32px 24px;
-  }
-
-  .footer-links {
-    gap: 20px;
-  }
 
   .exp-item--current {
     padding-left: 16px;
