@@ -34,6 +34,24 @@ export const projects = [
     company: "Infosys",
   },
   {
+    id: "smartleave-ai",
+    featured: false,
+    lab: true,
+    tag: "Workforce Analytics · Full stack",
+    name: "SmartLeave AI",
+    description:
+      "Event-based leave impact intelligence platform for Indian organizations. " +
+      "Replaces blanket leave decisions with targeted recommendations based on " +
+      "commute mode, regional calendars, and employee demographics.",
+    impact: [
+      { num: "65", label: "Unit tests" },
+      { num: "Session", label: "Storage only" },
+    ],
+    stack: ["React 19", "TypeScript", "Zustand", "Recharts", "Express"],
+    repo: "https://github.com/MurugeshAravind/smartleave-ai",
+    live: "https://smartleave-ai.vercel.app/",
+  },
+  {
     id: "fundscope",
     featured: false,
     lab: true,
