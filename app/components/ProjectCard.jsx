@@ -101,6 +101,43 @@ const VISUAL_PATTERNS = {
       <circle cx="195" cy="90" r="3" fill="var(--accent2)" />
     </svg>
   ),
+  "smartleave-ai": (
+    <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="project-svg">
+      <defs>
+        <linearGradient id="smartGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="var(--accent2)" stopOpacity="0.05" />
+        </linearGradient>
+      </defs>
+      <line x1="50" y1="50" x2="350" y2="50" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
+      <line x1="50" y1="100" x2="350" y2="100" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
+      <line x1="50" y1="150" x2="350" y2="150" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
+      
+      <rect x="100" y="40" width="200" height="120" rx="8" stroke="rgba(255,255,255,0.06)" strokeWidth="1.5" fill="url(#smartGrad)" className="svg-draw" />
+      <line x1="100" y1="65" x2="300" y2="65" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+      
+      <rect x="115" y="48" width="55" height="10" rx="3" fill="var(--accent2)" fillOpacity="0.2" />
+      <circle cx="122" cy="53" r="2.5" fill="var(--accent2)" />
+      
+      <rect x="115" y="78" width="36" height="36" rx="4" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" fill="none" />
+      <line x1="115" y1="88" x2="151" y2="88" stroke="rgba(255, 255, 255, 0.15)" strokeWidth="1" />
+      <circle cx="124" cy="98" r="2.5" fill="var(--accent)" />
+      <circle cx="133" cy="98" r="2.5" fill="var(--accent2)" />
+      <circle cx="142" cy="98" r="2.5" fill="rgba(255, 255, 255, 0.15)" />
+      <circle cx="124" cy="106" r="2.5" fill="rgba(255, 255, 255, 0.15)" />
+      <circle cx="133" cy="106" r="2.5" fill="rgba(255, 255, 255, 0.15)" />
+      <circle cx="142" cy="106" r="2.5" fill="var(--accent)" fillOpacity="0.7" />
+
+      <rect x="165" y="80" width="110" height="8" rx="4" fill="rgba(255, 255, 255, 0.08)" />
+      <text x="165" y="74" fill="var(--muted)" fontSize="7" fontWeight="600" opacity="0.6">BLANKET LEAVE</text>
+      
+      <rect x="165" y="104" width="45" height="8" rx="4" fill="var(--accent)" />
+      <text x="165" y="98" fill="var(--accent)" fontSize="7" fontWeight="600">TARGETED LEAVE</text>
+      
+      <path d="M210 108 L275 108" stroke="var(--accent)" strokeWidth="1" strokeDasharray="2 2" strokeOpacity="0.4" />
+      <text x="225" y="120" fill="var(--accent)" fontSize="7" fontWeight="700">65% SAVED</text>
+    </svg>
+  ),
   portfolio: (
     <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="project-svg">
       <defs>
