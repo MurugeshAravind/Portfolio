@@ -3,7 +3,10 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "vitest run",
+    "test:e2e": "playwright test",
+    "lint": "next lint"
   },
   "dependencies": {
     "@tailwindcss/postcss": "4.0.0-alpha.13",
