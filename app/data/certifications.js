@@ -24,11 +24,12 @@ export const certifications = [
   {
     name: "Claude Certified Architect - Foundations",
     issuer: "Anthropic",
-    issuedDate: "Jun 6, 2026",
-    expiryDate: "Dec 6, 2026",
-    skills: ["Claude", "AI Architecture"],
+    issuedDate: "Jun 2026",
+    expiryDate: "Jun 2027",
+    skills: ["Claude Code", "Claude Agent SDK", "Claude API", "MCP", "AI Architecture"],
     icon: "anthropic",
-    credentialUrl: "https://verify.skilljar.com/c/vqc4tx8irviz",
+    credentialUrl:
+      "https://www.credly.com/badges/de77999b-3bf9-419a-9056-1cad604c3494/public_url",
   },
   {
     name: "Context Engineering Foundation",

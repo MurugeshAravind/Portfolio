@@ -59,6 +59,8 @@ export default function Hero() {
               "Zustand",
               "Jest",
               "Playwright",
+              "MCP",
+              "Claude API",
             ].map((s) => (
               <span key={s} className="pill">
                 {s}

@@ -73,6 +73,8 @@ const jsonLd = {
     "Frontend Architecture",
     "Accessibility",
     "Performance Optimization",
+    "AI Architecture",
+    "Model Context Protocol (MCP)",
   ],
 };
 
