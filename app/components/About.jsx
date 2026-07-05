@@ -70,7 +70,7 @@ export default function About() {
           </div>
 
           <p className="about-text">
-            Outside enterprise work, I’m exploring cloud and AI-powered systems, combining modern frontend engineering with intelligent workflows and deterministic reliability.
+            Outside enterprise work, I’m exploring cloud and AI-powered systems. As a Claude Certified Architect, I build integrations with the Model Context Protocol (MCP) and design agentic frontend architectures that combine modern UI engineering with deterministic reliability.
           </p>
 
           <p className="about-text">
