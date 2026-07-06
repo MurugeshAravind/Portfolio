@@ -88,6 +88,23 @@ export const projects = [
     live: "https://main.d2o5yre1zt6isc.amplifyapp.com/",
   },
   {
+    id: "inbox-janitor-agent",
+    featured: false,
+    lab: true,
+    tag: "AI Email Agent · Open source",
+    name: "Inbox Janitor Agent",
+    description:
+      "AI-powered, defensive Gmail inbox cleaner. Uses LangChain, Gemini 2.5 Flash, " +
+      "and strict Zod-enforced schemas to safely classify, filter, and purge automated " +
+      "newsletter, promotional, and marketing clutter.",
+    impact: [
+      { num: "Gemini", label: "2.5 Flash" },
+      { num: "Structured", label: "Zod Schema" },
+    ],
+    stack: ["TypeScript", "LangChain", "Gemini AI", "Gmail API", "Zod"],
+    repo: "https://github.com/MurugeshAravind/inbox-janitor-agent",
+  },
+  {
     id: "portfolio",
     featured: false,
     lab: true,

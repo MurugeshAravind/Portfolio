@@ -138,6 +138,55 @@ const VISUAL_PATTERNS = {
       <text x="225" y="120" fill="var(--accent)" fontSize="7" fontWeight="700">65% SAVED</text>
     </svg>
   ),
+  "inbox-janitor-agent": (
+    <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="project-svg">
+      <defs>
+        <linearGradient id="janitorGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="var(--accent)" stopOpacity="0.2" />
+          <stop offset="100%" stopColor="var(--accent2)" stopOpacity="0.05" />
+        </linearGradient>
+      </defs>
+      <line x1="50" y1="50" x2="350" y2="50" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
+      <line x1="50" y1="100" x2="350" y2="100" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
+      <line x1="50" y1="150" x2="350" y2="150" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
+      
+      <rect x="100" y="40" width="200" height="120" rx="8" stroke="rgba(255,255,255,0.06)" strokeWidth="1.5" fill="url(#janitorGrad)" className="svg-draw" />
+      <line x1="100" y1="65" x2="300" y2="65" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
+      
+      <text x="115" y="55" fill="var(--muted)" fontSize="7" fontWeight="600" opacity="0.6">GMAIL JANITOR</text>
+      <circle cx="280" cy="53" r="2.5" fill="rgba(16, 185, 129, 0.4)" />
+      <circle cx="270" cy="53" r="2.5" fill="rgba(245, 158, 11, 0.4)" />
+      <circle cx="260" cy="53" r="2.5" fill="rgba(239, 68, 68, 0.4)" />
+      
+      {/* Row 1: Keep/Safe */}
+      <circle cx="120" cy="83" r="6" fill="var(--accent)" fillOpacity="0.2" />
+      <rect x="132" y="78" width="45" height="4" rx="2" fill="var(--accent)" />
+      <rect x="132" y="86" width="90" height="4" rx="2" fill="rgba(255,255,255,0.15)" />
+      <rect x="250" y="78" width="30" height="10" rx="3" fill="rgba(16, 185, 129, 0.1)" stroke="rgba(16, 185, 129, 0.3)" strokeWidth="0.5" />
+      <text x="256" y="85" fill="#10B981" fontSize="5" fontWeight="700">KEEP</text>
+      
+      {/* Row 2: Delete/Clutter */}
+      <circle cx="120" cy="113" r="6" fill="var(--accent2)" fillOpacity="0.2" />
+      <rect x="132" y="108" width="40" height="4" rx="2" fill="var(--accent2)" fillOpacity="0.7" />
+      <rect x="132" y="116" width="75" height="4" rx="2" fill="rgba(255,255,255,0.08)" />
+      <line x1="132" y1="114" x2="230" y2="114" stroke="rgba(239, 68, 68, 0.4)" strokeWidth="1" strokeDasharray="3 2" />
+      <rect x="250" y="108" width="30" height="10" rx="3" fill="rgba(239, 68, 68, 0.1)" stroke="rgba(239, 68, 68, 0.3)" strokeWidth="0.5" />
+      <text x="255" y="115" fill="#EF4444" fontSize="5" fontWeight="700">TRASH</text>
+      
+      {/* Row 3: Delete/Clutter 2 */}
+      <circle cx="120" cy="143" r="6" fill="rgba(255, 255, 255, 0.1)" />
+      <rect x="132" y="138" width="35" height="4" rx="2" fill="rgba(255, 255, 255, 0.1)" />
+      <rect x="132" y="146" width="60" height="4" rx="2" fill="rgba(255, 255, 255, 0.05)" />
+      <line x1="132" y1="144" x2="200" y2="144" stroke="rgba(239, 68, 68, 0.2)" strokeWidth="1" strokeDasharray="3 2" />
+      <rect x="250" y="138" width="30" height="10" rx="3" fill="rgba(239, 68, 68, 0.05)" stroke="rgba(239, 68, 68, 0.15)" strokeWidth="0.5" />
+      <text x="255" y="145" fill="#EF4444" opacity="0.5" fontSize="5" fontWeight="700">TRASH</text>
+      
+      {/* Sparkles indicating active janitorial/clean function */}
+      <path d="M 235 98 L 237 103 L 242 105 L 237 107 L 235 112 L 233 107 L 228 105 L 233 103 Z" fill="var(--accent)" />
+      <path d="M 225 125 L 226 128 L 229 129 L 226 130 L 225 133 L 224 130 L 221 129 L 224 128 Z" fill="var(--accent2)" />
+      <path d="M 242 145 L 243 147 L 246 148 L 243 149 L 242 151 L 241 149 L 238 148 L 241 147 Z" fill="var(--accent)" opacity="0.6" />
+    </svg>
+  ),
   portfolio: (
     <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="project-svg">
       <defs>
