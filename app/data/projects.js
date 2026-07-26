@@ -85,7 +85,6 @@ export const projects = [
     ],
     stack: ["React 19", "TypeScript", "AWS Cognito", "DynamoDB", "Vite"],
     repo: "https://github.com/MurugeshAravind/advanced-tic-tac-toe",
-    live: "https://main.d2o5yre1zt6isc.amplifyapp.com/",
   },
   {
     id: "inbox-janitor-agent",
@@ -103,19 +102,5 @@ export const projects = [
     ],
     stack: ["TypeScript", "LangChain", "Gemini AI", "Gmail API", "Zod"],
     repo: "https://github.com/MurugeshAravind/inbox-janitor-agent",
-  },
-  {
-    id: "portfolio",
-    featured: false,
-    lab: true,
-    tag: "Side project · Open source",
-    name: "This Portfolio",
-    description:
-      "Next.js 16 + React 19 with App Router, JSON-LD structured data, " +
-      "LERP cursor spotlight, Vitest unit tests, and custom domain via is-a.dev.",
-    impact: [],
-    stack: ["Next.js", "React 19", "Tailwind", "Vitest", "Vercel"],
-    repo: "https://github.com/MurugeshAravind/Portfolio",
-    live: "https://aravind.is-a.dev",
   },
 ];
