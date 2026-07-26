@@ -187,33 +187,6 @@ const VISUAL_PATTERNS = {
       <path d="M 242 145 L 243 147 L 246 148 L 243 149 L 242 151 L 241 149 L 238 148 L 241 147 Z" fill="var(--accent)" opacity="0.6" />
     </svg>
   ),
-  portfolio: (
-    <svg viewBox="0 0 400 200" fill="none" xmlns="http://www.w3.org/2000/svg" className="project-svg">
-      <defs>
-        <linearGradient id="portGrad" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="var(--accent2)" stopOpacity="0.2" />
-          <stop offset="100%" stopColor="var(--accent)" stopOpacity="0.05" />
-        </linearGradient>
-      </defs>
-      <line x1="50" y1="50" x2="350" y2="50" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
-      <line x1="50" y1="100" x2="350" y2="100" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
-      <line x1="50" y1="150" x2="350" y2="150" stroke="rgba(255,255,255,0.015)" strokeWidth="1" />
-      
-      <rect x="110" y="40" width="180" height="120" rx="8" stroke="rgba(255,255,255,0.06)" strokeWidth="1.5" fill="url(#portGrad)" className="svg-draw" />
-      <line x1="110" y1="65" x2="290" y2="65" stroke="rgba(255,255,255,0.08)" strokeWidth="1" />
-      
-      <circle cx="125" cy="52" r="3.5" fill="rgba(239, 68, 68, 0.4)" />
-      <circle cx="137" cy="52" r="3.5" fill="rgba(245, 158, 11, 0.4)" />
-      <circle cx="149" cy="52" r="3.5" fill="rgba(16, 185, 129, 0.4)" />
-      
-      <path d="M130 85 L142 93 L130 101" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" fill="none" className="svg-draw" />
-      <line x1="152" y1="93" x2="210" y2="93" stroke="var(--accent)" strokeWidth="2" strokeLinecap="round" />
-      
-      <rect x="130" y="115" width="130" height="6" rx="3" fill="rgba(255, 255, 255, 0.15)" />
-      <rect x="130" y="127" width="100" height="6" rx="3" fill="rgba(255, 255, 255, 0.1)" />
-      <rect x="130" y="139" width="115" height="6" rx="3" fill="var(--accent2)" fillOpacity="0.3" />
-    </svg>
-  ),
 };
 
 export default function ProjectCard({ project }) {
