@@ -12,6 +12,16 @@
 /** @type {Certification[]} */
 export const certifications = [
   {
+    name: "AWS Certified Developer - Associate",
+    issuer: "Amazon Web Services (AWS)",
+    issuedDate: "Aug 2026",
+    expiryDate: "Aug 2029",
+    skills: ["AWS Cloud", "Amazon Web Services", "Cloud Deployment", "Cloud Development"],
+    icon: "aws",
+    credentialUrl:
+      "https://www.credly.com/badges/ba0df7c4-23b0-4ca3-81d0-6a9234b2a92b/public_url",
+  },
+  {
     name: "Add Agents to Gemini Enterprise",
     issuer: "Google Cloud",
     issuedDate: "Jun 2026",
