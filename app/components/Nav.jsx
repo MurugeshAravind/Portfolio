@@ -16,6 +16,7 @@ export default function Nav() {
   const activeSection = useActiveSection(SECTION_IDS);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
+  const hamburgerRef = useRef(null);
 
   function toggleMenu() {
     setMenuOpen(prev => !prev);
@@ -29,6 +30,19 @@ export default function Nav() {
       document.body.style.overflow = "";
       document.documentElement.style.overflow = "";
     };
+  }, [menuOpen]);
+
+  // Close the mobile menu with the Escape key and return focus to the toggle.
+  useEffect(() => {
+    if (!menuOpen) return;
+    const handleKey = (e) => {
+      if (e.key === "Escape") {
+        setMenuOpen(false);
+        hamburgerRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", handleKey);
+    return () => document.removeEventListener("keydown", handleKey);
   }, [menuOpen]);
 
   return (
@@ -62,6 +76,7 @@ export default function Nav() {
 
       {/* Mobile hamburger */}
       <button
+        ref={hamburgerRef}
         className="nav-hamburger"
         onClick={toggleMenu}
         aria-label={menuOpen ? "Close menu" : "Open menu"}

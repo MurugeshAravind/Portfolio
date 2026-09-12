@@ -9,7 +9,11 @@ export default function LazySpotlight() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    if (typeof window === "undefined" || window.innerWidth < 1024) {
+    if (
+      typeof window === "undefined" ||
+      window.innerWidth < 1024 ||
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches
+    ) {
       return;
     }
 

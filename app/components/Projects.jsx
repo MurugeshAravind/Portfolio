@@ -6,7 +6,7 @@ export default function Projects() {
   const labs = projects.filter((p) => p.lab);
 
   return (
-    <section id="work" className="section">
+    <section id="work" className="section" tabIndex={-1}>
       <div className="section-header">
         <span className="section-num">01</span>
         <h2>Work</h2>
