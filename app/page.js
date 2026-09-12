@@ -10,14 +10,19 @@ import ScrollProgress from "./components/ScrollProgress";
 export default function HomePage() {
   return (
     <>
+      <a href="#main" className="skip-link">
+        Skip to content
+      </a>
       <ScrollProgress />
       <LazySpotlight />
       <Nav />
-      <Hero />
-      <Projects />
-      <Experience />
-      <Certifications />
-      <About />
+      <main id="main" tabIndex={-1}>
+        <Hero />
+        <Projects />
+        <Experience />
+        <Certifications />
+        <About />
+      </main>
     </>
   );
 }

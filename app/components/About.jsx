@@ -4,7 +4,7 @@ import profileImg from "../../profile.webp";
 
 export default function About() {
   return (
-    <section id="about" className="section">
+    <section id="about" className="section" tabIndex={-1}>
       <div className="section-header">
         <span className="section-num">04</span>
         <h2>About</h2>

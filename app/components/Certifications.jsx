@@ -4,7 +4,7 @@ import { certifications } from "../data/certifications";
 const BRAND_ICONS = {
   "google-cloud": {
     src: "/cert-icons/google-cloud-icon.webp",
-    className: "cert-logo cert-logo-gcp",
+    className: "cert-logo",
   },
   anthropic: {
     src: "/cert-icons/claude-ai-icon.webp",
@@ -32,7 +32,7 @@ function CertIcon({ cert }) {
       <span className="cert-icon-frame">
         <Image
           src={brandIcon.src}
-          alt={`${cert.issuer} logo`}
+          alt=""
           width={32}
           height={32}
           className={brandIcon.className}
@@ -65,7 +65,7 @@ function CertIcon({ cert }) {
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="section certs-section">
+    <section id="certifications" className="section certs-section" tabIndex={-1}>
       <div className="section-header">
         <span className="section-num">03</span>
         <h2>Certifications</h2>

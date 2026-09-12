@@ -2,7 +2,7 @@ import { experience } from "../data/experience";
 
 export default function Experience() {
   return (
-    <section id="experience" className="section">
+    <section id="experience" className="section" tabIndex={-1}>
       <div className="section-header">
         <span className="section-num">02</span>
         <h2>Experience</h2>
