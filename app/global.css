@@ -6,6 +6,7 @@
   --surface: #111111;
   --card: #141414;
   --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.16);
   --accent: #c8f545;
   --accent2: #3b82f6;
   --text: #f0ede6;
@@ -752,10 +753,15 @@ section:focus {
   padding: 20px 24px;
   transition: border-color 0.25s ease, transform 0.25s ease;
   text-decoration: none;
+}
+
+/* Only cards that actually link somewhere get the interactive affordances;
+   credentials with no credentialUrl render as a plain, inert <div>. */
+a.cert-card {
   cursor: pointer;
 }
 
-.cert-card:hover {
+a.cert-card:hover {
   border-color: rgba(200, 245, 69, 0.3);
   transform: translateY(-2px);
 }
@@ -777,7 +783,7 @@ section:focus {
   transition: border-color 0.25s ease, background 0.25s ease;
 }
 
-.cert-card:hover .cert-icon-frame {
+a.cert-card:hover .cert-icon-frame {
   border-color: rgba(200, 245, 69, 0.28);
   background:
     linear-gradient(145deg, rgba(255, 255, 255, 0.075), rgba(255, 255, 255, 0.02)),
@@ -912,6 +918,20 @@ section:focus {
   color: var(--accent);
   font-weight: 500;
   margin-bottom: 16px;
+}
+
+.exp-role-via {
+  display: inline-block;
+  margin-left: 8px;
+  padding: 1px 7px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted);
+  border: 1px solid var(--border-strong);
+  border-radius: 3px;
+  vertical-align: middle;
 }
 
 .exp-bullets {

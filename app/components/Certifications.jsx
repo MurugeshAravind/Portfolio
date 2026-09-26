@@ -71,34 +71,48 @@ export default function Certifications() {
         <h2>Certifications</h2>
       </div>
       <div className="certs-grid">
-        {certifications.map((cert) => (
-          <a
-            key={cert.name}
-            href={cert.credentialUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cert-card"
-          >
-            <CertIcon cert={cert} />
-            <div className="cert-info">
-              <span className="cert-name">{cert.name}</span>
-              <span className="cert-issuer">{cert.issuer}</span>
-              <span className="cert-dates">
-                Issued {cert.issuedDate}
-                {cert.expiryDate ? ` · Expires ${cert.expiryDate}` : ""}
-              </span>
-              {cert.skills.length > 0 && (
-                <div className="cert-skills">
-                  {cert.skills.map((skill) => (
-                    <span key={skill} className="pill pill-sm">
-                      {skill}
-                    </span>
-                  ))}
-                </div>
-              )}
+        {certifications.map((cert) => {
+          const body = (
+            <>
+              <CertIcon cert={cert} />
+              <div className="cert-info">
+                <span className="cert-name">{cert.name}</span>
+                <span className="cert-issuer">{cert.issuer}</span>
+                <span className="cert-dates">
+                  Issued {cert.issuedDate}
+                  {cert.expiryDate ? ` · Expires ${cert.expiryDate}` : ""}
+                </span>
+                {cert.skills.length > 0 && (
+                  <div className="cert-skills">
+                    {cert.skills.map((skill) => (
+                      <span key={skill} className="pill pill-sm">
+                        {skill}
+                      </span>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </>
+          );
+
+          // Credentials with no public badge URL yet render as a plain card
+          // rather than linking nowhere.
+          return cert.credentialUrl ? (
+            <a
+              key={cert.name}
+              href={cert.credentialUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cert-card"
+            >
+              {body}
+            </a>
+          ) : (
+            <div key={cert.name} className="cert-card">
+              {body}
             </div>
-          </a>
-        ))}
+          );
+        })}
       </div>
     </section>
   );

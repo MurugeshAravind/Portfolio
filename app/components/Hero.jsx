@@ -14,9 +14,9 @@ export default function Hero() {
         </h1>
 
         <p className="hero-sub animate-in delay-2">
-          8 years building banking platforms and React architectures for 50,000+
-          users. I turn complex legacy systems into fast, accessible, rigorously
-          tested products.
+          8+ years building banking platforms and React architectures for
+          enterprise systems serving 50,000+ users. I turn complex legacy systems
+          into fast, accessible, rigorously tested products.
         </p>
 
         <div className="hero-actions animate-in delay-3">
@@ -55,7 +55,7 @@ export default function Hero() {
         <div className="stat-row">
           {[
             { num: "8+", label: "Years experience" },
-            { num: "50k+", label: "Daily users" },
+            { num: "50k+", label: "Users served" },
             { num: "40%", label: "Load time cut" },
           ].map((s) => (
             <div key={s.label} className="stat-card">
@@ -72,6 +72,7 @@ export default function Hero() {
               "React",
               "TypeScript",
               "Next.js",
+              "Micro-frontends",
               "Redux Toolkit",
               "Zustand",
               "Jest",

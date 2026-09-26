@@ -9,8 +9,8 @@ export const projects = [
       "Built PII masking, role-based access control, and a test suite " +
       "that became the internal coverage benchmark across 3 teams.",
     impact: [
-      { num: "50k+", label: "Daily users" },
-      { num: "95%", label: "Test coverage" },
+      { num: "Thousands", label: "Daily users" },
+      { num: "85%+", label: "Test coverage" },
       { num: "0", label: "PII breaches" },
     ],
     stack: ["React", "TypeScript", "Redux", "Playwright", "RBAC"],

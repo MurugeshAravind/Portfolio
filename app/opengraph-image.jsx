@@ -46,7 +46,7 @@ export default function OgImage() {
             marginTop: 16,
           }}
         >
-          Senior Frontend Engineer · 8 years · Banking &amp; Fintech
+          Senior Frontend Engineer · 8+ years · Banking &amp; Fintech
         </p>
       </div>
     ),

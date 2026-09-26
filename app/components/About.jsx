@@ -32,6 +32,10 @@ export default function About() {
             I’m a Senior Frontend Engineer based in Bangalore with 8+ years of experience modernizing legacy architectures, improving performance, and shipping changes safely at scale. My work sits at the intersection of frontend engineering, system design, and operational reliability.
           </p>
 
+          <p className="about-text">
+            I didn’t start in software — I came from telecom engineering, where I learned how systems fail before I ever wrote a line of React. That infrastructure-first mindset still shapes how I build frontends today.
+          </p>
+
           <h3 className="about-subheading">Over the years, I’ve helped deliver:</h3>
           <ul className="about-list" role="list">
             <li className="about-list-item">50,000+ user platforms supporting enterprise workflows</li>

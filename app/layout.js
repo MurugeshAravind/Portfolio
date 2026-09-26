@@ -21,12 +21,12 @@ export const metadata = {
   metadataBase: new URL(siteUrl),
   title: "Murugesh Aravind — Senior Frontend Engineer",
   description:
-    "8 years building banking platforms and React architectures for 50,000+ users. Based in India. Open to senior and lead frontend roles.",
+    "8+ years building banking platforms and React architectures for enterprise systems serving 50,000+ users. Based in India. Open to senior and lead frontend roles.",
   openGraph: {
     type: "website",
     url: siteUrl,
     title: "Murugesh Aravind — Senior Frontend Engineer",
-    description: "8 years · React · TypeScript · Banking · 50k+ users",
+    description: "8+ years · React · TypeScript · Enterprise · 50k+ users",
     siteName: "Murugesh Aravind",
     locale: "en_IN",
   },
