@@ -1,3 +1,5 @@
+import { metrics } from "./metrics";
+
 /**
  * @typedef {Object} ExperienceEntry
  * @property {string} period
@@ -20,7 +22,7 @@ export const experience = [
       "Architected React + TypeScript frontend for the Open Account Online (OAO) banking platform, supporting secure customer onboarding for thousands of customers daily",
       "Implemented PII data-masking, secure rendering, and role-based access control (RBAC) to meet enterprise banking compliance requirements",
       "Improved page load times and Core Web Vitals by 25% through lazy loading, memoization, React Hooks, and Redux Toolkit state management",
-      "Established testing strategy with Jest and React Testing Library, reaching 85%+ code coverage and setting the internal quality benchmark",
+      `Established testing strategy with Jest and React Testing Library, reaching ${metrics.testCoverage.text} code coverage and setting the internal quality benchmark`,
       "Introduced AI-assisted development tooling (Cursor, GitHub Copilot) into team workflows, improving sprint velocity and review turnaround",
       "Led code reviews, set engineering standards, and mentored junior frontend developers in React, TypeScript, and component-driven development",
     ],
@@ -30,11 +32,11 @@ export const experience = [
     company: "Infosys",
     role: "Senior Associate Consultant — Frontend Engineering",
     bullets: [
-      "Led the end-to-end Angular-to-React migration of a Red Hat Process Automation Manager workflow platform serving 50,000+ active users, re-architecting the SPA for scalability and developer velocity",
-      "Reduced application load times by 40% and improved Lighthouse scores by 20 points via code-splitting, lazy loading, tree-shaking, and Webpack bundle optimization, with zero production rollbacks",
+      `Led the end-to-end Angular-to-React migration of a Red Hat Process Automation Manager workflow platform serving ${metrics.usersServed.text} active users, re-architecting the SPA for scalability and developer velocity`,
+      `Reduced application load times by ${metrics.loadTimeReduction.text} and improved Lighthouse scores by 20 points via code-splitting, lazy loading, tree-shaking, and Webpack bundle optimization, with zero production rollbacks`,
       "Contributed to 15% growth in Daily Active Users within six months of release through UX improvements and REST API integration optimizations",
       "Drove the WCAG 2.1 AA accessibility initiative across critical enterprise workflows, implementing ARIA landmarks, semantic HTML, and full keyboard navigation",
-      "Designed a reusable component library adopted across 6 product teams, improving UI consistency and speed-to-market",
+      `Designed a reusable component library adopted across ${metrics.teamsAdopted.text} product teams, improving UI consistency and speed-to-market`,
     ],
   },
   {

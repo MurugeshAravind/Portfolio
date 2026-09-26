@@ -1,5 +1,6 @@
 import { Space_Grotesk, Inter } from "next/font/google";
 import "./global.css";
+import { metrics } from "./data/metrics";
 
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
@@ -20,13 +21,12 @@ const siteUrl = "https://aravind.is-a.dev";
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: "Murugesh Aravind — Senior Frontend Engineer",
-  description:
-    "8+ years building banking platforms and React architectures for enterprise systems serving 50,000+ users. Based in India. Open to senior and lead frontend roles.",
+  description: `${metrics.yearsExperience.text} building banking platforms and React architectures for enterprise systems serving ${metrics.usersServed.text} users. Based in India. Open to senior and lead frontend roles.`,
   openGraph: {
     type: "website",
     url: siteUrl,
     title: "Murugesh Aravind — Senior Frontend Engineer",
-    description: "8+ years · React · TypeScript · Enterprise · 50k+ users",
+    description: `${metrics.yearsExperience.text} · React · TypeScript · Enterprise · ${metrics.usersServed.compact} users`,
     siteName: "Murugesh Aravind",
     locale: "en_IN",
   },

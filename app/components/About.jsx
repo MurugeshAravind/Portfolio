@@ -1,5 +1,6 @@
 import Image from "next/image";
 import profileImg from "../../profile.webp";
+import { metrics } from "../data/metrics";
 
 
 export default function About() {
@@ -29,7 +30,7 @@ export default function About() {
           </p>
 
           <p className="about-text">
-            I’m a Senior Frontend Engineer based in Bangalore with 8+ years of experience modernizing legacy architectures, improving performance, and shipping changes safely at scale. My work sits at the intersection of frontend engineering, system design, and operational reliability.
+            I’m a Senior Frontend Engineer based in Bangalore with {metrics.yearsExperience.text} of experience modernizing legacy architectures, improving performance, and shipping changes safely at scale. My work sits at the intersection of frontend engineering, system design, and operational reliability.
           </p>
 
           <p className="about-text">
@@ -38,9 +39,9 @@ export default function About() {
 
           <h3 className="about-subheading">Over the years, I’ve helped deliver:</h3>
           <ul className="about-list" role="list">
-            <li className="about-list-item">50,000+ user platforms supporting enterprise workflows</li>
-            <li className="about-list-item">40% load time improvements through performance optimization</li>
-            <li className="about-list-item">85%+ test coverage as a quality baseline, not a milestone</li>
+            <li className="about-list-item">{metrics.usersServed.text} user platforms supporting enterprise workflows</li>
+            <li className="about-list-item">{metrics.loadTimeReduction.text} load time improvements through performance optimization</li>
+            <li className="about-list-item">{metrics.testCoverage.text} test coverage as a quality baseline, not a milestone</li>
             <li className="about-list-item">Large-scale migrations completed with zero rollbacks</li>
           </ul>
 

@@ -1,3 +1,5 @@
+import { metrics } from "../data/metrics";
+
 export default function Hero() {
   return (
     <section className="hero" aria-label="Introduction">
@@ -14,9 +16,10 @@ export default function Hero() {
         </h1>
 
         <p className="hero-sub animate-in delay-2">
-          8+ years building banking platforms and React architectures for
-          enterprise systems serving 50,000+ users. I turn complex legacy systems
-          into fast, accessible, rigorously tested products.
+          {metrics.yearsExperience.text} building banking platforms and React
+          architectures for enterprise systems serving {metrics.usersServed.text}{" "}
+          users. I turn complex legacy systems into fast, accessible, rigorously
+          tested products.
         </p>
 
         <div className="hero-actions animate-in delay-3">
@@ -54,9 +57,9 @@ export default function Hero() {
       <div className="hero-right animate-in delay-2">
         <div className="stat-row">
           {[
-            { num: "8+", label: "Years experience" },
-            { num: "50k+", label: "Users served" },
-            { num: "40%", label: "Load time cut" },
+            { num: metrics.yearsExperience.compact, label: "Years experience" },
+            { num: metrics.usersServed.compact, label: "Users served" },
+            { num: metrics.loadTimeReduction.text, label: "Load time cut" },
           ].map((s) => (
             <div key={s.label} className="stat-card">
               <span className="stat-num">{s.num}</span>

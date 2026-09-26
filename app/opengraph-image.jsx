@@ -1,4 +1,5 @@
 import { ImageResponse } from "next/og";
+import { metrics } from "./data/metrics";
 
 export const runtime = "edge";
 export const size = { width: 1200, height: 630 };
@@ -46,7 +47,7 @@ export default function OgImage() {
             marginTop: 16,
           }}
         >
-          Senior Frontend Engineer · 8+ years · Banking &amp; Fintech
+          Senior Frontend Engineer · {metrics.yearsExperience.text} · Banking &amp; Fintech
         </p>
       </div>
     ),

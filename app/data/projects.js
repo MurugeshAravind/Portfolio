@@ -1,3 +1,5 @@
+import { metrics } from "./metrics";
+
 export const projects = [
   {
     id: "open-account",
@@ -10,7 +12,7 @@ export const projects = [
       "that became the internal coverage benchmark across 3 teams.",
     impact: [
       { num: "Thousands", label: "Daily users" },
-      { num: "85%+", label: "Test coverage" },
+      { num: metrics.testCoverage.text, label: "Test coverage" },
       { num: "0", label: "PII breaches" },
     ],
     stack: ["React", "TypeScript", "Redux", "Playwright", "RBAC"],
@@ -22,13 +24,13 @@ export const projects = [
     tag: "Migration · Platform",
     name: "Angular to React Migration",
     description:
-      "Led full migration of a 50k+ user enterprise platform. " +
-      "Reduced load time by 40%, zero rollbacks, component library " +
-      "adopted by 6 product teams.",
+      `Led full migration of a ${metrics.usersServed.compact} user enterprise platform. ` +
+      `Reduced load time by ${metrics.loadTimeReduction.text}, zero rollbacks, component library ` +
+      `adopted by ${metrics.teamsAdopted.text} product teams.`,
     impact: [
-      { num: "40%", label: "Faster load" },
+      { num: metrics.loadTimeReduction.text, label: "Faster load" },
       { num: "0", label: "Rollbacks" },
-      { num: "6", label: "Teams adopted" },
+      { num: metrics.teamsAdopted.text, label: "Teams adopted" },
     ],
     stack: ["React", "Angular", "Jest", "Webpack"],
     company: "Infosys",
