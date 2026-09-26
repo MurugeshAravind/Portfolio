@@ -99,6 +99,14 @@ export const certifications = [
       "https://www.credly.com/badges/ba0df7c4-23b0-4ca3-81d0-6a9234b2a92b/public_url",
   },
   {
+    name: "OpenAI Codex Hackathon — AI Builder, Runner-Up",
+    issuer: "Cognizant",
+    issuedDate: "Jul 2026",
+    expiryDate: null,
+    skills: ["OpenAI Codex", "AI-Assisted Development"],
+    icon: "cognizant",
+  },
+  {
     name: "Claude Certified Architect - Foundations",
     issuer: "Anthropic",
     issuedDate: "Jun 2026",
