@@ -22,6 +22,14 @@ const BRAND_ICONS = {
     src: "/cert-icons/github.svg",
     className: "cert-logo cert-logo-github",
   },
+  openai: {
+    src: "/cert-icons/openai.svg",
+    className: "cert-logo",
+  },
+  oracle: {
+    src: "/cert-icons/oracle.svg",
+    className: "cert-logo",
+  },
 };
 
 function CertIcon({ cert }) {

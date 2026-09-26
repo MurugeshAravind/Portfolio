@@ -15,9 +15,10 @@
  * profile, in that profile's order. Everything after those five follows in
  * reverse chronological order. This is deliberately not a pure date sort.
  *
- * `icon` values with no matching entry in BRAND_ICONS (openai, oracle) fall
- * back to the generic award badge in Certifications.jsx. Drop SVGs into
- * public/cert-icons and register them in BRAND_ICONS to give them logos.
+ * `icon` must have a matching entry in BRAND_ICONS in Certifications.jsx; one
+ * that doesn't falls back to the generic award badge. The OpenAI and Oracle
+ * marks are vendored from simple-icons (CC0) rather than the credential
+ * issuers, since neither publishes a standalone badge logo.
  *
  * @type {Certification[]}
  */
