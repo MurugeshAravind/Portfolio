@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Murugesh Aravind">
+  <!--
+    The nav wordmark, at favicon size: "MA" in ink on the paper ground, with the
+    accent period from `Nav.jsx`. Static SVG rather than a generated route — an
+    icon is requested on every page load, so it should not cost a function
+    invocation, and `opengraph-image.jsx` already covers the edge-rendered case.
+
+    Serif stack is deliberate: IBM Plex Serif is not resolvable inside a static
+    SVG, so this asks for the closest system serif and falls back to `serif`
+    rather than inventing a second typeface.
+  -->
+  <rect width="64" height="64" rx="13" fill="#faf8f3"/>
+  <text
+    x="29"
+    y="45"
+    font-family="Georgia, 'Times New Roman', Times, serif"
+    font-size="35"
+    font-weight="700"
+    letter-spacing="-1.5"
+    text-anchor="middle"
+    fill="#17160f">MA</text>
+  <circle cx="51" cy="41.5" r="4.2" fill="#9a3b1e"/>
+</svg>
