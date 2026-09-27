@@ -6,6 +6,10 @@
  * @property {string|null} expiryDate
  * @property {string[]} skills
  * @property {"github"|"cognizant"|"aws"|"anthropic"|"google-cloud"|"openai"|"oracle"} icon
+ * @property {boolean} [featured] Surfaced in the three-card block on the
+ *   homepage. The rest of the list moves to /credentials — a wall of twelve
+ *   badges on the landing page reads as cert-collecting, so the homepage shows
+ *   the three that carry the strongest signal and links out for the rest.
  * @property {string} [credentialUrl] Omitted for credentials with no public
  *   badge URL yet; those cards render unlinked rather than as a broken link.
  */
@@ -20,6 +24,10 @@
  * marks are vendored from simple-icons (CC0) rather than the credential
  * issuers, since neither publishes a standalone badge logo.
  *
+ * Awards are not certifications and no longer live here — the Codex Hackathon
+ * result used to sit in this list, which made a hackathon placing look like a
+ * badge exam. See `awards.js`.
+ *
  * @type {Certification[]}
  */
 export const certifications = [
@@ -28,13 +36,14 @@ export const certifications = [
     issuer: "Google Cloud",
     issuedDate: "Aug 2026",
     expiryDate: "Feb 2027",
+    featured: true,
     skills: ["Gemini Enterprise", "AI Agents", "Agent Development Kit (ADK)", "MCP", "A2A"],
     icon: "google-cloud",
     credentialUrl:
       "https://www.credly.com/badges/1bf80fef-c2f0-41fb-be45-ba6795235f6b/public_url",
   },
   {
-    name: "GitHub Copilot",
+    name: "GitHub Copilot Foundations",
     issuer: "GitHub",
     issuedDate: "Jun 2025",
     expiryDate: "Jun 2028",
@@ -93,6 +102,7 @@ export const certifications = [
     name: "AWS Certified Developer - Associate",
     issuer: "Amazon Web Services (AWS)",
     issuedDate: "Aug 2026",
+    featured: true,
     expiryDate: "Aug 2029",
     skills: ["AWS Cloud", "Cloud Deployment", "Cloud Development"],
     icon: "aws",
@@ -100,17 +110,10 @@ export const certifications = [
       "https://www.credly.com/badges/ba0df7c4-23b0-4ca3-81d0-6a9234b2a92b/public_url",
   },
   {
-    name: "OpenAI Codex Hackathon — AI Builder, Runner-Up",
-    issuer: "Cognizant",
-    issuedDate: "Jul 2026",
-    expiryDate: null,
-    skills: ["OpenAI Codex", "AI-Assisted Development"],
-    icon: "cognizant",
-  },
-  {
     name: "Claude Certified Architect - Foundations",
     issuer: "Anthropic",
     issuedDate: "Jun 2026",
+    featured: true,
     expiryDate: "Jun 2027",
     skills: ["Claude Code", "Claude Agent SDK", "Claude API", "MCP", "AI Architecture"],
     icon: "anthropic",

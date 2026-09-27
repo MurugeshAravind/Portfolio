@@ -1,26 +1,44 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useActiveSection } from "../hooks/useActiveSection";
+import { site } from "../data/site";
 
-const LINKS = [
-  { label: "Work", href: "#work" },
-  { label: "Experience", href: "#experience" },
-  { label: "Certifications", href: "#certifications" },
-  { label: "About", href: "#about" },
+/**
+ * Section links resolve against the current route: on the homepage they are
+ * plain fragments, on /lab and /credentials they are prefixed with "/" so the
+ * browser navigates home and then scrolls. Hardcoding "#work" everywhere (as
+ * this did) meant every nav link was dead on a subpage.
+ *
+ * The count of links is fixed at four plus the Connect CTA: the mobile menu
+ * renders exactly five anchors, which tests/e2e/hamburger-menu.spec.ts asserts.
+ */
+const SECTIONS = [
+  { label: "Work", id: "work" },
+  { label: "Experience", id: "experience" },
+  { label: "Certifications", id: "certifications" },
+  { label: "About", id: "about" },
 ];
 
-const SECTION_IDS = ["work", "experience", "certifications", "about"];
+const SECTION_IDS = SECTIONS.map((section) => section.id);
 
 export default function Nav() {
+  const pathname = usePathname();
+  const onHome = pathname === "/";
   const activeSection = useActiveSection(SECTION_IDS);
   const [menuOpen, setMenuOpen] = useState(false);
   const menuRef = useRef(null);
   const hamburgerRef = useRef(null);
 
+  const connect = site.links.find((link) => link.label === "LinkedIn");
+
   function toggleMenu() {
-    setMenuOpen(prev => !prev);
+    setMenuOpen((prev) => !prev);
   }
+
+  const hrefFor = (id) => (onHome ? `#${id}` : `/#${id}`);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
@@ -35,8 +53,8 @@ export default function Nav() {
   // Close the mobile menu with the Escape key and return focus to the toggle.
   useEffect(() => {
     if (!menuOpen) return;
-    const handleKey = (e) => {
-      if (e.key === "Escape") {
+    const handleKey = (event) => {
+      if (event.key === "Escape") {
         setMenuOpen(false);
         hamburgerRef.current?.focus();
       }
@@ -47,17 +65,16 @@ export default function Nav() {
 
   return (
     <nav className="nav" aria-label="Main navigation">
-      <a href="#" className="nav-logo">
+      <Link href="/" className="nav-logo">
         MA<span className="accent">.</span>
-      </a>
+      </Link>
 
-      {/* Desktop links */}
       <ul className="nav-links">
-        {LINKS.map(({ label, href }) => (
-          <li key={label}>
+        {SECTIONS.map(({ label, id }) => (
+          <li key={id}>
             <a
-              href={href}
-              className={activeSection === href.slice(1) ? "active" : ""}
+              href={hrefFor(id)}
+              className={onHome && activeSection === id ? "active" : ""}
             >
               {label}
             </a>
@@ -66,7 +83,7 @@ export default function Nav() {
       </ul>
 
       <a
-        href="https://linkedin.com/in/murugesh-aravind-0ab64847"
+        href={connect?.href}
         target="_blank"
         rel="noopener noreferrer"
         className="nav-cta nav-cta-desktop"
@@ -74,7 +91,6 @@ export default function Nav() {
         Connect
       </a>
 
-      {/* Mobile hamburger */}
       <button
         ref={hamburgerRef}
         className="nav-hamburger"
@@ -88,14 +104,13 @@ export default function Nav() {
         <span className={`hamburger-line ${menuOpen ? "open" : ""}`} />
       </button>
 
-      {/* Mobile menu */}
       {menuOpen && (
         <div id="mobile-menu" className="mobile-menu" ref={menuRef}>
-          {LINKS.map(({ label, href }) => (
+          {SECTIONS.map(({ label, id }) => (
             <a
-              key={label}
-              href={href}
-              className={`mobile-menu-link ${activeSection === href.slice(1) ? "active" : ""}`}
+              key={id}
+              href={hrefFor(id)}
+              className={`mobile-menu-link ${onHome && activeSection === id ? "active" : ""}`}
               onClick={() => {
                 setMenuOpen(false);
               }}
@@ -104,7 +119,7 @@ export default function Nav() {
             </a>
           ))}
           <a
-            href="https://linkedin.com/in/murugesh-aravind-0ab64847"
+            href={connect?.href}
             target="_blank"
             rel="noopener noreferrer"
             className="mobile-menu-link mobile-menu-cta"

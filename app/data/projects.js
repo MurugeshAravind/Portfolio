@@ -1,108 +1,76 @@
-import { metrics } from "./metrics";
+/**
+ * Lab projects — the open-source and experiment work.
+ *
+ * These are not the day job. The day job is `work.js` (the banking platform
+ * and the migration) and `genai.js` (production AI engineering); anything in
+ * here is something built for its own sake. Only the two marked `home` appear
+ * on the homepage — the full set lives at /lab.
+ *
+ * Every claim below was checked against the actual repository on 2026-09-27 by
+ * downloading each one and reading it, because a specific number that fails
+ * when someone clicks through is worse than a vague one. Four claims did not
+ * survive that check and were corrected:
+ *   - FundScope's test count was 42; the suite has 49 cases.
+ *   - Tic-Tac-Toe was described as multiplayer and DynamoDB-backed. It has no
+ *     multiplayer code, and no DynamoDB client — it authenticates with Cognito
+ *     and talks to an API Gateway endpoint.
+ *   - Inbox Janitor named a single Gemini version that is not the one it runs.
+ * Re-verify before editing these descriptions, and do not add a figure that
+ * has not been read out of the repository.
+ *
+ * @typedef {Object} LabProject
+ * @property {string} id
+ * @property {string} name
+ * @property {string} kicker Short descriptor: domain and shape.
+ * @property {string} description A paragraph. Figures go in the sentence.
+ * @property {string} stack Named in running text, not as badges.
+ * @property {boolean} [home] Show in the homepage grid as well as /lab.
+ * @property {string} [live] Live demo, preferred over source when present.
+ * @property {string} [repo] Omitted where the source is not public — an
+ *   unlinked project is honest, a dead link is not.
+ */
 
-export const projects = [
-  {
-    id: "open-account",
-    featured: true,
-    tag: "Banking · Enterprise",
-    name: "Open Account Online Platform",
-    description:
-      "End-to-end account opening platform for a major retail bank. " +
-      "Built PII masking, role-based access control, and a test suite " +
-      "that became the internal coverage benchmark across 3 teams.",
-    impact: [
-      { num: "Thousands", label: "Daily users" },
-      { num: metrics.testCoverage.text, label: "Test coverage" },
-      { num: "0", label: "PII breaches" },
-    ],
-    stack: ["React", "TypeScript", "Redux", "Playwright", "RBAC"],
-    company: "Cognizant",
-  },
-  {
-    id: "angular-react-migration",
-    featured: false,
-    tag: "Migration · Platform",
-    name: "Angular to React Migration",
-    description:
-      `Led full migration of a ${metrics.usersServed.compact} user enterprise platform. ` +
-      `Reduced load time by ${metrics.loadTimeReduction.text}, zero rollbacks, component library ` +
-      `adopted by ${metrics.teamsAdopted.text} product teams.`,
-    impact: [
-      { num: metrics.loadTimeReduction.text, label: "Faster load" },
-      { num: "0", label: "Rollbacks" },
-      { num: metrics.teamsAdopted.text, label: "Teams adopted" },
-    ],
-    stack: ["React", "Angular", "Jest", "Webpack"],
-    company: "Infosys",
-  },
+/** @type {LabProject[]} */
+export const labProjects = [
   {
     id: "smartleave-ai",
-    featured: false,
-    lab: true,
-    tag: "Workforce Analytics · Full stack",
     name: "SmartLeave AI",
+    kicker: "Workforce analytics · Full stack",
     description:
-      "Event-based leave impact intelligence platform for Indian organizations. " +
-      "Replaces blanket leave decisions with targeted recommendations based on " +
-      "commute mode, regional calendars, and employee demographics.",
-    impact: [
-      { num: "65", label: "Unit tests" },
-      { num: "Session", label: "Storage only" },
-    ],
-    stack: ["React 19", "TypeScript", "Zustand", "Recharts", "Express"],
-    repo: "https://github.com/MurugeshAravind/smartleave-ai",
+      "Event-based leave impact intelligence for Indian organizations, built around a real problem: a single blanket leave decision lands differently depending on how people commute, where they are, and which regional calendar is in play. It replaces that with targeted recommendations.",
+    stack: "React 19 · TypeScript · Zustand · Recharts · Express",
+    home: true,
     live: "https://smartleave-ai.vercel.app/",
-  },
-  {
-    id: "fundscope",
-    featured: false,
-    lab: true,
-    tag: "State Management Demo · Open source",
-    name: "FundScope",
-    description:
-      "Mutual fund tracker — search, compare NAV, and explore fund details. " +
-      "Built with Zustand for global state, dark mode, skeleton loading, " +
-      "and a 42-test suite with Playwright E2E coverage.",
-    impact: [
-      { num: "42", label: "Tests" },
-      { num: "E2E", label: "Playwright" },
-    ],
-    stack: ["React 19", "TypeScript", "Zustand", "Tailwind", "Vite"],
-    repo: "https://github.com/MurugeshAravind/zustand-demo",
-    live: "https://fundscope.netlify.app",
-  },
-  {
-    id: "tic-tac-toe",
-    featured: false,
-    lab: true,
-    tag: "AWS Architecture Demo · Open source",
-    name: "Advanced Tic-Tac-Toe",
-    description:
-      "Multiplayer game with AWS Cognito auth, DynamoDB-backed history, " +
-      "global leaderboard, and dynamic 3x3 to 6x6 grids. Deployed on " +
-      "AWS Amplify with full CI/CD pipeline.",
-    impact: [
-      { num: "6x6", label: "Max grid size" },
-      { num: "E2E", label: "Playwright tested" },
-    ],
-    stack: ["React 19", "TypeScript", "AWS Cognito", "DynamoDB", "Vite"],
-    repo: "https://github.com/MurugeshAravind/advanced-tic-tac-toe",
+    // No repo link: the source is not public, and the link that used to be here
+    // 404'd for every visitor. Publish the repo or leave this absent.
   },
   {
     id: "inbox-janitor-agent",
-    featured: false,
-    lab: true,
-    tag: "AI Email Agent · Open source",
     name: "Inbox Janitor Agent",
+    kicker: "AI email agent · Open source",
     description:
-      "AI-powered, defensive Gmail inbox cleaner. Uses LangChain, Gemini 2.5 Flash, " +
-      "and strict Zod-enforced schemas to safely classify, filter, and purge automated " +
-      "newsletter, promotional, and marketing clutter.",
-    impact: [
-      { num: "Gemini", label: "2.5 Flash" },
-      { num: "Structured", label: "Zod Schema" },
-    ],
-    stack: ["TypeScript", "LangChain", "Gemini AI", "Gmail API", "Zod"],
+      "A deliberately defensive Gmail cleaner. Deletion is off unless DRY_RUN is explicitly disabled, and every classification has to satisfy a strict Zod schema before anything is acted on, so a misclassified newsletter cannot become a deleted invoice. When a model starts rate-limiting mid-run it fails over through a pool of Gemini models rather than dropping the batch.",
+    stack: "TypeScript · LangChain · Gemini · Gmail API · Zod",
+    home: true,
     repo: "https://github.com/MurugeshAravind/inbox-janitor-agent",
+  },
+  {
+    id: "fundscope",
+    name: "FundScope",
+    kicker: "State management · Open source",
+    description:
+      "A mutual fund tracker for searching, comparing NAV, and exploring fund detail — built to work through Zustand's global state story properly. Dark mode, skeleton loading, and a 49-case suite with Playwright E2E coverage on top.",
+    stack: "React 19 · TypeScript · Zustand · Tailwind · Vite",
+    live: "https://fundscope.netlify.app",
+    repo: "https://github.com/MurugeshAravind/zustand-demo",
+  },
+  {
+    id: "tic-tac-toe",
+    name: "Advanced Tic-Tac-Toe",
+    kicker: "AWS architecture · Open source",
+    description:
+      "Tic-tac-toe with Cognito authentication, where match history and a global leaderboard sit behind an API Gateway endpoint that verifies the caller's ID token. Mostly an excuse to build a real CI/CD pipeline onto AWS Amplify and see where the architecture strains.",
+    stack: "React 19 · TypeScript · AWS Amplify · Cognito · Vite",
+    repo: "https://github.com/MurugeshAravind/advanced-tic-tac-toe",
   },
 ];

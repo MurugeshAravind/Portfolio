@@ -1,127 +1,25 @@
-import Image from "next/image";
+import Link from "next/link";
 import { certifications } from "../data/certifications";
+import CertList from "./CertList";
 
-const BRAND_ICONS = {
-  "google-cloud": {
-    src: "/cert-icons/google-cloud-icon.webp",
-    className: "cert-logo",
-  },
-  anthropic: {
-    src: "/cert-icons/claude-ai-icon.webp",
-    className: "cert-logo cert-logo-claude",
-  },
-  cognizant: {
-    src: "/cert-icons/CTSH.svg",
-    className: "cert-logo cert-logo-cognizant",
-  },
-  aws: {
-    src: "/cert-icons/aws-icon.webp",
-    className: "cert-logo cert-logo-aws",
-  },
-  github: {
-    src: "/cert-icons/github.svg",
-    className: "cert-logo cert-logo-github",
-  },
-  openai: {
-    src: "/cert-icons/openai.svg",
-    className: "cert-logo",
-  },
-  oracle: {
-    src: "/cert-icons/oracle.svg",
-    className: "cert-logo",
-  },
-};
-
-function CertIcon({ cert }) {
-  const brandIcon = BRAND_ICONS[cert.icon];
-
-  if (brandIcon) {
-    return (
-      <span className="cert-icon-frame">
-        <Image
-          src={brandIcon.src}
-          alt=""
-          width={32}
-          height={32}
-          className={brandIcon.className}
-        />
-      </span>
-    );
-  }
-
-  return (
-    <span className="cert-icon-frame">
-      <svg
-        className="cert-icon"
-        width="28"
-        height="28"
-        viewBox="0 0 24 24"
-        fill="none"
-        stroke="currentColor"
-        strokeWidth="1.5"
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        aria-hidden="true"
-      >
-        <path d="M12 15l-3 3v-4.5M12 15l3 3v-4.5M12 15V9" />
-        <circle cx="12" cy="9" r="6" />
-        <path d="M9.5 8.5l1.5 1.5 3-3" />
-      </svg>
-    </span>
-  );
-}
-
+/**
+ * Three credentials on the homepage, the rest at /credentials. The full set of
+ * eleven previously ran down the landing page as a grid of cards, which read as
+ * badge-collecting; the three shown here are the ones carrying the strongest
+ * signal, and the count is stated so nothing is hidden.
+ */
 export default function Certifications() {
-  return (
-    <section id="certifications" className="section certs-section" tabIndex={-1}>
-      <div className="section-header">
-        <span className="section-num">03</span>
-        <h2>Certifications</h2>
-      </div>
-      <div className="certs-grid">
-        {certifications.map((cert) => {
-          const body = (
-            <>
-              <CertIcon cert={cert} />
-              <div className="cert-info">
-                <span className="cert-name">{cert.name}</span>
-                <span className="cert-issuer">{cert.issuer}</span>
-                <span className="cert-dates">
-                  Issued {cert.issuedDate}
-                  {cert.expiryDate ? ` · Expires ${cert.expiryDate}` : ""}
-                </span>
-                {cert.skills.length > 0 && (
-                  <div className="cert-skills">
-                    {cert.skills.map((skill) => (
-                      <span key={skill} className="pill pill-sm">
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
-                )}
-              </div>
-            </>
-          );
+  const featured = certifications.filter((cert) => cert.featured);
 
-          // Credentials with no public badge URL yet render as a plain card
-          // rather than linking nowhere.
-          return cert.credentialUrl ? (
-            <a
-              key={cert.name}
-              href={cert.credentialUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="cert-card"
-            >
-              {body}
-            </a>
-          ) : (
-            <div key={cert.name} className="cert-card">
-              {body}
-            </div>
-          );
-        })}
-      </div>
+  return (
+    <section id="certifications" className="section" tabIndex={-1}>
+      <h2 className="section-label">Certifications</h2>
+      <CertList items={featured} />
+      <p className="section-foot">
+        <Link href="/credentials">
+          All {certifications.length} credentials and every award →
+        </Link>
+      </p>
     </section>
   );
 }

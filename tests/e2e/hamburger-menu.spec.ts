@@ -118,7 +118,7 @@ test.describe("Hamburger menu open/close behavior", () => {
     expect(overflow).toBe("");
   });
 
-  test("menu background is fully opaque #0a0a0a", async ({ page }) => {
+  test("menu background is fully opaque #faf8f3", async ({ page }) => {
     const hamburger = page.locator("button.nav-hamburger");
     await hamburger.click();
 
@@ -126,8 +126,8 @@ test.describe("Hamburger menu open/close behavior", () => {
     await expect(menu).toBeVisible();
 
     const bg = await menu.evaluate((el) => getComputedStyle(el).backgroundColor);
-    // #0a0a0a = rgb(10, 10, 10)
-    expect(bg).toBe("rgb(10, 10, 10)");
+    // --paper: #faf8f3 = rgb(250, 248, 243)
+    expect(bg).toBe("rgb(250, 248, 243)");
 
     // Ensure no backdrop-filter
     const backdrop = await menu.evaluate((el) => getComputedStyle(el).backdropFilter);
@@ -198,8 +198,8 @@ test.describe("Hamburger menu open/close behavior", () => {
       };
     });
 
-    // #0a0a0a = rgb(10, 10, 10)
-    expect(styles.backgroundColor).toBe("rgb(10, 10, 10)");
+    // --paper: #faf8f3 = rgb(250, 248, 243)
+    expect(styles.backgroundColor).toBe("rgb(250, 248, 243)");
     expect(styles.backdropFilter).toBe("none");
   });
 

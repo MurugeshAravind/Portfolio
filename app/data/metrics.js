@@ -7,8 +7,7 @@
  * The figures are declared once in `figures` and the display strings are
  * derived from them, so a number can never drift between its long form
  * ("50,000+", used in prose and metadata) and its compact form ("50k+", used in
- * stat cards and social cards) — the two used to be hand-written separately in
- * six files.
+ * the social card) — the two used to be hand-written separately in six files.
  *
  * Figures that appear in exactly one place (the 25% Core Web Vitals gain, the
  * 15% DAU growth, the per-project test counts) stay inline at their call site.
@@ -36,15 +35,16 @@ const withThousandsSeparator = (n) =>
 /**
  * @typedef {Object} Metric
  * @property {string} text Long form, for prose, list items, and metadata.
- * @property {string} [compact] Short form for stat cards and social cards,
- *   present only where the design uses a narrower variant.
+ * @property {string} [compact] Short form for the social card, present only
+ *   where a narrower variant is actually used. The homepage stat cards it was
+ *   originally written for are gone, which is why only `usersServed` still
+ *   declares one.
  */
 
 /** @type {Record<string, Metric>} */
 export const metrics = {
   yearsExperience: {
     text: `${figures.yearsExperience}+ years`,
-    compact: `${figures.yearsExperience}+`,
   },
   usersServed: {
     text: `${withThousandsSeparator(figures.usersServed)}+`,

@@ -1,18 +1,36 @@
-import { Space_Grotesk, Inter } from "next/font/google";
+import {
+  IBM_Plex_Sans,
+  IBM_Plex_Serif,
+  IBM_Plex_Mono,
+} from "next/font/google";
 import "./global.css";
 import { metrics } from "./data/metrics";
 
-const spaceGrotesk = Space_Grotesk({
+/**
+ * One superfamily, three members with separate jobs: serif for headings, sans
+ * for prose, mono for metadata (dates, tech lists, labels). An earlier revision
+ * paired Space Grotesk with Inter — the display-plus-body pairing that every
+ * generated portfolio reaches for. A single superfamily reads as a deliberate
+ * system instead.
+ */
+const plexSerif = IBM_Plex_Serif({
   subsets: ["latin"],
-  weight: ["500", "700"],
+  weight: ["600"],
   variable: "--font-display",
   display: "swap",
 });
 
-const inter = Inter({
+const plexSans = IBM_Plex_Sans({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
+  weight: ["400", "600"],
   variable: "--font-body",
+  display: "swap",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: ["400", "500"],
+  variable: "--font-mono",
   display: "swap",
 });
 
@@ -21,12 +39,12 @@ const siteUrl = "https://aravind.is-a.dev";
 export const metadata = {
   metadataBase: new URL(siteUrl),
   title: "Murugesh Aravind — Senior Frontend Engineer",
-  description: `${metrics.yearsExperience.text} building banking platforms and React architectures for enterprise systems serving ${metrics.usersServed.text} users. Based in India. Open to senior and lead frontend roles.`,
+  description: `${metrics.yearsExperience.text} building banking platforms and React architectures for enterprise systems serving ${metrics.usersServed.text} users, plus production GenAI work with the Claude API and Gemini ADK. Based in India. Open to senior and lead frontend roles.`,
   openGraph: {
     type: "website",
     url: siteUrl,
     title: "Murugesh Aravind — Senior Frontend Engineer",
-    description: `${metrics.yearsExperience.text} · React · TypeScript · Enterprise · ${metrics.usersServed.compact} users`,
+    description: `${metrics.yearsExperience.text} · React · TypeScript · Enterprise · GenAI · ${metrics.usersServed.compact} users`,
     siteName: "Murugesh Aravind",
     locale: "en_IN",
   },
@@ -80,7 +98,10 @@ const jsonLd = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={`${spaceGrotesk.variable} ${inter.variable}`}>
+    <html
+      lang="en"
+      className={`${plexSerif.variable} ${plexSans.variable} ${plexMono.variable}`}
+    >
       <head>
         <script
           type="application/ld+json"
