@@ -5,8 +5,10 @@ import { labProjects } from "../data/projects";
 
 /**
  * The Work section, written as four blocks of prose rather than as a grid of
- * cards: the current platform, the AI work inside it, the migration before it,
- * and the lab projects underneath.
+ * cards: the current platform, the AI learning work beside it, the migration
+ * before it, and the lab projects underneath. Only the first and third were
+ * client delivery — the AI block's heading says what it is, and the lab
+ * projects are open source rather than client work.
  *
  * The card grid this replaced gave every project the same shape — an abstract
  * SVG visual, a name, a tag, three metric badges, a row of tech pills and two

@@ -1,11 +1,20 @@
 /**
- * GenAI engineering, modelled as production work rather than as lab projects.
+ * AI learning work: exercises, proofs of concept, and a certification path.
+ * None of it ran against live traffic, and the heading says so.
  *
- * Everything here is lifted from the "Generative AI & Agent Development" block
- * of the resume. It lives in its own module rendered inside the Work section:
- * the site previously represented this work only as a lab card (Inbox Janitor)
- * and a single line about Cursor and Copilot, which made production AI
- * architecture read as a hobby.
+ * Two temptations to resist when editing, both of which an earlier revision of
+ * this block gave in to. One is the word "production", or its cousins
+ * "deployed" and "replaced" — the items here explore how something could work,
+ * they do not report a system that served users. The other is register: this
+ * block sits beside the banking platform and the migration, where everything
+ * genuinely did ship, and copy drifts up to match its neighbours. A technical
+ * reader checks the delivery claim first, and the whole block collapses on the
+ * question of what it served.
+ *
+ * Everything is lifted from the "Generative AI & Agent Development" block of the
+ * resume. It is grouped with the Work section because AI capability is the third
+ * thing worth knowing about the engineering — but it is a different kind of
+ * thing from the other three blocks, and the heading is what draws that line.
  *
  * There is no framing line above the items. A one-sentence framing for this
  * block was drafted and then dropped: it rested on a rhetorical figure that
@@ -20,21 +29,21 @@
  */
 
 /** The heading for the AI block. */
-export const genaiHeading = "AI and agent work in production";
+export const genaiHeading = "Learning AI by building it";
 
 /** @type {GenAiWorkItem[]} */
 export const genaiWork = [
   {
-    title: "LLM-driven product logic",
-    body: "Replaced hardcoded business-rule engines with batched LLM-generated suggestions behind a human confirmation layer, using the Anthropic Claude API. The batching strategy keeps per-run inference cost predictable as volume grows — the constraint was cost and reliability, not whether a model could produce the output.",
+    title: "LLM-driven business logic",
+    body: "Explored whether hardcoded business-rule engines could be replaced by batched LLM-generated suggestions, using the Anthropic Claude API, with a human confirmation layer in front of every suggestion. The constraint that emerged was per-run inference cost and reliability, not whether a model could produce usable output.",
   },
   {
     title: "Multi-agent orchestration",
-    body: "Designed and deployed multi-agent workflows with Google's Agent Development Kit, certified through the official Google enterprise program.",
+    body: "Multi-agent workflow design with Google's Agent Development Kit, worked through as part of the official Google enterprise certification programme.",
   },
   {
     title: "Context engineering",
-    body: "Built the structured context and prompt pipelines that production web features run on, reducing hallucination and making model output consistent enough to put in front of a user.",
+    body: "Structured context and prompt pipelines — chunking, retrieval, and output shaping — built to understand what makes a model's output consistent enough to rely on rather than merely plausible.",
   },
   {
     title: "AI-assisted delivery",

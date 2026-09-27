@@ -1,10 +1,10 @@
 /**
  * Lab projects — the open-source and experiment work.
  *
- * These are not the day job. The day job is `work.js` (the banking platform
- * and the migration) and `genai.js` (production AI engineering); anything in
- * here is something built for its own sake. Only the two marked `home` appear
- * on the homepage — the full set lives at /lab.
+ * These are not the day job. The day job is `work.js` — the banking platform
+ * and the migration; `genai.js` is learning work rather than delivery, and is
+ * labelled as such. Anything in here is something built for its own sake. Only
+ * the two marked `home` appear on the homepage — the full set lives at /lab.
  *
  * Every claim below was checked against the actual repository on 2026-09-27 by
  * downloading each one and reading it, because a specific number that fails
