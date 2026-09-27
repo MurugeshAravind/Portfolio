@@ -8,11 +8,6 @@ const nextConfig = {
 
   // Remove X-Powered-By header for smaller responses
   poweredByHeader: false,
-
-  // Optimise package imports to reduce unused JS
-  experimental: {
-    optimizePackageImports: ["geist"],
-  },
 };
 
 export default nextConfig;
