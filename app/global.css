@@ -333,6 +333,11 @@ section:focus {
 .hero-title {
   font-size: var(--step-display);
   max-width: 22ch;
+  /* The measure is deliberately narrow, which at display size leaves the rag
+     wildly uneven ("Two and a half years" against a 27-character third line).
+     Balancing evens the lines without widening the column. Ignored by browsers
+     that do not support it, which fall back to the normal greedy break. */
+  text-wrap: balance;
   margin-bottom: 28px;
 }
 

@@ -13,12 +13,20 @@
  *
  * The h1 states a fact about the career rather than a claim about the person —
  * the telecom years, then the first React component. The lede carries the
- * evidence. No year counts, no superlatives: the case study immediately below
- * has the figures, and repeating them here would read as padding.
+ * evidence and opens on "Now I build banking frontends…", so the two read as a
+ * then/now pair. No career totals ("8+ years"), no superlatives: the case study
+ * immediately below has the figures, and repeating them here would read as
+ * padding.
+ *
+ * "React component" is load-bearing and must not be widened to "frontend code".
+ * The Nokia entry in experience.js says the first web work came alongside those
+ * years, so an absolute claim here would be contradicted one screen further
+ * down. Naming Vodafone is fine — the Experience section names the client
+ * already, and it is on the resume.
  */
 
 export const heroTitle =
-  "I spent two and a half years configuring phone networks before I wrote any frontend code.";
+  "Two and a half years keeping Vodafone's networks up before my first React component.";
 
 export const heroLede =
   "Now I build banking frontends where a bad deploy is a compliance incident — where the PII masking, secure rendering, and role-based access control have to be right before anything ships.";
