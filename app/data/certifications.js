@@ -121,7 +121,7 @@ export const certifications = [
       "https://www.credly.com/badges/de77999b-3bf9-419a-9056-1cad604c3494/public_url",
   },
   {
-    name: "Vibe Code Hackathon — Vibe Coded using Cursor",
+    name: "Vibe Code Hackathon: Vibe Coded using Cursor",
     issuer: "Cognizant",
     issuedDate: "Nov 2025",
     expiryDate: null,

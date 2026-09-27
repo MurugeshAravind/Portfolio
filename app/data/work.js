@@ -13,10 +13,10 @@ import { metrics } from "./metrics";
 export const caseStudy = {
   id: "open-account-online",
   title: "Open Account Online",
-  meta: "Cognizant · Aug 2022 — present · Banking onboarding",
+  meta: "Cognizant, Aug 2022 to present · Banking onboarding",
   paragraphs: [
     "OAO is the customer onboarding platform for a major retail bank. Thousands of customers open accounts through it every day, and I designed and built its frontend in React and TypeScript, leading that work since August 2022.",
-    "Banking compliance is not a checklist you bolt on at the end. PII masking, secure rendering, and role-based access control all had to be correct before a single line reached production — a different kind of pressure from shipping a feature and watching the graphs. The implementation ended up as the reference other engineering teams were pointed at.",
+    "Banking compliance is not a checklist you bolt on at the end. PII masking, secure rendering, and role-based access control all had to be correct before a single line reached production, which is a different kind of pressure from shipping a feature and watching the graphs. The implementation ended up as the reference other engineering teams were pointed at.",
     `What shipped: page loads and Core Web Vitals improved by 25% through lazy loading, memoization, and Redux Toolkit state management; a testing strategy that reached ${metrics.testCoverage.text} coverage and became the team's quality benchmark; and a codebase other engineers could pick up without me in the room.`,
   ],
   quote: {
@@ -30,6 +30,6 @@ export const migration = {
   id: "angular-react-migration",
   title: "Red Hat Process Automation Manager",
   subtitle: "Angular to React migration",
-  meta: "Infosys · Jun 2020 — Apr 2022",
+  meta: "Infosys · Jun 2020 to Apr 2022",
   body: `I led the end-to-end migration of a ${metrics.usersServed.text}-user workflow platform, re-architecting the single-page app for scalability and developer velocity. Load times came down ${metrics.loadTimeReduction.text} and Lighthouse scores rose 20 points through code-splitting, lazy loading, tree-shaking, and Webpack bundle optimization. Daily active users grew 15% in the six months after release, and nothing rolled back in production. Insta Award, Infosys 2021.`,
 };

@@ -5,7 +5,7 @@ import { certifications } from "../data/certifications";
 import { awards } from "../data/awards";
 
 export const metadata = {
-  title: "Credentials — Murugesh Aravind",
+  title: "Credentials | Murugesh Aravind",
   description:
     "Eleven certifications across Google Cloud, AWS, Anthropic, OpenAI and Oracle, plus three internal awards for delivery and security work.",
   alternates: { canonical: "https://aravind.is-a.dev/credentials" },
@@ -27,7 +27,7 @@ export default function CredentialsPage() {
         <div className="subpage">
           <h1 className="subpage-title">Credentials</h1>
           <p className="subpage-intro">
-            Every certification and award, in one place — including the ones
+            Every certification and award, in one place, including the ones
             that did not make the homepage. The issuer and dates are on each
             entry; the links go to the public badge where one exists.
           </p>

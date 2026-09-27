@@ -43,7 +43,7 @@ export const genaiWork = [
   },
   {
     title: "Context engineering",
-    body: "Structured context and prompt pipelines — chunking, retrieval, and output shaping — built to understand what makes a model's output consistent enough to rely on rather than merely plausible.",
+    body: "Structured context and prompt pipelines (chunking, retrieval, and output shaping), built to understand what makes a model's output consistent enough to rely on rather than merely plausible.",
   },
   {
     title: "AI-assisted delivery",

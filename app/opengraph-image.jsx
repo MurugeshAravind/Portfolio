@@ -54,8 +54,8 @@ export default function OgImage() {
             marginTop: 16,
           }}
         >
-          Senior Frontend Engineer · {metrics.yearsExperience.text} · Banking
-          &amp; GenAI
+          Senior Frontend Engineer, {metrics.yearsExperience.text} in banking
+          and AI
         </p>
       </div>
     ),

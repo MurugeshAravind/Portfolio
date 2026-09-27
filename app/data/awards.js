@@ -22,14 +22,14 @@ export const awards = [
     issuer: "Cognizant",
     year: "2026",
     context:
-      "OpenAI Codex Hackathon — shipped a working AI feature end to end against the clock, judged on the build rather than a slide deck.",
+      "OpenAI Codex Hackathon: shipped a working AI feature end to end against the clock, judged on the build rather than a slide deck.",
   },
   {
     name: "Doing The Right Thing",
     issuer: "Cognizant",
     year: "2025",
     context:
-      "Delivery quality on the Open Account Online banking platform — the PII masking and RBAC work that became the internal security reference.",
+      "Delivery quality on the Open Account Online banking platform, for the PII masking and RBAC work that became the internal security reference.",
   },
   {
     name: "Insta Award",

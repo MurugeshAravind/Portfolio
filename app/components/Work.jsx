@@ -59,7 +59,7 @@ export default function Work() {
       <div className="migration">
         <h3 className="migration-title">{migration.title}</h3>
         <p className="migration-meta">
-          {migration.subtitle} · {migration.meta}
+          {migration.subtitle}, {migration.meta}
         </p>
         <p className="prose">{migration.body}</p>
       </div>

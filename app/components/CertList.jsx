@@ -48,11 +48,11 @@ export default function CertList({ items }) {
             <span className="cert-info">
               <span className="cert-name">{cert.name}</span>
               <span className="cert-dates">
-                {cert.issuer} · Issued {cert.issuedDate}
-                {cert.expiryDate ? ` · Expires ${cert.expiryDate}` : ""}
+                {cert.issuer}, issued {cert.issuedDate}
+                {cert.expiryDate ? `, expires ${cert.expiryDate}` : ""}
               </span>
               {cert.skills.length > 0 && (
-                <span className="cert-tech">{cert.skills.join(" · ")}</span>
+                <span className="cert-tech">{cert.skills.join(", ")}</span>
               )}
             </span>
           </>

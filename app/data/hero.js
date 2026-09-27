@@ -29,7 +29,7 @@ export const heroTitle =
   "Two and a half years keeping Vodafone's networks up before my first React component.";
 
 export const heroLede =
-  "Now I build banking frontends where a bad deploy is a compliance incident — where the PII masking, secure rendering, and role-based access control have to be right before anything ships.";
+  "Now I build banking frontends where a bad deploy is a compliance incident: PII masking, secure rendering, and role-based access control have to be right before anything ships.";
 
 export const heroMeta =
   "Senior Frontend Engineer · React, TypeScript, AWS, GenAI";

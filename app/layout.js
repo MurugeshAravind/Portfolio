@@ -38,19 +38,19 @@ const siteUrl = "https://aravind.is-a.dev";
 
 export const metadata = {
   metadataBase: new URL(siteUrl),
-  title: "Murugesh Aravind — Senior Frontend Engineer",
+  title: "Murugesh Aravind, Senior Frontend Engineer",
   description: `${metrics.yearsExperience.text} building banking platforms and React architectures for enterprise systems serving ${metrics.usersServed.text} users, plus hands-on AI work with the Claude API and Gemini ADK. Based in India. Open to senior and lead frontend roles.`,
   openGraph: {
     type: "website",
     url: siteUrl,
-    title: "Murugesh Aravind — Senior Frontend Engineer",
-    description: `${metrics.yearsExperience.text} · React · TypeScript · Enterprise · GenAI · ${metrics.usersServed.compact} users`,
+    title: "Murugesh Aravind, Senior Frontend Engineer",
+    description: `${metrics.yearsExperience.text} in React and TypeScript, building banking platforms used by ${metrics.usersServed.compact} people.`,
     siteName: "Murugesh Aravind",
     locale: "en_IN",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Murugesh Aravind — Senior Frontend Engineer",
+    title: "Murugesh Aravind, Senior Frontend Engineer",
   },
   robots: {
     index: true,

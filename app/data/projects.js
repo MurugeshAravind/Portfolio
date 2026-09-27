@@ -38,7 +38,7 @@ export const labProjects = [
     kicker: "Workforce analytics · Full stack",
     description:
       "Event-based leave impact intelligence for Indian organizations, built around a real problem: a single blanket leave decision lands differently depending on how people commute, where they are, and which regional calendar is in play. It replaces that with targeted recommendations.",
-    stack: "React 19 · TypeScript · Zustand · Recharts · Express",
+    stack: "React 19, TypeScript, Zustand, Recharts, Express",
     home: true,
     live: "https://smartleave-ai.vercel.app/",
     // No repo link: the source is not public, and the link that used to be here
@@ -50,7 +50,7 @@ export const labProjects = [
     kicker: "AI email agent · Open source",
     description:
       "A deliberately defensive Gmail cleaner. Deletion is off unless DRY_RUN is explicitly disabled, and every classification has to satisfy a strict Zod schema before anything is acted on, so a misclassified newsletter cannot become a deleted invoice. When a model starts rate-limiting mid-run it fails over through a pool of Gemini models rather than dropping the batch.",
-    stack: "TypeScript · LangChain · Gemini · Gmail API · Zod",
+    stack: "TypeScript, LangChain, Gemini, Gmail API, Zod",
     home: true,
     repo: "https://github.com/MurugeshAravind/inbox-janitor-agent",
   },
@@ -59,8 +59,8 @@ export const labProjects = [
     name: "FundScope",
     kicker: "State management · Open source",
     description:
-      "A mutual fund tracker for searching, comparing NAV, and exploring fund detail — built to work through Zustand's global state story properly. Dark mode, skeleton loading, and a 49-case suite with Playwright E2E coverage on top.",
-    stack: "React 19 · TypeScript · Zustand · Tailwind · Vite",
+      "A mutual fund tracker for searching, comparing NAV, and exploring fund detail, built to work through Zustand's global state story properly. Dark mode, skeleton loading, and a 49-case suite with Playwright E2E coverage on top.",
+    stack: "React 19, TypeScript, Zustand, Tailwind, Vite",
     live: "https://fundscope.netlify.app",
     repo: "https://github.com/MurugeshAravind/zustand-demo",
   },
@@ -70,7 +70,7 @@ export const labProjects = [
     kicker: "AWS architecture · Open source",
     description:
       "Tic-tac-toe with Cognito authentication, where match history and a global leaderboard sit behind an API Gateway endpoint that verifies the caller's ID token. Mostly an excuse to build a real CI/CD pipeline onto AWS Amplify and see where the architecture strains.",
-    stack: "React 19 · TypeScript · AWS Amplify · Cognito · Vite",
+    stack: "React 19, TypeScript, AWS Amplify, Cognito, Vite",
     repo: "https://github.com/MurugeshAravind/advanced-tic-tac-toe",
   },
 ];

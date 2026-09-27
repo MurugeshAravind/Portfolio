@@ -3,9 +3,9 @@ import Footer from "../components/Footer";
 import { labProjects } from "../data/projects";
 
 export const metadata = {
-  title: "Lab — Murugesh Aravind",
+  title: "Lab | Murugesh Aravind",
   description:
-    "Open-source projects and experiments: a leave-impact analytics tool, a defensive AI email agent, a mutual fund tracker, and a multiplayer game on AWS.",
+    "Open-source projects and experiments: a leave-impact analytics tool, a defensive AI email agent, a mutual fund tracker, and a game on AWS with Cognito auth and a leaderboard.",
   alternates: { canonical: "https://aravind.is-a.dev/lab" },
 };
 
@@ -24,7 +24,7 @@ export default function LabPage() {
         <div className="subpage">
           <h1 className="subpage-title">Lab</h1>
           <p className="subpage-intro">
-            Things built for their own sake — open source, mostly, and mostly to
+            Things built for their own sake: open source, mostly, and mostly to
             work through a problem I had not solved before. The day job is on
             the homepage.
           </p>

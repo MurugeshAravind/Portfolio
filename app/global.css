@@ -33,9 +33,16 @@
   --measure: 62ch;
   --gutter: 40px;
 
-  /* Four steps, and nothing outside them. Hierarchy is carried by weight,
-     colour, and measure — not by inventing sizes. */
+  /* Five steps, and nothing outside them.
+
+     `--step-section` earns its place by measurement, not by preference. The
+     section masthead and an item heading (an award name, a case-study title)
+     both sat at `--step-title`, and in Awards the two rendered 28px apart at
+     the same size and weight, so "Awards" read as a subtitle of "AI Builder,
+     Runner-Up" rather than as the heading over it. A masthead has to outrank
+     the items beneath it, so it gets its own step between title and display. */
   --step-display: clamp(2.125rem, 5vw, 3.375rem);
+  --step-section: clamp(1.75rem, 3.2vw, 2.25rem);
   --step-title: clamp(1.375rem, 2.4vw, 1.75rem);
   --step-body: 1.0625rem;
   --step-meta: 0.8125rem;
@@ -139,16 +146,22 @@ section:focus {
   scroll-margin-top: 76px;
 }
 
-/* A section is introduced by a mono label. No numerals, no rule across the
-   page — the previous "01 / Work ————————" header was identical on every
-   section and was the clearest template tell on the site. */
+/* A section is introduced by its heading, set in the display face at the same
+   step as every other section title. No numerals and no rule across the page:
+   the "01 / Work" header this replaced was identical on every section and was
+   the clearest template tell on the site.
+
+   The uppercase mono label that briefly followed it was the same tell in
+   plainer clothes. A small tracked micro-label opening all five sections is the
+   eyebrow rhythm that generated pages produce, and it left each section heading
+   set smaller and paler than the prose underneath it, so the page had no
+   typographic hierarchy at all: one 13px grey word introducing every block. The
+   heading now carries the section on its own, which is what a real heading is
+   for. The base h1-h4 rule already supplies the family, weight and tracking. */
 .section-label {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: var(--step-meta);
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--muted);
-  margin-bottom: 28px;
+  font-size: var(--step-section);
+  color: var(--ink);
+  margin-bottom: 36px;
 }
 
 .section-title {
@@ -332,7 +345,12 @@ section:focus {
 
 .hero-title {
   font-size: var(--step-display);
-  max-width: 22ch;
+  /* 26ch is the point at which the h1 breaks to three lines instead of four.
+     At 22ch the single sentence fragments into four short, unevenly ragged
+     lines (527/497/591/584); at 26ch it reads as a sentence (745/790/676) and
+     is 65px shorter. Below that width the viewport binds before the measure
+     does, so mobile is unaffected either way. */
+  max-width: 26ch;
   /* The measure is deliberately narrow, which at display size leaves the rag
      wildly uneven ("Two and a half years" against a 27-character third line).
      Balancing evens the lines without widening the column. Ignored by browsers
