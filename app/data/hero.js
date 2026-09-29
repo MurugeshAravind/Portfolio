@@ -1,3 +1,5 @@
+import { metrics } from "./metrics";
+
 /**
  * Hero copy.
  *
@@ -11,28 +13,37 @@
  * signal: a hit means live copy slipped through, never that a comment quoted
  * one. Look them up outside the repo before editing this copy.
  *
- * The h1 states a fact about the career rather than a claim about the person —
- * the telecom years, then the first React component. The lede carries the
- * evidence and opens on "Now I build banking frontends…", so the two read as a
- * then/now pair. No career totals ("8+ years"), no superlatives: the case study
- * immediately below has the figures, and repeating them here would read as
- * padding.
+ * The h1 leads with the role, the years, and the domain. This is the one screen
+ * a visitor is guaranteed to read, and an earlier revision spent it on the
+ * telecom years instead, which left level and stack below the fold in the
+ * smallest type on the page and said nothing about what the work is. Career
+ * totals used to be kept out of the h1 on the grounds that the case study below
+ * repeats them; the total is the first thing a recruiter scans for, so it is
+ * carried here, read from `metrics` so the h1 cannot drift from the metadata
+ * and the social card.
  *
- * "React component" is load-bearing and must not be widened to "frontend code".
- * The Nokia entry in experience.js says the first web work came alongside those
- * years, so an absolute claim here would be contradicted one screen further
- * down. Naming Vodafone is fine — the Experience section names the client
- * already, and it is on the resume.
+ * The lede then carries the specialisation, regulated systems where PII
+ * handling and access control are requirements rather than features, and names
+ * the kind of work the role actually is: standards and architecture that
+ * outlive any one feature. Those are what a hiring lead reads for.
+ *
+ * The telecom origin is deliberately absent here. About opens with it and
+ * experience.js records it, so a third telling would spend the most valuable
+ * line on the page on a job left in 2018.
+ *
+ * The meta line no longer repeats the job title, since the h1 carries it. It
+ * states availability instead, which used to appear only in About's last
+ * paragraph and in the page metadata, leaving a recruiter no signal above the
+ * fold that the site is a job search.
  */
 
-export const heroTitle =
-  "Two and a half years keeping Vodafone's networks up before my first React component.";
+export const heroTitle = `Senior frontend engineer, ${metrics.yearsExperience.text} in, building banking platforms.`;
 
 export const heroLede =
-  "Now I build banking frontends where a bad deploy is a compliance incident: PII masking, secure rendering, and role-based access control have to be right before anything ships.";
+  "I lead the frontend for a retail bank's account-opening platform, where PII masking, secure rendering, and role-based access control are compliance requirements rather than a checklist. A lot of that job is the part that outlives the feature: review standards, test strategy, and architecture the rest of the team builds on.";
 
 export const heroMeta =
-  "Senior Frontend Engineer · React, TypeScript, AWS, GenAI";
+  "React, TypeScript, AWS, GenAI · Open to senior and lead roles";
 
 /** The single call to action. There used to be two (See my work, Download CV);
  *  the CV now lives in the footer, where a download belongs. */

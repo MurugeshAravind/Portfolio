@@ -345,16 +345,18 @@ section:focus {
 
 .hero-title {
   font-size: var(--step-display);
-  /* 26ch is the point at which the h1 breaks to three lines instead of four.
-     At 22ch the single sentence fragments into four short, unevenly ragged
-     lines (527/497/591/584); at 26ch it reads as a sentence (745/790/676) and
-     is 65px shorter. Below that width the viewport binds before the measure
-     does, so mobile is unaffected either way. */
+  /* 26ch holds the h1 at three lines. Measured on the rendered page at 1280px
+     and 1440px, both of which are past the container's cap: every measure from
+     22ch to 26ch produces the same three lines, 28ch drops it to two, and 20ch
+     breaks it to four with a much rougher rag. On a 390px viewport the gutter
+     binds before the measure does, so the h1 is four lines at any value here.
+     These figures belong to the current sentence, not to the box, so re-measure
+     rather than re-tune by eye if the copy changes. */
   max-width: 26ch;
-  /* The measure is deliberately narrow, which at display size leaves the rag
-     wildly uneven ("Two and a half years" against a 27-character third line).
-     Balancing evens the lines without widening the column. Ignored by browsers
-     that do not support it, which fall back to the normal greedy break. */
+  /* Balancing evens the rag without narrowing the column: at 26ch the greedy
+     break lands [736/671/265], with a stub for a last line, and the balanced
+     break lands [661/523/490]. Ignored by browsers that do not support it,
+     which fall back to the greedy break. */
   text-wrap: balance;
   margin-bottom: 28px;
 }
