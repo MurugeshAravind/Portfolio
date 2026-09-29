@@ -16,7 +16,15 @@ import { metrics } from "./metrics";
  *   Set explicitly rather than inferred from the period string.
  * @property {string} body One paragraph of prose. This was a list of bullets;
  *   the bullets were the reason the section read like a resume pasted into a
- *   browser. The figures that matter are kept, in the sentences.
+ *   browser.
+ *
+ *   Delivery figures are deliberately not repeated here. Both entries used to
+ *   restate the case study's numbers, the coverage figure and the phrase about
+ *   the quality benchmark among them, in the same words, one section apart.
+ *   `work.js` owns the delivery story and its figures; these entries own the
+ *   things a case study cannot state, which are the scope of the role, how long
+ *   it has been held, and what it covers beyond the code. The exception is
+ *   `teamsAdopted`, which appears nowhere else.
  */
 
 /** @type {ExperienceEntry[]} */
@@ -27,14 +35,14 @@ export const experience = [
     role: "Senior Associate, Projects (Frontend Tech Lead)",
     location: "Bengaluru, India (Hybrid)",
     current: true,
-    body: `I lead the frontend for OAO, a high-security banking onboarding platform whose PII masking, secure rendering, and role-based access control became the internal security reference. Page loads and Core Web Vitals improved by 25%, and the testing strategy I set became the team's quality benchmark at ${metrics.testCoverage.text} coverage. I brought Cursor and GitHub Copilot into the team's workflow, set the review standards, and mentored the junior engineers on the team.`,
+    body: "I lead the frontend for OAO, and have since I joined in 2022. The role covers the platform's architecture and delivery, its security-critical work, and the review and testing practice the wider frontend group works to.",
   },
   {
     period: "Jun 2020 to Apr 2022",
     company: "Infosys",
     role: "Senior Associate Consultant, Frontend Engineering",
     location: "Bengaluru, India (Remote)",
-    body: `I led the end-to-end Angular-to-React migration of a Red Hat Process Automation Manager platform serving ${metrics.usersServed.text} active users, cutting load times ${metrics.loadTimeReduction.text} with zero production rollbacks. I drove the WCAG 2.1 AA accessibility initiative across critical enterprise workflows and designed a reusable component library that ${metrics.teamsAdopted.text} product teams adopted.`,
+    body: `I led the end-to-end Angular-to-React migration of the Red Hat Process Automation Manager platform, and drove the WCAG 2.1 AA accessibility initiative across its critical enterprise workflows. The reusable component library I designed was adopted by ${metrics.teamsAdopted.text} product teams.`,
   },
   {
     period: "Jun 2018 to Mar 2020",
