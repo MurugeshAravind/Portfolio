@@ -45,6 +45,7 @@ export const heroLede =
 export const heroMeta =
   "React, TypeScript, AWS, GenAI · Open to senior and lead roles";
 
-/** The single call to action. There used to be two (See my work, Download CV);
- *  the CV now lives in the footer, where a download belongs. */
+/** The single call to action. There used to be two (See my work, Download CV),
+ *  and the CV then moved to the footer. It is out of the footer for now while
+ *  the PDF is regenerated, so this is the only call to action on the page. */
 export const heroCta = { label: "See the work →", href: "#work" };
