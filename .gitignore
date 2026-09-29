@@ -45,3 +45,6 @@ next-env.d.ts
 skills-lock.json
 e2e-tests/
 tasks/todo.md
+
+# review artefacts: working documents about the site, not published with it
+/reviews/
