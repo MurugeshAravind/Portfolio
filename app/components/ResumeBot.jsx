@@ -44,7 +44,6 @@ function renderInline(str) {
 function FormattedMessage({ text }) {
   if (!text) return null;
 
-  // Split by double line break into blocks
   const blocks = text.split(/\n\s*\n/);
 
   return (
@@ -91,6 +90,42 @@ function FormattedMessage({ text }) {
   );
 }
 
+/**
+ * Pure SSE Stream Consumer (outside component to satisfy React 19 immutability)
+ */
+async function consumeSseStream(response, { onCitations, onToken, onDone }) {
+  const reader = response.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+
+  while (true) {
+    const { done, value } = await reader.read();
+    if (done) break;
+
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split("\n\n");
+    buffer = lines.pop() || "";
+
+    for (const block of lines) {
+      const line = block.trim();
+      if (!line.startsWith("data: ")) continue;
+
+      try {
+        const data = JSON.parse(line.slice(6));
+        if (data.type === "citations") {
+          onCitations(data.citations || []);
+        } else if (data.type === "token" && data.text) {
+          onToken(data.text);
+        } else if (data.type === "done") {
+          onDone();
+        }
+      } catch {
+        // ignore parse errors
+      }
+    }
+  }
+}
+
 export default function ResumeBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -102,6 +137,7 @@ export default function ResumeBot() {
   const inputRef = useRef(null);
   const triggerRef = useRef(null);
   const drawerRef = useRef(null);
+  const messageCounterRef = useRef(0);
   const titleId = useId();
 
   // Scroll messages to bottom smoothly as tokens stream in
@@ -133,8 +169,11 @@ export default function ResumeBot() {
     if (!query || isLoading) return;
 
     setInput("");
-    const userMsgId = `user-${Date.now()}`;
-    const botMsgId = `bot-${Date.now()}`;
+
+    messageCounterRef.current += 1;
+    const userMsgId = `user-${messageCounterRef.current}`;
+    messageCounterRef.current += 1;
+    const botMsgId = `bot-${messageCounterRef.current}`;
 
     const newMessages = [
       ...messages,
@@ -175,58 +214,31 @@ export default function ResumeBot() {
         return;
       }
 
-      const reader = response.body.getReader();
-      const decoder = new TextDecoder();
-      let buffer = "";
-      let accumulatedText = "";
-      let accumulatedCitations = [];
-
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split("\n\n");
-        buffer = lines.pop() || "";
-
-        for (const block of lines) {
-          const line = block.trim();
-          if (line.startsWith("data: ")) {
-            try {
-              const data = JSON.parse(line.slice(6));
-              if (data.type === "citations") {
-                accumulatedCitations = data.citations || [];
-                setMessages((prev) =>
-                  prev.map((msg) =>
-                    msg.id === botMsgId
-                      ? { ...msg, citations: accumulatedCitations }
-                      : msg
-                  )
-                );
-              } else if (data.type === "token") {
-                accumulatedText += data.text || "";
-                setMessages((prev) =>
-                  prev.map((msg) =>
-                    msg.id === botMsgId
-                      ? { ...msg, text: accumulatedText }
-                      : msg
-                  )
-                );
-              } else if (data.type === "done") {
-                setMessages((prev) =>
-                  prev.map((msg) =>
-                    msg.id === botMsgId
-                      ? { ...msg, isStreaming: false }
-                      : msg
-                  )
-                );
-              }
-            } catch {
-              // skip parse errors
-            }
-          }
+      await consumeSseStream(response, {
+        onCitations: (citations) => {
+          setMessages((prev) =>
+            prev.map((msg) =>
+              msg.id === botMsgId ? { ...msg, citations } : msg
+            )
+          );
+        },
+        onToken: (token) => {
+          setMessages((prev) =>
+            prev.map((msg) =>
+              msg.id === botMsgId
+                ? { ...msg, text: (msg.text || "") + token }
+                : msg
+            )
+          );
+        },
+        onDone: () => {
+          setMessages((prev) =>
+            prev.map((msg) =>
+              msg.id === botMsgId ? { ...msg, isStreaming: false } : msg
+            )
+          );
         }
-      }
+      });
 
       setMessages((prev) =>
         prev.map((msg) =>
