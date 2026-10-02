@@ -5,6 +5,7 @@ import {
 } from "next/font/google";
 import "./global.css";
 import { metrics } from "./data/metrics";
+import ResumeBot from "./components/ResumeBot";
 
 /**
  * One superfamily, three members with separate jobs: serif for headings, sans
@@ -108,7 +109,10 @@ export default function RootLayout({ children }) {
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body>{children}</body>
+      <body>
+        {children}
+        <ResumeBot />
+      </body>
     </html>
   );
 }
