@@ -8,7 +8,7 @@ test.describe("Resume & Architecture Assistant Bot (RAG)", () => {
   test("trigger button is visible on page", async ({ page }) => {
     const trigger = page.locator(".resume-bot-trigger");
     await expect(trigger).toBeVisible();
-    await expect(trigger).toContainText("Ask Resume AI");
+    await expect(trigger).toContainText("Technical Q&A");
   });
 
   test("clicking trigger opens the assistant drawer", async ({ page }) => {
@@ -18,7 +18,7 @@ test.describe("Resume & Architecture Assistant Bot (RAG)", () => {
     await expect(drawer).not.toHaveClass(/is-open/);
     await trigger.click();
     await expect(drawer).toHaveClass(/is-open/);
-    await expect(page.locator(".bot-title")).toContainText("Resume & Architecture Assistant");
+    await expect(page.locator(".bot-title")).toContainText("Engineering & Architecture Q&A");
   });
 
   test("starter prompt chips populate and submit questions", async ({ page }) => {

@@ -1,17 +1,18 @@
 /**
- * Copy and starter prompts for the Resume Bot assistant.
+ * Copy and starter prompts for the Engineering & Architecture Q&A assistant.
  * Strict separation of concerns per AGENTS.md: all presentational copy lives here.
  */
 
 export const botConfig = {
-  title: "Resume & Architecture Assistant",
-  subtitle: "RAG agent grounded in Murugesh's verified case studies and delivery metrics.",
-  triggerLabel: "Ask Resume AI",
-  triggerShortLabel: "AI Assistant",
-  inputPlaceholder: "Ask about banking architecture, migrations, AI agents, or tech stack...",
+  title: "Engineering & Architecture Q&A",
+  subtitle: "Grounded in Murugesh's delivery case studies, migrations, and verified metrics.",
+  triggerLabel: "Technical Q&A",
+  triggerShortLabel: "Q&A",
+  badge: "Verified Archive",
+  inputPlaceholder: "Ask about banking architecture, migrations, or stack...",
   disclaimer: "Answers are grounded strictly in portfolio case studies with zero metric hallucination.",
   emptyStateTitle: "Verified Knowledge Exploration",
-  emptyStateIntro: "Ask a direct question, or click any starter inquiry to deep-dive into Murugesh's delivery record:",
+  emptyStateIntro: "Ask a direct question, or select an inquiry below to deep-dive into Murugesh's engineering record:",
   starterPrompts: [
     {
       label: "Banking Onboarding (OAO)",

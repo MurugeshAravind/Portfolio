@@ -3,6 +3,94 @@
 import React, { useState, useEffect, useRef, useId } from "react";
 import { botConfig } from "../data/bot";
 
+/**
+ * Parses inline markdown: **bold**, [Source X], and [links](url)
+ */
+function renderInline(str) {
+  if (!str) return null;
+  const parts = str.split(/(\*\*[^*]+\*\*|\[Source:?[^\]]+\]|\[[^\]]+\]\([^)]+\))/g);
+  return parts.map((part, i) => {
+    if (part.startsWith("**") && part.endsWith("**")) {
+      return <strong key={i}>{part.slice(2, -2)}</strong>;
+    }
+    const linkMatch = part.match(/^\[([^\]]+)\]\(([^)]+)\)$/);
+    if (linkMatch) {
+      return (
+        <a
+          key={i}
+          href={linkMatch[2]}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="bot-inline-link"
+        >
+          {linkMatch[1]}
+        </a>
+      );
+    }
+    if (part.startsWith("[Source") && part.endsWith("]")) {
+      return (
+        <span key={i} className="inline-source-tag">
+          {part.slice(1, -1)}
+        </span>
+      );
+    }
+    return part;
+  });
+}
+
+/**
+ * Formats message blocks into paragraphs, editorial lists, and bold headings
+ */
+function FormattedMessage({ text }) {
+  if (!text) return null;
+
+  // Split by double line break into blocks
+  const blocks = text.split(/\n\s*\n/);
+
+  return (
+    <div className="bot-formatted-content">
+      {blocks.map((block, bIdx) => {
+        const trimmed = block.trim();
+        if (!trimmed) return null;
+
+        const lines = trimmed.split("\n");
+        const isList =
+          lines.length > 0 &&
+          lines.every((line) => {
+            const l = line.trim();
+            return l.startsWith("- ") || l.startsWith("• ") || l.startsWith("* ");
+          });
+
+        if (isList) {
+          return (
+            <ul key={bIdx} className="bot-bullet-list">
+              {lines.map((line, lIdx) => {
+                const itemContent = line.trim().replace(/^[-•*]\s*/, "");
+                return (
+                  <li key={lIdx}>
+                    {renderInline(itemContent)}
+                  </li>
+                );
+              })}
+            </ul>
+          );
+        }
+
+        return (
+          <p key={bIdx} className="bot-paragraph">
+            {lines.map((line, lIdx) => (
+              <React.Fragment key={lIdx}>
+                {lIdx > 0 && <br />}
+                {renderInline(line)}
+              </React.Fragment>
+            ))}
+          </p>
+        );
+      })}
+    </div>
+  );
+}
+
 export default function ResumeBot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([]);
@@ -16,7 +104,7 @@ export default function ResumeBot() {
   const drawerRef = useRef(null);
   const titleId = useId();
 
-  // Scroll messages to bottom as tokens stream in
+  // Scroll messages to bottom smoothly as tokens stream in
   useEffect(() => {
     if (isOpen && messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
@@ -177,10 +265,10 @@ export default function ResumeBot() {
         aria-expanded={isOpen}
         aria-controls="resume-bot-drawer"
         className="resume-bot-trigger"
-        title="Ask Murugesh's Resume Assistant"
+        title="Explore Murugesh's Engineering Record"
       >
         <span className="bot-trigger-icon" aria-hidden="true">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
           </svg>
         </span>
@@ -188,7 +276,7 @@ export default function ResumeBot() {
         <span className="bot-trigger-dot" aria-hidden="true"></span>
       </button>
 
-      {/* Backdrop overlay (z-index: 999 strictly adheres to AGENTS.md stacking rules) */}
+      {/* Backdrop overlay (starts below 60px nav, z-index: 999 strictly adheres to AGENTS.md stacking rules) */}
       {isOpen && (
         <div
           className="resume-bot-backdrop"
@@ -197,7 +285,7 @@ export default function ResumeBot() {
         />
       )}
 
-      {/* Slide-over Drawer Panel */}
+      {/* Slide-over Drawer Panel (starts below 60px nav, keeping nav visible and accessible) */}
       <section
         id="resume-bot-drawer"
         ref={drawerRef}
@@ -212,7 +300,7 @@ export default function ResumeBot() {
           <div>
             <div className="bot-header-meta">
               <span className="bot-status-indicator"></span>
-              <span className="bot-badge">RAG Grounded</span>
+              <span className="bot-badge">{botConfig.badge || "Verified Archive"}</span>
             </div>
             <h2 id={titleId} className="bot-title">
               {botConfig.title}
@@ -279,7 +367,7 @@ export default function ResumeBot() {
 
                   <div className="bot-bubble-text">
                     {msg.text ? (
-                      <p style={{ whiteSpace: "pre-wrap" }}>{msg.text}</p>
+                      <FormattedMessage text={msg.text} />
                     ) : (
                       <div className="bot-typing-indicator" aria-label={botConfig.labels.thinking}>
                         <span></span>
