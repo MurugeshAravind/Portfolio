@@ -6,10 +6,14 @@
  * @property {string|null} expiryDate
  * @property {string[]} skills
  * @property {"github"|"cognizant"|"aws"|"anthropic"|"google-cloud"|"openai"|"oracle"} icon
- * @property {boolean} [featured] Surfaced in the three-card block on the
- *   homepage. The rest of the list moves to /credentials — a wall of twelve
+ * @property {number} [featured] Rank in the three-card block on the homepage,
+ *   `1` leading. The rest of the list moves to /credentials — a wall of fourteen
  *   badges on the landing page reads as cert-collecting, so the homepage shows
  *   the three that carry the strongest signal and links out for the rest.
+ *   A rank rather than a boolean because this array is ordered for the LinkedIn
+ *   profile first and reverse-chronology second; without an explicit rank the
+ *   homepage block would inherit whatever position the filter happened to walk
+ *   past, which is how two "Developer" cards ended up adjacent.
  * @property {string} [credentialUrl] Omitted for credentials with no public
  *   badge URL yet; those cards render unlinked rather than as a broken link.
  */
@@ -36,7 +40,6 @@ export const certifications = [
     issuer: "Google Cloud",
     issuedDate: "Aug 2026",
     expiryDate: "Feb 2027",
-    featured: true,
     skills: ["Gemini Enterprise", "AI Agents", "Agent Development Kit (ADK)", "MCP", "A2A"],
     icon: "google-cloud",
     credentialUrl:
@@ -83,6 +86,39 @@ export const certifications = [
       "https://www.credly.com/badges/e3bbe76e-8f82-4bf2-bef2-9ba7b4db3436/public_url",
   },
   {
+    name: "Claude Certified Developer - Foundations",
+    issuer: "Anthropic",
+    issuedDate: "Oct 2026",
+    // Anthropic Claude certifications run 12 months from award date, renewable
+    // free of charge via a non-proctored assessment on the Partner Academy.
+    expiryDate: "Oct 2027",
+    featured: 2,
+    skills: ["Claude API", "Claude Code", "MCP", "AI Agents"],
+    icon: "anthropic",
+    credentialUrl:
+      "https://www.credly.com/badges/64fe9c52-e5a0-48b5-b512-e35c31540ab1/public_url",
+  },
+  {
+    name: "Claude Certified Associate - Foundations",
+    issuer: "Anthropic",
+    issuedDate: "Oct 2026",
+    expiryDate: "Oct 2027",
+    skills: ["Claude", "Prompt Engineering", "Responsible AI"],
+    icon: "anthropic",
+    credentialUrl:
+      "https://www.credly.com/badges/ff1528e6-f3eb-4b8d-8f2c-b565c93de430/public_url",
+  },
+  {
+    name: "Build with Gemini",
+    issuer: "Google Cloud",
+    issuedDate: "Sep 2026",
+    expiryDate: null,
+    skills: ["Gemini", "AI Platform Governance", "AI Security"],
+    icon: "google-cloud",
+    credentialUrl:
+      "https://www.credly.com/badges/9171265e-22e6-4934-b9a1-8d4ba8b2f610/public_url",
+  },
+  {
     name: "Codex Solutions Practitioner",
     issuer: "OpenAI",
     issuedDate: "Sep 2026",
@@ -102,7 +138,7 @@ export const certifications = [
     name: "AWS Certified Developer - Associate",
     issuer: "Amazon Web Services (AWS)",
     issuedDate: "Aug 2026",
-    featured: true,
+    featured: 3,
     expiryDate: "Aug 2029",
     skills: ["AWS Cloud", "Cloud Deployment", "Cloud Development"],
     icon: "aws",
@@ -113,7 +149,7 @@ export const certifications = [
     name: "Claude Certified Architect - Foundations",
     issuer: "Anthropic",
     issuedDate: "Jun 2026",
-    featured: true,
+    featured: 1,
     expiryDate: "Jun 2027",
     skills: ["Claude Code", "Claude Agent SDK", "Claude API", "MCP", "AI Architecture"],
     icon: "anthropic",
