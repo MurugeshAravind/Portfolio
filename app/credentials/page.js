@@ -6,8 +6,11 @@ import { awards } from "../data/awards";
 
 export const metadata = {
   title: "Credentials | Murugesh Aravind",
-  description:
-    "Eleven certifications across Google Cloud, AWS, Anthropic, OpenAI and Oracle, plus three internal awards for delivery and security work.",
+  // Counts are derived, not written out: this description said "Eleven
+  // certifications" long after the list had grown past that. The issuer list is
+  // spelled out because a search result reads better with names than with a
+  // bare number.
+  description: `${certifications.length} certifications across Anthropic, Google Cloud, AWS, GitHub, OpenAI, Cognizant and Oracle, plus ${awards.length} internal awards for delivery and security work.`,
   alternates: { canonical: "https://aravind.is-a.dev/credentials" },
 };
 
