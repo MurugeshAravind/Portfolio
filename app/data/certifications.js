@@ -7,7 +7,7 @@
  * @property {string[]} skills
  * @property {"github"|"cognizant"|"aws"|"anthropic"|"google-cloud"|"openai"|"oracle"} icon
  * @property {number} [featured] Rank in the three-card block on the homepage,
- *   `1` leading. The rest of the list moves to /credentials — a wall of fourteen
+ *   `1` leading. The rest of the list moves to /credentials — a wall of fifteen
  *   badges on the landing page reads as cert-collecting, so the homepage shows
  *   the three that carry the strongest signal and links out for the rest.
  *   A rank rather than a boolean because this array is ordered for the LinkedIn
@@ -86,11 +86,22 @@ export const certifications = [
       "https://www.credly.com/badges/e3bbe76e-8f82-4bf2-bef2-9ba7b4db3436/public_url",
   },
   {
-    name: "Claude Certified Developer - Foundations",
+    name: "Claude Certified Architect - Professional",
     issuer: "Anthropic",
     issuedDate: "Oct 2026",
     // Anthropic Claude certifications run 12 months from award date, renewable
     // free of charge via a non-proctored assessment on the Partner Academy.
+    expiryDate: "Oct 2027",
+    featured: 1,
+    skills: ["Enterprise Architecture", "AI Governance", "Context Engineering", "Solution Design", "Claude Agent SDK"],
+    icon: "anthropic",
+    credentialUrl:
+      "https://www.credly.com/badges/b352d249-c166-4f1f-a5f3-be500ea920fd/public_url",
+  },
+  {
+    name: "Claude Certified Developer - Foundations",
+    issuer: "Anthropic",
+    issuedDate: "Oct 2026",
     expiryDate: "Oct 2027",
     featured: 2,
     skills: ["Claude API", "Claude Code", "MCP", "AI Agents"],
@@ -149,7 +160,6 @@ export const certifications = [
     name: "Claude Certified Architect - Foundations",
     issuer: "Anthropic",
     issuedDate: "Jun 2026",
-    featured: 1,
     expiryDate: "Jun 2027",
     skills: ["Claude Code", "Claude Agent SDK", "Claude API", "MCP", "AI Architecture"],
     icon: "anthropic",

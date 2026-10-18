@@ -4,7 +4,7 @@ import CertList from "./CertList";
 
 /**
  * Three credentials on the homepage, the rest at /credentials. The full set of
- * fourteen previously ran down the landing page as a grid of cards, which read as
+ * fifteen previously ran down the landing page as a grid of cards, which read as
  * badge-collecting; the three shown here are the ones carrying the strongest
  * signal, and the count is stated so nothing is hidden.
  *

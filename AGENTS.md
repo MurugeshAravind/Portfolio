@@ -7,17 +7,17 @@ This codebase is a premium portfolio built with Next.js 16, React 19, Tailwind C
 ## 🛠️ Architectural Landmines & Warnings
 
 ### 1. Tailwind CSS v4 (Alpha) Dependency
-* **Location:** `package.json`, `app/globals.css`
-* **Warning:** The project uses `@tailwindcss/postcss` and `tailwindcss` version `4.0.0-alpha.13`.
-* **Constraint:** Tailwind v4 handles configuration primarily in the CSS file via `@theme` directives rather than a traditional `tailwind.config.js`. Do not attempt to refactor style values or add plugin files using Tailwind v3 configuration patterns, as this will break compilation or cause silent style regressions.
+* **Location:** `package.json`, `app/global.css`
+* **Warning:** The project uses `@tailwindcss/postcss` and `tailwindcss` v4 (exact version pinned in `package.json`).
+* **Constraint:** Tailwind v4 is wired up through `@tailwindcss/postcss` (`postcss.config.js`) with `@import "tailwindcss"` in `app/global.css`; a leftover `tailwind.config.js` exists at the repo root but is not referenced. Do not add plugin files or restyle via Tailwind v3 configuration patterns, as this will break compilation or cause silent style regressions.
 
 ### 2. Strict Separation of Data & Presentation
 * **Location:** `app/data/` vs `app/components/`
-* **Warning:** All copy, metrics, skills lists, and links must reside in the `app/data/` files (e.g., [projects.js](file:///E:/Project/Portfolio/app/data/projects.js), [experience.js](file:///E:/Project/Portfolio/app/data/experience.js), [certifications.js](file:///E:/Project/Portfolio/app/data/certifications.js)).
+* **Warning:** All copy, metrics, skills lists, and links must reside in the `app/data/` files (e.g., `app/data/projects.js`, `app/data/experience.js`, `app/data/certifications.js`).
 * **Constraint:** Components under `app/components/` must remain purely presentational. Do not hardcode portfolio data or copy directly into JSX code.
 
 ### 3. Mobile Menu Scroll Lock & iOS Stacking Rules
-* **Location:** [hamburger-menu.spec.ts](file:///E:/Project/Portfolio/tests/e2e/hamburger-menu.spec.ts), `app/components/Nav.jsx`
+* **Location:** `tests/e2e/hamburger-menu.spec.ts`, `app/components/Nav.jsx`
 * **Warning:** WebKit (iOS Safari) requires specific overflow controls and stacking contexts.
 * **Constraint:** 
   1. The mobile menu scroll lock must apply `overflow: hidden` to **both** `document.body` and `document.documentElement` simultaneously.
@@ -29,7 +29,7 @@ This codebase is a premium portfolio built with Next.js 16, React 19, Tailwind C
 * **Constraint:** Skill badges (e.g., React, TypeScript) must *only* appear inside the specific cards/rows under `Projects` or `Certifications` where they show direct evidence of work. Do not create a separate "Skills" section.
 
 ### 5. Edge Runtime Constraints
-* **Location:** [app/opengraph-image.jsx](file:///E:/Project/Portfolio/app/opengraph-image.jsx)
+* **Location:** `app/opengraph-image.jsx`
 * **Warning:** The OpenGraph image generator runs on the Next.js Edge Runtime.
 * **Constraint:** Do not import any Node.js native packages (like `fs` or `path`) inside this file.
 

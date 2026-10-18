@@ -23,7 +23,7 @@ Senior Frontend Engineer with 8+ years of experience building banking platforms 
 | Route | Contents |
 | --- | --- |
 | `/` | Hero, Work (case study, GenAI, migration, lab projects), Experience, Certifications, Awards, About |
-| `/credentials` | All 14 certifications and 3 awards |
+| `/credentials` | All 15 certifications and 3 awards |
 | `/lab` | All 4 lab projects |
 
 ## Features
