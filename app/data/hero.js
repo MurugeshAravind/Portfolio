@@ -43,7 +43,7 @@ export const heroLede =
   "I lead the frontend for a retail bank's account-opening platform, where PII masking, secure rendering, and role-based access control are compliance requirements rather than a checklist. A lot of that job is the part that outlives the feature: review standards, test strategy, and architecture the rest of the team builds on.";
 
 export const heroMeta =
-  "React, TypeScript, AWS, GenAI · Open to senior and lead roles";
+  "React, TypeScript, AWS, AI Architecture · Open to senior and lead roles";
 
 /** The single call to action. There used to be two (See my work, Download CV),
  *  and the CV then moved to the footer. It is out of the footer for now while

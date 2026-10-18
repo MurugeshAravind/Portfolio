@@ -8,11 +8,11 @@ export const botConfig = {
   subtitle: "Grounded in Murugesh's delivery case studies, migrations, and verified metrics.",
   triggerLabel: "Technical Q&A",
   triggerShortLabel: "Q&A",
-  badge: "Verified Archive",
+  badge: "Technical Index",
   inputPlaceholder: "Ask about banking architecture, migrations, or stack...",
-  disclaimer: "Answers are grounded strictly in portfolio case studies with zero metric hallucination.",
-  emptyStateTitle: "Verified Knowledge Exploration",
-  emptyStateIntro: "Ask a direct question, or select an inquiry below to deep-dive into Murugesh's engineering record:",
+  disclaimer: "Answers are grounded strictly in portfolio case studies and delivery records.",
+  emptyStateTitle: "Architecture & Delivery Record",
+  emptyStateIntro: "Ask a direct technical question, or select a topic below to inspect Murugesh's engineering record:",
   starterPrompts: [
     {
       label: "Banking Onboarding (OAO)",
@@ -36,10 +36,10 @@ export const botConfig = {
     }
   ],
   labels: {
-    sourcesHeader: "Verified Sources & Confidence",
+    sourcesHeader: "Referenced Sources & Evidence",
     closeDrawer: "Close assistant",
     clearConversation: "Clear chat",
     sendButton: "Send inquiry",
-    thinking: "Retrieving verified records..."
+    thinking: "Retrieving records..."
   }
 };

@@ -1,15 +1,14 @@
 import Image from "next/image";
 import profileImg from "../../profile.webp";
 import { aboutParagraphs } from "../data/about";
-import { site } from "../data/site";
 
 /**
  * Prose only — no subheadings, no bullet lists, no "principles" cards. See the
  * note in data/about.js for why.
  *
- * The profile links come from data/site.js rather than being written into the
- * JSX: AGENTS.md §2 puts links in app/data/, and the same hrefs were previously
- * hardcoded here, in Nav.jsx, and in layout.js.
+ * Outbound links live in the footer (app/components/Footer.jsx); keeping them out
+ * of this section leaves the About story to finish on its own terms and avoids
+ * duplicate profile links stacked right above the footer rule.
  */
 export default function About() {
   return (
@@ -36,16 +35,9 @@ export default function About() {
               {paragraph}
             </p>
           ))}
-
-          <div className="about-links">
-            {site.links.map(({ label, href }) => (
-              <a key={label} href={href} target="_blank" rel="noopener noreferrer">
-                {label}
-              </a>
-            ))}
-          </div>
         </div>
       </div>
     </section>
   );
 }
+

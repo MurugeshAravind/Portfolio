@@ -754,20 +754,6 @@ a.cert-row:hover .cert-name {
   max-width: var(--measure);
 }
 
-.about-links {
-  display: flex;
-  gap: 24px;
-  margin-top: 28px;
-}
-
-.about-links a {
-  font-family: var(--font-mono), ui-monospace, monospace;
-  font-size: var(--step-meta);
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  min-height: 44px;
-}
 
 /* ─── Footer ─── */
 .footer {
@@ -947,9 +933,8 @@ a.cert-row:hover .cert-name {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #34d399; /* verified online status dot */
+  background: #10b981;
   display: inline-block;
-  box-shadow: 0 0 6px rgba(52, 211, 153, 0.8);
 }
 
 .resume-bot-backdrop {
@@ -1010,7 +995,7 @@ a.cert-row:hover .cert-name {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #34d399;
+  background: #10b981;
 }
 
 .bot-badge {
