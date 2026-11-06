@@ -7,7 +7,7 @@
  * @property {string[]} skills
  * @property {"github"|"cognizant"|"aws"|"anthropic"|"google-cloud"|"openai"|"oracle"} icon
  * @property {number} [featured] Rank in the three-card block on the homepage,
- *   `1` leading. The rest of the list moves to /credentials — a wall of fifteen
+ *   `1` leading. The rest of the list moves to /credentials — a wall of sixteen
  *   badges on the landing page reads as cert-collecting, so the homepage shows
  *   the three that carry the strongest signal and links out for the rest.
  *   A rank rather than a boolean because this array is ordered for the LinkedIn
@@ -84,6 +84,25 @@ export const certifications = [
     icon: "cognizant",
     credentialUrl:
       "https://www.credly.com/badges/e3bbe76e-8f82-4bf2-bef2-9ba7b4db3436/public_url",
+  },
+  {
+    name: "AWS Certified AI Practitioner",
+    issuer: "Amazon Web Services (AWS)",
+    issuedDate: "Nov 2026",
+    // AWS certifications are valid for three years from the award date.
+    expiryDate: "Nov 2029",
+    // The badge's actual Credly skill tags, minus the vendor-name duplicates
+    // ("AWS", "AWS Certification", "Amazon Web Services", "Cloud Certification").
+    skills: [
+      "Generative AI",
+      "Machine Learning (ML)",
+      "Artificial Intelligence (AI)",
+      "Foundation Models",
+      "AI and ML on AWS - Foundational",
+    ],
+    icon: "aws",
+    credentialUrl:
+      "https://www.credly.com/badges/53f62957-0d26-49d6-8988-cd3b73db0fad/public_url",
   },
   {
     name: "Claude Certified Architect - Professional",
