@@ -91,7 +91,15 @@ export const certifications = [
     issuedDate: "Nov 2026",
     // AWS certifications are valid for three years from the award date.
     expiryDate: "Nov 2029",
-    skills: ["Generative AI", "Machine Learning", "Responsible AI", "AWS Core Services"],
+    // The badge's actual Credly skill tags, minus the vendor-name duplicates
+    // ("AWS", "AWS Certification", "Amazon Web Services", "Cloud Certification").
+    skills: [
+      "Generative AI",
+      "Machine Learning (ML)",
+      "Artificial Intelligence (AI)",
+      "Foundation Models",
+      "AI and ML on AWS - Foundational",
+    ],
     icon: "aws",
     credentialUrl:
       "https://www.credly.com/badges/53f62957-0d26-49d6-8988-cd3b73db0fad/public_url",
