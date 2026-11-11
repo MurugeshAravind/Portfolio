@@ -5,12 +5,12 @@ import { labProjects } from "../data/projects";
 export const metadata = {
   title: "Lab | Murugesh Aravind",
   description:
-    "Open-source projects and experiments: a leave-impact analytics tool, a defensive AI email agent, a mutual fund tracker, and a game on AWS with Cognito auth and a leaderboard.",
+    "Open-source projects and experiments: a leave-impact analytics tool, a mutual fund tracker, and a game on AWS with Cognito auth and a leaderboard.",
   alternates: { canonical: "https://aravind.is-a.dev/lab" },
 };
 
 /**
- * All four lab projects. The homepage shows the two strongest and links here —
+ * All three lab projects. The homepage shows the two strongest and links here —
  * a full grid on the landing page diluted the work that actually matters.
  */
 export default function LabPage() {
