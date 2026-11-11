@@ -66,7 +66,7 @@ export default function Nav() {
   return (
     <nav className="nav" aria-label="Main navigation">
       <Link href="/" className="nav-logo">
-        MA<span className="accent">.</span>
+        Murugesh Aravind<span className="accent">.</span>
       </Link>
 
       <ul className="nav-links">
