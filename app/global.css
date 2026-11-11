@@ -29,8 +29,8 @@
   --accent: #9a3b1e;
   --accent-2: #2f4858;
 
-  --container: 1080px;
-  --measure: 62ch;
+  --container: 1120px;
+  --measure: 64ch;
   --gutter: 40px;
 
   /* Five steps, and nothing outside them.
@@ -42,7 +42,7 @@
      Runner-Up" rather than as the heading over it. A masthead has to outrank
      the items beneath it, so it gets its own step between title and display. */
   --step-display: clamp(2.125rem, 5vw, 3.375rem);
-  --step-section: clamp(1.75rem, 3.2vw, 2.25rem);
+  --step-section: clamp(1.625rem, 2.6vw, 2rem);
   --step-title: clamp(1.375rem, 2.4vw, 1.75rem);
   --step-body: 1.0625rem;
   --step-meta: 0.8125rem;
@@ -59,6 +59,9 @@
 
 html {
   scroll-behavior: smooth;
+  /* The nav is fixed in all but name. Offset anchor jumps and keyboard focus
+     scrolling so a focused control never lands underneath it. */
+  scroll-padding-top: 76px;
 }
 
 body {
@@ -66,10 +69,14 @@ body {
   color: var(--ink);
   font-family: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   font-size: var(--step-body);
-  line-height: 1.6;
+  line-height: 1.65;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+}
+
+p {
+  text-wrap: pretty;
 }
 
 ::selection {
@@ -84,6 +91,7 @@ h4 {
   font-weight: 600;
   line-height: 1.2;
   letter-spacing: -0.01em;
+  text-wrap: balance;
 }
 
 a {
@@ -111,6 +119,9 @@ a:hover {
   left: 12px;
   z-index: 2000;
   padding: 10px 16px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
   background: var(--accent);
   color: var(--paper);
   font-size: var(--step-meta);
@@ -133,18 +144,34 @@ section:focus {
 }
 
 /* ─── Layout ─── */
+/* An editorial two-column grid, not a centred stack. The section heading sits
+   in a narrow rail that stays in view while the section passes it, so the page
+   has a stable left edge and the reader always knows which section they are in.
+   Every other child is placed in the content column, which is what keeps the
+   heading and the prose on separate measures without per-section wrappers. */
 .section {
   max-width: var(--container);
   margin: 0 auto;
   padding: 88px var(--gutter);
+  display: grid;
+  grid-template-columns: minmax(180px, 220px) minmax(0, 1fr);
+  column-gap: clamp(40px, 5vw, 72px);
+  align-items: start;
 }
 
-/* The nav is sticky and 60px tall, so an anchor jump would otherwise park the
-   section heading underneath it. */
-.section,
-.subpage {
-  scroll-margin-top: 76px;
+.section > * {
+  grid-column: 2;
 }
+
+.section > .section-label {
+  grid-column: 1;
+  position: sticky;
+  top: 92px;
+  align-self: start;
+}
+
+/* The nav is sticky and 60px tall; html's scroll-padding-top handles the
+   offset for anchor jumps and focus scrolling in one place. */
 
 /* A section is introduced by its heading, set in the display face at the same
    step as every other section title. No numerals and no rule across the page:
@@ -161,7 +188,7 @@ section:focus {
 .section-label {
   font-size: var(--step-section);
   color: var(--ink);
-  margin-bottom: 36px;
+  margin-bottom: 0;
 }
 
 .section-title {
@@ -200,11 +227,12 @@ section:focus {
 
 .nav-logo {
   font-family: var(--font-display), ui-serif, Georgia, serif;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
   font-weight: 600;
   color: var(--ink);
   text-decoration: none;
   letter-spacing: -0.01em;
+  white-space: nowrap;
 }
 
 .nav-logo .accent {
@@ -233,7 +261,8 @@ section:focus {
 
 .nav-links a.active {
   text-decoration: underline;
-  text-underline-offset: 4px;
+  text-decoration-color: var(--accent);
+  text-underline-offset: 5px;
 }
 
 .nav-cta {
@@ -337,10 +366,48 @@ section:focus {
 }
 
 /* ─── Hero ─── */
+/* The masthead runs wider than the reading column: the statement on the left,
+   the person on the right. The portrait is not decoration; it is the only
+   human face on a page about work, and without it the first screen was two
+   thirds empty space. */
 .hero {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 112px var(--gutter) 88px;
+  padding: 96px var(--gutter) 80px;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 280px;
+  column-gap: clamp(40px, 6vw, 88px);
+  align-items: start;
+}
+
+.hero-content {
+  min-width: 0;
+}
+
+.hero-portrait {
+  margin: 0;
+}
+
+.hero-portrait-frame {
+  border: 1px solid var(--rule);
+  padding: 10px;
+  background: var(--paper-tint);
+}
+
+.hero-portrait-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  filter: grayscale(12%);
+}
+
+.hero-portrait figcaption {
+  margin-top: 10px;
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: var(--step-meta);
+  color: var(--muted);
 }
 
 .hero-title {
@@ -507,6 +574,13 @@ section:focus {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 40px;
+}
+
+/* A rule on each entry, as on the GenAI items, so the grid reads as a set of
+   records rather than as free-floating paragraphs. */
+.lab-grid > article {
+  border-top: 1px solid var(--rule);
+  padding-top: 18px;
 }
 
 .lab-name {
@@ -719,51 +793,36 @@ a.cert-row:hover .cert-name {
 }
 
 /* ─── About ─── */
-.about-grid {
-  display: grid;
-  grid-template-columns: 220px minmax(0, 1fr);
-  gap: 48px;
-  align-items: start;
-}
-
-.about-photo-wrap {
-  border: 1px solid var(--rule);
-  padding: 8px;
-  background: var(--paper-tint);
-}
-
-.about-photo {
-  width: 100%;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  display: block;
-  filter: grayscale(15%);
+.about-content {
+  max-width: var(--measure);
 }
 
 .about-lead {
   font-family: var(--font-display), ui-serif, Georgia, serif;
-  font-size: var(--step-title);
-  line-height: 1.35;
+  font-size: clamp(1.25rem, 1.8vw, 1.5rem);
+  line-height: 1.45;
   color: var(--ink);
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .about-text {
   color: var(--ink-soft);
-  margin-bottom: 20px;
-  max-width: var(--measure);
+  margin-bottom: 22px;
 }
 
 
 /* ─── Footer ─── */
+/* The tint is the only full-width colour block on the page. It closes the
+   document instead of letting the last paragraph run into the browser edge. */
 .footer {
   border-top: 1px solid var(--rule);
+  background: var(--paper-tint);
 }
 
 .footer-inner {
   max-width: var(--container);
   margin: 0 auto;
-  padding: 40px var(--gutter) 56px;
+  padding: 44px var(--gutter) 56px;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -815,6 +874,12 @@ a.cert-row:hover .cert-name {
   margin-top: 56px;
 }
 
+/* On subpages the section label is a plain group heading rather than a rail,
+   so it needs the spacing the homepage rail gets from the grid gap. */
+.subpage-group .section-label {
+  margin-bottom: 24px;
+}
+
 /* ─── Responsive ─── */
 
 /* The hamburger breakpoint. 640px is asserted by the e2e suite. */
@@ -836,6 +901,7 @@ a.cert-row:hover .cert-name {
     padding-left: 24px;
     padding-right: 24px;
   }
+
 }
 
 @media (max-width: 1024px) {
@@ -844,11 +910,29 @@ a.cert-row:hover .cert-name {
   }
 
   .section {
+    display: block;
     padding: 64px var(--gutter);
   }
 
+  .section > .section-label {
+    position: static;
+    margin-bottom: 32px;
+  }
+
   .hero {
+    grid-template-columns: minmax(0, 1fr);
     padding: 72px var(--gutter) 64px;
+  }
+
+  .hero-portrait {
+    max-width: 260px;
+    margin-top: 8px;
+  }
+
+  /* Reserve room for the fixed assistant trigger so it never sits on the
+     footer note on tablet or phone. */
+  .footer-inner {
+    padding-bottom: 104px;
   }
 
   .genai-list,
@@ -860,15 +944,6 @@ a.cert-row:hover .cert-name {
   .exp-item {
     grid-template-columns: minmax(0, 1fr);
     gap: 12px;
-  }
-
-  .about-grid {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 32px;
-  }
-
-  .about-photo-wrap {
-    max-width: 220px;
   }
 }
 
@@ -901,40 +976,37 @@ a.cert-row:hover .cert-name {
   z-index: 900;
   display: inline-flex;
   align-items: center;
-  gap: 10px;
-  background: var(--ink);
-  color: var(--paper);
+  gap: 9px;
+  background: var(--paper);
+  color: var(--ink);
   border: 1px solid var(--ink);
-  padding: 11px 18px;
-  border-radius: 9999px;
+  padding: 10px 14px;
+  min-height: 44px;
+  border-radius: 0;
   font-family: var(--font-mono), monospace;
   font-size: var(--step-meta);
   font-weight: 500;
-  letter-spacing: 0.02em;
+  letter-spacing: 0.01em;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(23, 22, 15, 0.18);
-  transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+  box-shadow: none;
+  transition: background 0.15s ease, color 0.15s ease;
 }
 
 .resume-bot-trigger:hover {
-  background: var(--accent);
-  border-color: var(--accent);
+  background: var(--ink);
+  border-color: var(--ink);
   color: var(--paper);
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(154, 59, 30, 0.28);
+  transform: none;
+  box-shadow: none;
+}
+
+.bot-trigger-text-short {
+  display: none;
 }
 
 .resume-bot-trigger:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 3px;
-}
-
-.bot-trigger-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: #10b981;
-  display: inline-block;
 }
 
 .resume-bot-backdrop {
@@ -991,18 +1063,9 @@ a.cert-row:hover .cert-name {
   margin-bottom: 6px;
 }
 
-.bot-status-indicator {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #10b981;
-}
-
 .bot-badge {
   font-family: var(--font-mono), monospace;
-  font-size: 0.7rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 0.75rem;
   color: var(--accent-2);
   font-weight: 500;
 }
@@ -1032,8 +1095,11 @@ a.cert-row:hover .cert-name {
   background: transparent;
   border: 1px solid var(--rule);
   color: var(--muted);
-  padding: 4px 10px;
-  border-radius: 4px;
+  padding: 0 10px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  border-radius: 0;
   font-family: var(--font-mono), monospace;
   font-size: 0.75rem;
   cursor: pointer;
@@ -1050,11 +1116,13 @@ a.cert-row:hover .cert-name {
   border: none;
   color: var(--muted);
   cursor: pointer;
-  padding: 4px;
+  padding: 0;
+  width: 44px;
+  height: 44px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 4px;
+  border-radius: 0;
   transition: color 0.15s ease;
 }
 
@@ -1071,8 +1139,11 @@ a.cert-row:hover .cert-name {
   gap: 20px;
 }
 
+/* Top-aligned rather than vertically centred. With five starter cards the
+   block is taller than the messages area on a laptop viewport, and the auto
+   margins that centred it pushed the title up behind the drawer header. */
 .bot-empty-state {
-  margin: auto 0;
+  margin: 0 0 20px;
   text-align: left;
 }
 
@@ -1101,7 +1172,7 @@ a.cert-row:hover .cert-name {
   background: var(--paper-tint);
   border: 1px solid var(--rule);
   padding: 12px 14px;
-  border-radius: 6px;
+  border-radius: 0;
   cursor: pointer;
   display: flex;
   flex-direction: column;
@@ -1116,8 +1187,7 @@ a.cert-row:hover .cert-name {
 
 .starter-label {
   font-family: var(--font-mono), monospace;
-  font-size: 0.72rem;
-  text-transform: uppercase;
+  font-size: 0.75rem;
   color: var(--accent);
   font-weight: 500;
 }
@@ -1144,7 +1214,7 @@ a.cert-row:hover .cert-name {
 .bot-bubble {
   max-width: 90%;
   padding: 14px 16px;
-  border-radius: 8px;
+  border-radius: 2px;
   font-size: 0.9rem;
   line-height: 1.55;
 }
@@ -1152,22 +1222,21 @@ a.cert-row:hover .cert-name {
 .user-bubble {
   background: var(--ink);
   color: var(--paper);
-  border-bottom-right-radius: 2px;
+  border-bottom-right-radius: 0;
 }
 
 .assistant-bubble {
   background: var(--paper-tint);
   color: var(--ink);
   border: 1px solid var(--rule);
-  border-bottom-left-radius: 2px;
+  border-bottom-left-radius: 0;
 }
 
 .bot-bubble-meta {
   font-family: var(--font-mono), monospace;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--muted);
   margin-bottom: 6px;
-  text-transform: uppercase;
 }
 
 .user-bubble .bot-bubble-meta {
@@ -1219,9 +1288,8 @@ a.cert-row:hover .cert-name {
   align-items: center;
   gap: 6px;
   font-family: var(--font-mono), monospace;
-  font-size: 0.7rem;
+  font-size: 0.72rem;
   color: var(--accent-2);
-  text-transform: uppercase;
   margin-bottom: 8px;
   font-weight: 500;
 }
@@ -1239,7 +1307,7 @@ a.cert-row:hover .cert-name {
   font-family: var(--font-mono), monospace;
   font-size: 0.74rem;
   padding: 6px 10px;
-  border-radius: 4px;
+  border-radius: 0;
   cursor: pointer;
   display: flex;
   justify-content: space-between;
@@ -1263,7 +1331,7 @@ a.cert-row:hover .cert-name {
   border: 1px solid var(--rule);
   border-top: none;
   padding: 10px 12px;
-  border-radius: 0 0 4px 4px;
+  border-radius: 0;
   font-size: 0.8rem;
 }
 
@@ -1296,7 +1364,7 @@ a.cert-row:hover .cert-name {
   gap: 8px;
   background: var(--paper);
   border: 1px solid var(--rule);
-  border-radius: 6px;
+  border-radius: 0;
   padding: 4px 6px 4px 14px;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
 }
@@ -1325,9 +1393,9 @@ a.cert-row:hover .cert-name {
   background: var(--accent);
   color: white;
   border: none;
-  width: 34px;
-  height: 34px;
-  border-radius: 4px;
+  width: 44px;
+  height: 44px;
+  border-radius: 0;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1415,7 +1483,7 @@ a.cert-row:hover .cert-name {
   background: var(--paper);
   border: 1px solid var(--rule);
   padding: 1px 6px;
-  border-radius: 3px;
+  border-radius: 1px;
   color: var(--accent-2);
   margin: 0 3px;
   font-weight: 500;
@@ -1427,4 +1495,34 @@ a.cert-row:hover .cert-name {
   text-decoration: underline;
   text-underline-offset: 3px;
   font-weight: 500;
+}
+
+/* The base trigger styles above sit after the page-level media queries, so the
+   mobile variant has to come last in the file to win the cascade. */
+@media (max-width: 640px) {
+  .resume-bot-trigger {
+    right: 16px;
+    bottom: 16px;
+    padding: 10px 12px;
+  }
+
+  .bot-trigger-text {
+    display: none;
+  }
+
+  .bot-trigger-text-short {
+    display: inline;
+  }
+
+  /* Text links are the primary tap targets on the mobile page; the inline
+     boxes were 17px tall. Give each one the full 44px hit area without
+     changing its visual weight. */
+  .nav-logo,
+  .hero-cta,
+  .lab-links a,
+  .section-foot a {
+    display: inline-flex;
+    align-items: center;
+    min-height: 44px;
+  }
 }

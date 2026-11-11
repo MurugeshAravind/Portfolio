@@ -14,7 +14,6 @@
  *   - Tic-Tac-Toe was described as multiplayer and DynamoDB-backed. It has no
  *     multiplayer code, and no DynamoDB client — it authenticates with Cognito
  *     and talks to an API Gateway endpoint.
- *   - Inbox Janitor named a single Gemini version that is not the one it runs.
  * Re-verify before editing these descriptions, and do not add a figure that
  * has not been read out of the repository.
  *
@@ -45,22 +44,13 @@ export const labProjects = [
     // 404'd for every visitor. Publish the repo or leave this absent.
   },
   {
-    id: "inbox-janitor-agent",
-    name: "Inbox Janitor Agent",
-    kicker: "AI email agent · Open source",
-    description:
-      "A deliberately defensive Gmail cleaner. Deletion is off unless DRY_RUN is explicitly disabled, and every classification has to satisfy a strict Zod schema before anything is acted on, so a misclassified newsletter cannot become a deleted invoice. When a model starts rate-limiting mid-run it fails over through a pool of Gemini models rather than dropping the batch.",
-    stack: "TypeScript, LangChain, Gemini, Gmail API, Zod",
-    home: true,
-    repo: "https://github.com/MurugeshAravind/inbox-janitor-agent",
-  },
-  {
     id: "fundscope",
     name: "FundScope",
     kicker: "State management · Open source",
     description:
       "A mutual fund tracker for searching, comparing NAV, and exploring fund detail, built to work through Zustand's global state story properly. Dark mode, skeleton loading, and a 49-case suite with Playwright E2E coverage on top.",
     stack: "React 19, TypeScript, Zustand, Tailwind, Vite",
+    home: true,
     live: "https://fundscope.netlify.app",
     repo: "https://github.com/MurugeshAravind/zustand-demo",
   },

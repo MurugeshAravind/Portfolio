@@ -18,6 +18,7 @@
 export const site = {
   name: "Murugesh Aravind",
   role: "Senior Frontend Engineer",
+  location: "Bengaluru, India",
   links: [
     { label: "GitHub", href: "https://github.com/MurugeshAravind" },
     {

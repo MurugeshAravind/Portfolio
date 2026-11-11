@@ -85,10 +85,10 @@ describe("Production RAG - Hybrid Retrieval Engine (RRF)", () => {
     expect(hasEducationChunk).toBe(true);
   });
 
-  it("retrieves defensive AI email agent for inbox janitor inquiries", () => {
-    const result = engine.search("How does his Inbox Janitor AI agent work?");
+  it("retrieves the SmartLeave lab project for portfolio inquiries", () => {
+    const result = engine.search("What is his SmartLeave AI lab project about?");
     expect(result.isRelevant).toBe(true);
-    expect(result.chunks[0].chunk.id).toBe("project-inbox-janitor");
+    expect(result.chunks[0].chunk.id).toBe("project-smartleave-ai");
   });
 
   it("correctly identifies and deflects out-of-scope queries (0 wasted tokens)", () => {

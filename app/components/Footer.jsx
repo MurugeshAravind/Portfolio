@@ -23,7 +23,7 @@ export default function Footer() {
           ))}
         </ul>
 
-        <p className="footer-note">{site.name} · Bengaluru, India</p>
+        <p className="footer-note">{site.name} · {site.location}</p>
       </div>
     </footer>
   );

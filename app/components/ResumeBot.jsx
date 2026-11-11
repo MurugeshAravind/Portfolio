@@ -140,9 +140,10 @@ export default function ResumeBot() {
   const messageCounterRef = useRef(0);
   const titleId = useId();
 
-  // Scroll messages to bottom smoothly as tokens stream in
+  // Scroll messages to bottom smoothly as tokens stream in. Do not scroll on
+  // open with an empty thread: it pulls the empty-state heading out of view.
   useEffect(() => {
-    if (isOpen && messagesEndRef.current) {
+    if (isOpen && messages.length > 0 && messagesEndRef.current) {
       messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
     }
   }, [messages, isOpen]);
@@ -277,6 +278,7 @@ export default function ResumeBot() {
         aria-expanded={isOpen}
         aria-controls="resume-bot-drawer"
         className="resume-bot-trigger"
+        aria-label={botConfig.triggerLabel}
         title="Explore Murugesh's Engineering Record"
       >
         <span className="bot-trigger-icon" aria-hidden="true">
@@ -285,7 +287,9 @@ export default function ResumeBot() {
           </svg>
         </span>
         <span className="bot-trigger-text">{botConfig.triggerLabel}</span>
-        <span className="bot-trigger-dot" aria-hidden="true"></span>
+        <span className="bot-trigger-text-short" aria-hidden="true">
+          {botConfig.triggerShortLabel}
+        </span>
       </button>
 
       {/* Backdrop overlay (starts below 60px nav, z-index: 999 strictly adheres to AGENTS.md stacking rules) */}
@@ -311,7 +315,6 @@ export default function ResumeBot() {
         <header className="bot-header">
           <div>
             <div className="bot-header-meta">
-              <span className="bot-status-indicator"></span>
               <span className="bot-badge">{botConfig.badge || "Verified Archive"}</span>
             </div>
             <h2 id={titleId} className="bot-title">
